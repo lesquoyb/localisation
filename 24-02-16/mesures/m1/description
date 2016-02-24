@@ -1,0 +1,11 @@
+le but de cette experiance est de mesurer le décalage de phase suivant differentes distances entre les deux micros et la source sonore en ligne droite.
+
+- des mesures vont être prises sans modifier aucunes distance.
+- la distance entre les deux micros vont etre diminuer et augmenté en gardant la source a une position constante
+- la distance entre les micros et la source va etre modifier, en gardant l'ecartement entre les deux micros constant.
+
+le fichier sonore utilisé est un .wav qui
+	- dure 15sec, 
+	- frequance constante a 440Hz
+	- sample rate : 44100Hz
+	- fichier mono
