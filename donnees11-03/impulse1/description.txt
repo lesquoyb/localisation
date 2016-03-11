@@ -1,0 +1,15 @@
+premier test:
+	il n'y a un décalage que d'un sample entre les deux.
+
+deuxieme test:
+	le decalage de phase est de 11 sample, soit 220microSeconde.
+troisieme test :
+	malgré le faite que les deux micros soient a la meme distance avec la source sonore, il y a un décalage de phase de 2 sample. de plus, les deux signaux ne se resemblent pas du tout!
+
+quatrieme test :
+	les deux signaux ne se ressemblent pas
+	il y a decalage de 1 sample.
+
+cinquieme test :
+	le signal entouré du cone est beaucoup plus faible.
+	il y a un décalage de 5 sample entre les deux signaux.

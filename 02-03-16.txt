@@ -1,0 +1,12 @@
+decrire tout ca, sceen shot etc...
+
+tester un signal, pour faire en sorte qu'on ait pas d'echo en limitant la durée du son joué
+par exemple prendre un sin * un gauss sur quelques periodes
+ou une marche (signal carée) assez cours d'une durée de 1 echantillon et de 5 samples. le signal carrée doit etre periodique, avec un blanc de 2-3sec entre chaque impulsion
+	verifier qu'on trouve toujours la bonne distance
+	faire les memes mesures avec des connes
+
+le prochaine mesure, il faut les pendre loin des obstacles (conditions plutot favorable )
+
+
+pour le future assez distant, ca serais bien d'avoir des repaires sur le sol pour mettre les trois enseintes
