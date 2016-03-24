@@ -1,7 +1,7 @@
 Objectif:
 	Le premier objectif de cette série de teste est de verifier la validité de l'utilisation d'un signal carré.
 	On a voulu tester cette forme de signal, car le front montant du signal est supposé etre facilement repairable dans le signal de l'acquisition du micro.
-	le deuxieme objectif est d'acquerir un signal avec le minimum d'echo possible. Le signal carré utilisé étant très court, le pique enregistré sur les micros ne peut (hypothetiquement) pas etre bruité par de l'echo.
+	Le deuxieme objectif est d'acquerir un signal avec le minimum d'echo possible. Le signal carré utilisé étant très court, le pique enregistré sur les micros ne peut (hypothetiquement) pas etre bruité par de l'echo.
 
 
 Protocole:
@@ -62,17 +62,17 @@ Resultat:
 
 		troisieme test:
 			le décalage de phase est de 2samples.
-			de plus les deux signaux ne se resemblent pas (oulala il y a de l'echo)
+			de plus les deux signaux ne se resemblent pas 
 
 		quatrieme test :
 			il n' a pas de decalage de phase... je ne sais pas pourquoi!
 
 		cinquieme test :
 	        le décalage de phase est de 2 sample. j'aurais pensé que ca soit plus.
-	        le signale est beaucoup plus faible pour le micro qui est entouré du con
+	        le signale est beaucoup plus faible pour le micro qui est entouré du cone. 
 
 
 Conclusion:
 	Malgré la forme du signal d'origine très reconnaisable, la signal recu, l'est beaucoup moins. Il est assez compliqué de reperé le meme extremum dans les deux signaux acquis par les micros.
 	Le fait que le signal n'est pas reconnaisable, et que le tous les piques ne sont pas pareil dans l'enregistrement des deux micros, est probablement du au limitation materiel du haut parleur (la membrane vibre et ne peut pas reconstituer un signal carré)
-	
+	Malgrès les effort pour limiter l'apparition d'echo, celui-ci est inévitable.
