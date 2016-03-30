@@ -19,10 +19,10 @@ On aimerait définir un protocole qui permettrait de mesurer précisément un d�
 On considérera que le protocole est bon si on arrive systématiquement et dans plusieurs configurations à retrouver les distances physiques séparant l'émetteur du signal de chacun des micros. De plus on vérifiera que le décalage de phase entre les micros correspond bien à la distance les séparant.
 
 \subsection{Configurations}
-Tout au long du document, on utilisera les termes m1 et m2 pour désigner les deux micros, x l'espace entre les micros, s1 la source sonore (le haut parleur), et y la distance entre m2 et s1. De sorte que la configuration avec les micros et le haut parleur aligné puisse être schématisé comme si dessous:
+Tout au long du document, on utilisera les termes m1 et m2 pour désigner les deux micros, x l'espace entre les micros, s1 la source sonore (le haut-parleur), et y la distance entre m2 et s1. De sorte que la configuration avec les micros et le haut-parleur aligné puisse être schématisé comme si dessous:
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{../24-02-16/mesures/m1/schema.png} 
-\caption{Schéma de l'expérience avec les micros et le haut parleur alignés}
+\caption{Schéma de l'expérience avec les micros et le haut-parleur alignés}
 \end{figure}
 les différentes configurations choisies sont:
 \begin{itemize}
@@ -105,7 +105,7 @@ Le matériel et les paramètres sont les mêmes que pour l'expérience précéde
 \end{figure}
 
 
-\paragraph{perpendiculaire au haut parleur}
+\paragraph{perpendiculaire au haut-parleur}
 
 On constate déjà qu'il y a un décalage assez marqué(anormal puisque les micros sont côte à côte)
 \begin{figure}[h]
@@ -115,7 +115,7 @@ On constate déjà qu'il y a un décalage assez marqué(anormal puisque les micr
 
 TODO: faire le tableau avec tous les décalages, calculer le décalage moyen
 
-\paragraph{dos au haut parleur}
+\paragraph{dos au haut-parleur}
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{../donnees25-02/IMG_0924.jpg} 
@@ -141,39 +141,26 @@ On en conclu que l'écho influence effectivement beaucoup le signal reçu, pouva
 	Tous les tests ont été effectué a distance de mures pour éviter la formation 
 	On a ensuite fait les mêmes teste que pour les séances précédentes:
 
-	
-	
-	
-
-	premier test:
-		les deux micros sont cote a cote(a 6cm de décalage), à la même distance de la source sonore.
-\begin{figure}[H]
-		\includegraphics[width=\textwidth]{../donnees11-03/test_1.jpg} 
-		\caption{photo de l'expérience avec les micros côte à côte}
-\end{figure}
-		
-	deuxième test:
-		les deux micros sont en ligne droite avec le speaker. la distance entre les deux micros est de 520mm, la distance entre le micro le plus proche du speaker et le speaker est de 400mm.
-\begin{figure}[H]
-		\includegraphics[width=\textwidth]{../donnees11-03/test_2.jpg} 
-		\caption{photo de l'expérience avec les micros en ligne}
-\end{figure}
-	troisième test:
-		les deux micros sont a la même distance par rapport a la source sonore(920mm), mais il sont tous les deux séparé de 680mm.
-
-	quatrième test:
-		un des deux micros est entouré de mousse pour faire un cône, le rendant unidirectionnel.
-		le cône est dirigé vers le speaker
-		les deux micros sont a une distance de 900mm.
-\begin{figure}[H]
-		\includegraphics[width=\textwidth]{../donnees11-03/test_4.jpg} 
-		\caption{photo de l'expérience avec un cône autour d'un micro}
-\end{figure}
-	cinquième test:
-		un des deux micros est entouré de mousse pour faire un cone, le rendant unidirectionnel.
-		le cone est dirigé a 180 degré du speaker.
-		les deux micros sont a une distance de 900mm.
-
+\subsection{Protocole des tests}
+\begin{description}
+\item[Premier test] Les deux micros sont côte à côte(à 6cm de décalage), à la même distance de la source sonore.
+	\begin{figure}[H]
+	\includegraphics[width=\textwidth]{../donnees11-03/test_1.jpg} 
+	\caption{Photo de l'expérience avec les micros côte à côte}
+	\end{figure}
+\item[Deuxième test] Les deux micros sont en ligne droite avec le haut-parleur. La distance entre les deux micros est de 520mm, la distance entre le micro le plus proche du haut-parleur et le haut-parleur est de 400mm.
+	\begin{figure}[H]
+	\includegraphics[width=\textwidth]{../donnees11-03/test_2.jpg} 
+	\caption{Photo de l'expérience avec les micros en ligne}
+	\end{figure}
+\item[Troisième test] Les deux micros sont à la même distance par rapport à la source sonore (920mm), mais il sont tous deux séparé de 680mm.
+\item[Quatrième test] Un des deux micros est entouré de mousse pour faire un cône, le rendant unidirectionnel. Le cône est dirigé vers le haut-parleur. Les deux micros sont à une distance de 900mm de la source sonore.
+	\begin{figure}[H]
+	\includegraphics[width=\textwidth]{../donnees11-03/test_4.jpg} 
+	\caption{Photo de l'expérience avec un cône autour d'un micro}
+	\end{figure}
+\item[Cinquième test]	Un des deux micros est entouré de mousse pour faire un cone, le rendant unidirectionnel. Le cône est dirigé à 180 degré du haut-parleur. Les deux micros sont à une distance de 900mm de la source sonore.
+\end{description}
 
 \section{Résultats/conclusions}
 \paragraph{résultats}
@@ -217,7 +204,7 @@ On en conclu que l'écho influence effectivement beaucoup le signal reçu, pouva
 
 \subsection{Conclusion}
 	Malgré la forme du signal d'origine très reconnaissable, la signal reçu, l'est beaucoup moins. Il est assez compliqué de repéré le même extremum dans les deux signaux acquis par les micros.
-	Le fait que le signal n'est pas reconnaissable, et que le tous les piques ne sont pas pareil dans l'enregistrement des deux micros, est probablement du au limitation matériel du haut parleur (la membrane vibre et ne peut pas reconstituer un signal carré)
+	Le fait que le signal n'est pas reconnaissable, et que le tous les piques ne sont pas pareil dans l'enregistrement des deux micros, est probablement du au limitation matériel du haut-parleur (la membrane vibre et ne peut pas reconstituer un signal carré)
 	Malgré les effort pour limiter l'apparition d'écho, celui-ci est inévitable.
 
 

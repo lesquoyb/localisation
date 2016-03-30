@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.29)  30 MAR 2016 14:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.29)  30 MAR 2016 15:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -545,11 +545,11 @@ Package pdftex.def Info: ../donnees25-02/IMG_0924.jpg used on input line 121.
 (pdftex.def)             Requested size: 390.0pt x 519.95985pt.
  [8 <../donnees25-02/IMG_0923.jpg> <../donnees25-02/mesures_perpendiculaires/te
 st7.png (PNG copy)>] [9 <../donnees25-02/IMG_0924.jpg>]
-LaTeX Font Info:    Try loading font information for U+msa on input line 141.
+LaTeX Font Info:    Try loading font information for U+msa on input line 136.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 141.
+LaTeX Font Info:    Try loading font information for U+msb on input line 136.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -558,21 +558,26 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: ../donnees11-03/test_1.jpg Graphic file (type jpg)
 
 <use ../donnees11-03/test_1.jpg>
-Package pdftex.def Info: ../donnees11-03/test_1.jpg used on input line 150.
+Package pdftex.def Info: ../donnees11-03/test_1.jpg used on input line 148.
 (pdftex.def)             Requested size: 390.0pt x 519.95985pt.
  [10]
 <../donnees11-03/test_2.jpg, id=53, 2457.18pt x 3276.24pt>
 File: ../donnees11-03/test_2.jpg Graphic file (type jpg)
 
 <use ../donnees11-03/test_2.jpg>
-Package pdftex.def Info: ../donnees11-03/test_2.jpg used on input line 157.
+Package pdftex.def Info: ../donnees11-03/test_2.jpg used on input line 153.
 (pdftex.def)             Requested size: 390.0pt x 519.95985pt.
- [11 <../donnees11-03/test_1.jpg>] [12 <../donnees11-03/test_2.jpg>]
+
+Overfull \hbox (1.68204pt too wide) in paragraph at lines 151--155
+[]\T1/cmr/m/n/12 Les deux mi-cros sont en ligne droite avec le haut-parleur.
+ []
+
+[11 <../donnees11-03/test_1.jpg>] [12 <../donnees11-03/test_2.jpg>]
 <../donnees11-03/test_4.jpg, id=60, 3276.24pt x 2457.18pt>
 File: ../donnees11-03/test_4.jpg Graphic file (type jpg)
 
 <use ../donnees11-03/test_4.jpg>
-Package pdftex.def Info: ../donnees11-03/test_4.jpg used on input line 168.
+Package pdftex.def Info: ../donnees11-03/test_4.jpg used on input line 159.
 (pdftex.def)             Requested size: 390.0pt x 292.48679pt.
  [13 <../donnees11-03/test_4.jpg>] [14]
 (./rapport.aux) ) 
@@ -593,7 +598,7 @@ x1440.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1
 8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfcc1200.
 pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pf
 b>
-Output written on rapport.pdf (14 pages, 14781871 bytes).
+Output written on rapport.pdf (14 pages, 14784558 bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream
