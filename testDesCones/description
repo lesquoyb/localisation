@@ -1,0 +1,8 @@
+on test l'efficacité des cones pour éliminer l'écho.
+la pièce étant assez grande, il faudra regarder la fin du signal pour trouver des différences dû à l'écho (le temps que l'onde fasse les allez-retours contre les obstacles)
+Le signal est une sinusoide 
+face: les deux micros de face, l'un avec un cone large l'autre avec la mousse de base
+90: un micro est perpendiculaire à la source et a un cône, l'autre face à la source.
+90reverse: même chose, mais on interverti les positions deux micros, histoire de vérifier
+90reverseConePlusFin: idem mais on a resserré le cone
+
