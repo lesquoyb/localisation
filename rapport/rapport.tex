@@ -10,9 +10,21 @@
 \author{Baptiste Lesquoy}
 \begin{document}
 
-\begin{huge}
-TODO: Faire la partie materiel
-\end{huge}
+\chapter{Expériences}
+
+
+\part{Test du matériel}
+\section{Objectif}
+On voudrait savoir à quel point le matériel utilisé est fiable, et quelle précision on peut espérer avec.
+On testera donc que la mousse isole correctement. Ainsi que jusqu'à quel degré les micros sont omnidirectionnels.
+\section{Expérience}
+\subsection{La qualité de la mousse}
+\subsection{L'omnidirectionnalité des micros}
+\section{Résultats/conclusions}
+
+
+
+TODO: l'importance de l'environnement
 
 \part{Élaboration du protocole}
 \section{Objectif}
@@ -26,7 +38,7 @@ On considérera que le protocole est bon si on arrive systématiquement et dans 
 \subsection{Configurations}
 Tout au long du document, on utilisera les termes m1 et m2 pour désigner les deux micros, x l'espace entre les micros, s1 la source sonore (le haut-parleur), et y la distance entre m2 et s1. De sorte que la configuration avec les micros et le haut-parleur aligné puisse être schématisé comme si dessous:
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../24-02-16/mesures/m1/schema.png} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/schema.png} 
 \caption{Schéma de l'expérience avec les micros et le haut-parleur alignés}
 \end{figure}
 les différentes configurations choisies sont:
@@ -55,11 +67,11 @@ Les calculs de distances et de décalage de phase seront fait par rapport aux pr
 \section{Résultats/conclusions}
 \subsection{Tout aligné}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../donnees25-02/IMG_0919.jpg} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/micros_alignes.jpg} 
 \caption{expérience avec les micros et l'enceinte aligné}
 \end{figure}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../donnees25-02/mesures_en_ligne/tableau_resultats.png}
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/mesures_en_ligne/tableau_resultats.png}
 \caption{tableau des résultats de toutes les itération de l'expérience avec les micros et enceintes alignés}
 \end{figure}
 On constate que le décalage de phase correspond aux distances entre m1, m2 et s1\\
@@ -67,11 +79,11 @@ TODO: exprimer le décalage en sample pour des distances plus précises + ce ser
 
 \subsection{Récepteurs côte à côte}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../donnees25-02/IMG_0920.jpg} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/micros_cote_a_cote.jpg} 
 \end{figure}
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../donnees25-02/mesures_micro_colles/colles.png} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/mesures_micro_colles/colles.png} 
 \caption{signaux reçu par les deux micros lorsqu'ils sont collés}
 \end{figure}
 On constate bien qu'il n'y a pas de décalage quand les deux micros sont collés. Par contre on remarque une différence d'intensité, qui peut être expliqué par une simple différence du matériel. Les micros n'étant pas des micros professionnels, ce n'est pas étonnant que la qualité ne soit pas constante d'un micro à l'autre.
@@ -100,13 +112,13 @@ Le matériel et les paramètres sont les mêmes que pour l'expérience précéde
 
 
 \subsection{Vérification de l'efficacité de la mousse}
-\includegraphics[width=\textwidth]{../donnees25-02/IMG_0922.jpg} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/cone_face.jpg} 
 
 \subsection{Changement d'orientation}
 
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../donnees25-02/IMG_0923.jpg} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/cone_dos_a_dos.jpg} 
 \end{figure}
 
 
@@ -114,7 +126,7 @@ Le matériel et les paramètres sont les mêmes que pour l'expérience précéde
 
 On constate déjà qu'il y a un décalage assez marqué(anormal puisque les micros sont côte à côte)
 \begin{figure}[h]
-\includegraphics[width=\textwidth]{../donnees25-02/mesures_perpendiculaires/test7.png} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/mesures_perpendiculaires/test7.png} 
 \caption{exemple de décalage sur la 7ème itération de l'expérience}
 \end{figure}
 
@@ -123,7 +135,7 @@ TODO: faire le tableau avec tous les décalages, calculer le décalage moyen
 \paragraph{dos au haut-parleur}
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../donnees25-02/IMG_0924.jpg} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/IMG_0924.jpg} 
 \end{figure}
 
 TODO: on a perdu certaines mesures, il va falloir les refaire :(
@@ -145,18 +157,18 @@ On en conclu que l'écho influence effectivement beaucoup le signal reçu, pouva
 \begin{description}
 \item[Premier test] Les deux micros sont côte à côte(à 6cm de décalage), à la même distance de la source sonore.
 	\begin{figure}[H]
-	\includegraphics[width=\textwidth]{../donnees11-03/test_1.jpg} 
+	\includegraphics[width=\textwidth]{../tests/lecture_de_signaux_carres/donnees11-03/test_1.jpg} 
 	\caption{Photo de l'expérience avec les micros côte à côte}
 	\end{figure}
 \item[Deuxième test] Les deux micros sont en ligne droite avec le haut-parleur. La distance entre les deux micros est de 520mm, la distance entre le micro le plus proche du haut-parleur et le haut-parleur est de 400mm.
 	\begin{figure}[H]
-	\includegraphics[width=\textwidth]{../donnees11-03/test_2.jpg} 
+	\includegraphics[width=\textwidth]{../tests/lecture_de_signaux_carres/donnees11-03/test_2.jpg} 
 	\caption{Photo de l'expérience avec les micros en ligne}
 	\end{figure}
 \item[Troisième test] Les deux micros sont à la même distance par rapport à la source sonore (920mm), mais il sont tous deux séparé de 680mm.
 \item[Quatrième test] Un des deux micros est entouré de mousse pour faire un cône, le rendant unidirectionnel. Le cône est dirigé vers le haut-parleur. Les deux micros sont à une distance de 900mm de la source sonore. Les deux micros sont séparé de 12cm.
 	\begin{figure}[H]
-	\includegraphics[width=\textwidth]{../donnees11-03/test_4.jpg} 
+	\includegraphics[width=\textwidth]{../tests/lecture_de_signaux_carres/donnees11-03/test_4.jpg} 
 	\caption{Photo de l'expérience avec un cône autour d'un micro}
 	\end{figure}
 \item[Cinquième test]	Un des deux micros est entouré de mousse pour faire un cone, le rendant unidirectionnel. Le cône est dirigé à 180 degré du haut-parleur. Les deux micros sont à une distance de 900mm de la source sonore.

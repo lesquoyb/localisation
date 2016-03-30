@@ -1,0 +1,33 @@
+But pour la prochaine sceance:
+1) Etre sur de la repetabilité des mesures <==> avoir approx 10 mesures qui sont les memes
+2) Etre sur que c'est le meme decalage de phase pour les meme positions
+3) Faire les meme tests avec de la mousse et voir ce que ca donne
+4) Verifier qu'avec un sin(X) parfait on obtient PAS ce qu'on veut
+5) Expliquer pouquoi on obtient pas ce qu'on veut ^ (la cause est forcement les echo)
+6) Tester la creation des .wav a l'enregistrement
+
+/!\ Chaque tests doit etre documenté, faire des logs precis pour chaques essais
+	Faire un protocole de mesures :
+		* Ce qu'on veut mesurer
+		* Ce qu'on mesure
+
+Il faut aussi inclure dans les tests une partie en tapant dans les mains ( <==> ajouter des piques dans les sin(X) "pure")
+
+Pour les testes avec la mousse :
+	Isoler les speakers avec des cones en mousse ( <==> speaker unidirectionnel)
+	faire les mesures (il ne devrait pas y avoir d'echos)
+
+Pour tous les tests au dessus, il faut ce baser sur un .wav generé sur internet (utiliser un LA (440Hz) par exemple)
+
+Fourier : "Tout signal se décompose comme une somme de sinus de plusieurs frequance"
+f(x) = sum(ai sin(ix) + bi cos(ix), i=0, infinit)
+
+les coef ai / ai sin(X) representent l'amplitude d'un signal, mais aussi son spectre
+
+Echo :
+	sum des sin de memes frequance
+
+Pour l'instant on verifie les resultat grace a audacity:
+	les signaux devrait etre parfaitement alligné (pas de décalage de phase)
+	Conjecture : ca ne sera pas parfaitement en phase
+	Meme plus : si on rapporche les deux speakers ca sera vraiment la merde (toujours grace a ces magnifiques ECHO de merde)

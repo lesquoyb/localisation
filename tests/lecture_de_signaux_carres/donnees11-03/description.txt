@@ -1,0 +1,26 @@
+le but de ce test est de vérifier la validité d'un signal carrée de longueur d'un sample.
+
+on a choisit cette forme de signal pour se débarasser de l'echo.
+
+les memes testes vont etre effectuer que précédement pour avoir un point de repere par rapport a une sinusoïde!
+
+premier test:
+	les deux micros sont cote a cote(a 6cm de décalage), a la meme distance de la source sonore.
+
+deuxieme test:
+	les deux micros sont en ligne droite avec le speaker. la distance entre les deux micros est de 520mm, la distance entre le micro le plus proche du speaker et le speaker est de 400mm.
+
+troisieme test:
+	les deux micros sont a la meme distance par rapport a la source sonore(920mm), mais il sont tous les deux séparé de 680mm.
+
+quatrieme test:
+	un des deux micros est entouré de mousse pour faire un cone, le rendant unidirectionnel.
+	le cone est dirigé vers le speaker
+	les deux micros sont a une distance de 900mm.
+
+cinquieme test:
+	un des deux micros est entouré de mousse pour faire un cone, le rendant unidirectionnel.
+	le cone est dirigé a 180degré du speaker.
+	les deux micros sont a une distance de 900mm.
+
+	

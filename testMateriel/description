@@ -1,6 +1,0 @@
-tous les tests sont fait avec les micros à moins de 3 cm l'un de l'autre, et sans la mousse de base
-isolation: un micro entouré intégralement de mousse, l'autre non, orientation inconnue.
-testOrientation: un micro perpendiculaire à la source, l'autre de face
-testOrientation2:un micro face à la source, l'autre dos à la source
-testOrientationDosADos: les deux micros perpendiculaire à la source, les deux dos à dos
-testOrientation2LeRetour: répétition du 2 avec de la mousse entre les deux (pour les séparer)

@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[francais]{babel}
 \usepackage[T1]{fontenc}
@@ -9,6 +9,23 @@
 \usepackage{graphicx}
 \author{Baptiste Lesquoy}
 \begin{document}
+
+\chapter{Expériences}
+
+
+\part{Test du matériel}
+\section{Objectif}
+On voudrait savoir à quel point le matériel utilisé est fiable, et quelle précision on peut espérer avec.
+On testera donc que la mousse isole correctement. Ainsi que jusqu'à quel degré les micros sont omnidirectionnels.
+\section{Expérience}
+\subsection{La qualité de la mousse}
+\subsection{L'omnidirectionnalité des micros}
+\section{Résultats/conclusions}
+
+
+
+TODO: l'importance de l'environnement
+
 \part{Élaboration du protocole}
 \section{Objectif}
 On aimerait définir un protocole qui permettrait de mesurer précisément un décalage de phase sur un signal enregistré en même temps par deux micros différents.
@@ -19,10 +36,10 @@ On aimerait définir un protocole qui permettrait de mesurer précisément un d�
 On considérera que le protocole est bon si on arrive systématiquement et dans plusieurs configurations à retrouver les distances physiques séparant l'émetteur du signal de chacun des micros. De plus on vérifiera que le décalage de phase entre les micros correspond bien à la distance les séparant.
 
 \subsection{Configurations}
-Tout au long du document, on utilisera les termes m1 et m2 pour désigner les deux micros, x l'espace entre les micros, s1 la source sonore (le haut parleur), et y la distance entre m2 et s1. De sorte que la configuration avec les micros et le haut parleur aligné puisse être schématisé comme si dessous:
+Tout au long du document, on utilisera les termes m1 et m2 pour désigner les deux micros, x l'espace entre les micros, s1 la source sonore (le haut-parleur), et y la distance entre m2 et s1. De sorte que la configuration avec les micros et le haut-parleur aligné puisse être schématisé comme si dessous:
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../24-02-16/mesures/m1/schema.png} 
-\caption{Schéma de l'expérience avec les micros et le haut parleur alignés}
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/schema.png} 
+\caption{Schéma de l'expérience avec les micros et le haut-parleur alignés}
 \end{figure}
 les différentes configurations choisies sont:
 \begin{itemize}
@@ -50,11 +67,11 @@ Les calculs de distances et de décalage de phase seront fait par rapport aux pr
 \section{Résultats/conclusions}
 \subsection{Tout aligné}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../donnees25-02/IMG_0919.jpg} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/IMG_0919.jpg} 
 \caption{expérience avec les micros et l'enceinte aligné}
 \end{figure}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../donnees25-02/mesures_en_ligne/tableau_resultats.png}
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/mesures_en_ligne/tableau_resultats.png}
 \caption{tableau des résultats de toutes les itération de l'expérience avec les micros et enceintes alignés}
 \end{figure}
 On constate que le décalage de phase correspond aux distances entre m1, m2 et s1\\
@@ -62,11 +79,11 @@ TODO: exprimer le décalage en sample pour des distances plus précises + ce ser
 
 \subsection{Récepteurs côte à côte}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../donnees25-02/IMG_0920.jpg} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/IMG_0920.jpg} 
 \end{figure}
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../donnees25-02/mesures_micro_colles/colles.png} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/mesures_micro_colles/colles.png} 
 \caption{signaux reçu par les deux micros lorsqu'ils sont collés}
 \end{figure}
 On constate bien qu'il n'y a pas de décalage quand les deux micros sont collés. Par contre on remarque une différence d'intensité, qui peut être expliqué par une simple différence du matériel. Les micros n'étant pas des micros professionnels, ce n'est pas étonnant que la qualité ne soit pas constante d'un micro à l'autre.
@@ -95,27 +112,27 @@ Le matériel et les paramètres sont les mêmes que pour l'expérience précéde
 
 
 \subsection{Vérification de l'efficacité de la mousse}
-\includegraphics[width=\textwidth]{../donnees25-02/IMG_0922.jpg} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/IMG_0922.jpg} 
 
 \subsection{Changement d'orientation}
 
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../donnees25-02/IMG_0923.jpg} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/IMG_0923.jpg} 
 \end{figure}
 
 
-\paragraph{perpendiculaire au haut parleur}
+\paragraph{perpendiculaire au haut-parleur}
 
 On constate déjà qu'il y a un décalage assez marqué(anormal puisque les micros sont côte à côte)
 \begin{figure}[h]
-\includegraphics[width=\textwidth]{../donnees25-02/mesures_perpendiculaires/test7.png} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/mesures_perpendiculaires/test7.png} 
 \caption{exemple de décalage sur la 7ème itération de l'expérience}
 \end{figure}
 
 TODO: faire le tableau avec tous les décalages, calculer le décalage moyen
 
-\paragraph{dos au haut parleur}
+\paragraph{dos au haut-parleur}
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{../donnees25-02/IMG_0924.jpg} 
@@ -133,89 +150,63 @@ On en conclu que l'écho influence effectivement beaucoup le signal reçu, pouva
 	Le deuxième objectif est d'acquérir un signal avec le minimum d'écho possible. Le signal carré utilisé étant très court, le pique enregistré sur les micros ne devrait (hypothétiquement) pas être bruité par de l'écho.
 
 \section{Protocole}
-	On a créé deux fichier .wav. Le premier à 10 piques carré de longueur 1 échantillons, le deuxième à 10 piques carré de longueur 5 sample.
+	On a créé deux fichier .wav. Le premier a 10 piques carré de longueur sample de longueur, le deuxième a 10 piques carré de longueur 5 sample.
 	On a ensuite fait les mêmes teste que pour les séances précédentes:
 
-	Tous les tests ont été effectué a distance de mures pour éviter la formation 
+\subsection{Protocole des tests}
+\begin{description}
+\item[Premier test] Les deux micros sont côte à côte(à 6cm de décalage), à la même distance de la source sonore.
+	\begin{figure}[H]
+	\includegraphics[width=\textwidth]{../donnees11-03/test_1.jpg} 
+	\caption{Photo de l'expérience avec les micros côte à côte}
+	\end{figure}
+\item[Deuxième test] Les deux micros sont en ligne droite avec le haut-parleur. La distance entre les deux micros est de 520mm, la distance entre le micro le plus proche du haut-parleur et le haut-parleur est de 400mm.
+	\begin{figure}[H]
+	\includegraphics[width=\textwidth]{../donnees11-03/test_2.jpg} 
+	\caption{Photo de l'expérience avec les micros en ligne}
+	\end{figure}
+\item[Troisième test] Les deux micros sont à la même distance par rapport à la source sonore (920mm), mais il sont tous deux séparé de 680mm.
+\item[Quatrième test] Un des deux micros est entouré de mousse pour faire un cône, le rendant unidirectionnel. Le cône est dirigé vers le haut-parleur. Les deux micros sont à une distance de 900mm de la source sonore. Les deux micros sont séparé de 12cm.
+	\begin{figure}[H]
+	\includegraphics[width=\textwidth]{../donnees11-03/test_4.jpg} 
+	\caption{Photo de l'expérience avec un cône autour d'un micro}
+	\end{figure}
+\item[Cinquième test]	Un des deux micros est entouré de mousse pour faire un cone, le rendant unidirectionnel. Le cône est dirigé à 180 degré du haut-parleur. Les deux micros sont à une distance de 900mm de la source sonore.
+\end{description}
 
-	premier test:
-		les deux micros sont cote a cote(a 6cm de décalage), à la même distance de la source sonore.
-\begin{figure}[H]
-		\includegraphics[width=\textwidth]{../donnees11-03/test_1.jpg} 
-		\caption{photo de l'expérience avec les micros côte à côte}
-\end{figure}
-		
-	deuxième test:
-		les deux micros sont en ligne droite avec le speaker. la distance entre les deux micros est de 520mm, la distance entre le micro le plus proche du speaker et le speaker est de 400mm.
-\begin{figure}[H]
-		\includegraphics[width=\textwidth]{../donnees11-03/test_2.jpg} 
-		\caption{photo de l'expérience avec les micros en ligne}
-\end{figure}
-	troisième test:
-		les deux micros sont a la même distance par rapport a la source sonore(920mm), mais il sont tous les deux séparé de 680mm.
-
-	quatrième test:
-		un des deux micros est entouré de mousse pour faire un cône, le rendant unidirectionnel.
-		le cône est dirigé vers le speaker
-		les deux micros sont a une distance de 900mm.
-\begin{figure}[H]
-		\includegraphics[width=\textwidth]{../donnees11-03/test_4.jpg} 
-		\caption{photo de l'expérience avec un cône autour d'un micro}
-\end{figure}
-	cinquième test:
-		un des deux micros est entouré de mousse pour faire un cone, le rendant unidirectionnel.
-		le cone est dirigé a 180 degré du speaker.
-		les deux micros sont a une distance de 900mm.
-
+\begin{huge}
+TODO: expliquer la pertinance des tests
+\end{huge}
 
 \section{Résultats/conclusions}
-\paragraph{résultats}
-	Impulsion carré de 1 sample:
-		premier test:
-			il n'y a un décalage que d'un sample entre les deux.
+\subsection{résultats}
+\paragraph{Impulsion carré de 1 echantillon}
+\begin{description}
+\item[Premier test] Il n'y a un décalage que d'un sample entre les deux.
+\item[Deuxième test] Le décalage de phase est de 11 sample, soit 220 microsecondes.
+\item[Troisième test] Malgré le faite que les deux micros soient a la même distance avec la source sonore, il y a un décalage de phase de 4 sample. Ce décalage peut etre du au haut parleur qui n'est pas omnidirectionnel, et/ou a une erreur de mesure de l'ordre du centimetre
+\item[Quatrième test] Les deux signaux ne se ressemblent pas. Il y a décalage de 1 sample.
+\item[Cinquième test] Le signal entouré du cone est beaucoup plus faible. Il y a un décalage de 5 sample entre les deux signaux.
+\end{description}
 
-		deuxième test:
-			le décalage de phase est de 11 sample, soit 220 microsecondes.
-
-		troisième test:
-			malgré le faite que les deux micros soient a la même distance avec la source sonore, il y a un décalage de phase de 2 sample. de plus, les deux signaux ne se ressemblent pas du tout!
-
-		quatrième test :
-			les deux signaux ne se ressemblent pas
-			il y a décalage de 1 sample.
-
-		cinquième test :
-			le signal entouré du cone est beaucoup plus faible.
-			il y a un décalage de 5 sample entre les deux signaux.
-
-	Impulsion carré de 5 sample:
-		premier test:
-			il n'y a un décalage de phase que d'un seul sample. (20 microsecondes)
-
-		deuxième test:
-			le décalage de phase est de 11 sample (220 microsecondes)
-			ce décalage de phase est cohérent avec la distance entre les deux micros
-
-		troisième test:
-			le décalage de phase est de 2 samples.
-			de plus les deux signaux ne se ressemblent pas 
-
-		quatrième test :
-			il n' a pas de décalage de phase... je ne sais pas pourquoi!
-
-		cinquième test :
-	        le décalage de phase est de 2 sample. j'aurais pensé que ça soit plus.
-	        le signale est beaucoup plus faible pour le micro qui est entouré du cone. 
-
+\paragraph{Impulsion carré de 5 échantillons}
+\begin{description}
+\item[Premier test] Il n'y a un décalage de phase que d'un seul sample. (20 microsecondes)
+\item[Deuxième test] Le décalage de phase est de 11 sample (220 microsecondes). Ce décalage de phase est cohérent avec la distance entre les deux micros
+\item[Troisième test] Le décalage de phase est de 4 samples.  Ce décalage peut etre du au haut parleur qui n'est pas omnidirectionnel, et/ou a une erreur de mesure de l'ordre du centimetre
+\item[Quatrième test] Il n' a pas de décalage de phase... je ne sais pas pourquoi!
+\item[Cinquième test] Le décalage de phase est de 2 sample. j'aurais pensé que ça soit plus. Le signale est beaucoup plus faible pour le micro qui est entouré du cone. 
+\end{description}
+\begin{huge}
+Remarque : Quand les murs sont à 5m derriere les micros, on commence a persevoir l'echo 2.8ms après le front montant (meme si les deux signaux n'ont pas grand chose a voir)
+\end{huge}
 
 \subsection{Conclusion}
-	Malgré la forme du signal d'origine très reconnaissable, la signal reçu, l'est beaucoup moins. Il est assez compliqué de repéré le même extremum dans les deux signaux acquis par les micros.
-	Le fait que le signal n'est pas reconnaissable, et que le tous les piques ne sont pas pareil dans l'enregistrement des deux micros, est probablement du au limitation matériel du haut parleur (la membrane vibre et ne peut pas reconstituer un signal carré)
-	Malgré les effort pour limiter l'apparition d'écho, celui-ci est inévitable.
-
-
-
-TODO: expliquer les pistes sur les captures d'écran audacity
+Malgré la forme du signal d'origine très reconnaissable, la signal reçu, l'est beaucoup moins. Il est assez compliqué de repéré le même extremum dans les deux signaux acquis par les micros. Le fait que le signal n'est pas reconnaissable, et que le tous les piques ne sont pas pareil dans l'enregistrement des deux micros, est probablement du au limitation matériel du haut-parleur (la membrane vibre et ne peut pas reconstituer un signal carré). Malgré les effort pour limiter l'apparition d'écho, celui-ci est inévitable.
+	
+	
+\appendix
+\chapter{Audacity}
 
 
 \end{document}

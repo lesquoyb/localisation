@@ -1,6 +1,0 @@
-Premier essaye :
-- le taux d'echantillonage n'etait pas assez grand, on est donc passé à 192000Hz (logiciel)
-- Audacity ne nous permet pas d'arriver a une precision assez grande.
-
-
-on a utiliser une sinusoide de frequence 80Hz, donc d'une longueur d'onde de 3.75m.
