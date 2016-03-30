@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.29)  30 MAR 2016 14:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.29)  30 MAR 2016 14:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -484,55 +484,33 @@ File: ../donnees25-02/IMG_0919.jpg Graphic file (type jpg)
 Package pdftex.def Info: ../donnees25-02/IMG_0919.jpg used on input line 53.
 (pdftex.def)             Requested size: 390.0pt x 292.48679pt.
 
+<../donnees25-02/mesures_en_ligne/tableau_resultats.png, id=15, 371.88937pt x 2
+10.7875pt>
+File: ../donnees25-02/mesures_en_ligne/tableau_resultats.png Graphic file (type
+ png)
+ <use ../donnees25-02/mesures_en_ligne/tableau_resultats.png>
+Package pdftex.def Info: ../donnees25-02/mesures_en_ligne/tableau_resultats.png
+ used on input line 57.
+(pdftex.def)             Requested size: 390.0pt x 221.06001pt.
 
-LaTeX Warning: File `../donnees25-02/mesures_en_ligne/tableau_resultats.png' no
-t found on input line 57.
-
-
-! Package pdftex.def Error: File `../donnees25-02/mesures_en_ligne/tableau_resu
-ltats.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.57 ...02/mesures_en_ligne/tableau_resultats.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 57.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [2] [3 <../donnees25-02/IMG_0919.jpg>]
-<../donnees25-02/IMG_0920.jpg, id=21, 3276.24pt x 2457.18pt>
+[2] [3 <../donnees25-02/IMG_0919.jpg>]
+<../donnees25-02/IMG_0920.jpg, id=22, 3276.24pt x 2457.18pt>
 File: ../donnees25-02/IMG_0920.jpg Graphic file (type jpg)
 
 <use ../donnees25-02/IMG_0920.jpg>
 Package pdftex.def Info: ../donnees25-02/IMG_0920.jpg used on input line 65.
 (pdftex.def)             Requested size: 390.0pt x 292.48679pt.
- [4]
-
-LaTeX Warning: File `../donnees25-02/mesures_micro_colles/colles.png' not found
- on input line 69.
-
-
-! Package pdftex.def Error: File `../donnees25-02/mesures_micro_colles/colles.p
-ng' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.69 ...nees25-02/mesures_micro_colles/colles.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[5 <../donnees25-02/IMG_0920.jpg>] [6]
-<../donnees25-02/IMG_0922.jpg, id=32, 3276.24pt x 2457.18pt>
+ [4 <../donnees25-02/mesures_en_ligne/tableau_resultats.png (PNG copy)>]
+<../donnees25-02/mesures_micro_colles/colles.png, id=26, 1444.64719pt x 227.349
+38pt>
+File: ../donnees25-02/mesures_micro_colles/colles.png Graphic file (type png)
+ <use ../donnees25-02/mesures_micro_colles/colles.png>
+Package pdftex.def Info: ../donnees25-02/mesures_micro_colles/colles.png used o
+n input line 69.
+(pdftex.def)             Requested size: 390.0pt x 61.37474pt.
+ [5 <../donnees25-02/IMG_0920.jpg> <../donnees25-02/mesures_micro_colles/colles
+.png (PNG copy)>]
+<../donnees25-02/IMG_0922.jpg, id=30, 3276.24pt x 2457.18pt>
 File: ../donnees25-02/IMG_0922.jpg Graphic file (type jpg)
 
 <use ../donnees25-02/IMG_0922.jpg>
@@ -543,84 +521,82 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 98--99
 [][] 
  []
 
-[7] <../donnees25-02/IMG_0923.jpg, id=37, 3276.24pt x 2457.18pt>
+[6] <../donnees25-02/IMG_0923.jpg, id=34, 3276.24pt x 2457.18pt>
 File: ../donnees25-02/IMG_0923.jpg Graphic file (type jpg)
 
 <use ../donnees25-02/IMG_0923.jpg>
 Package pdftex.def Info: ../donnees25-02/IMG_0923.jpg used on input line 104.
 (pdftex.def)             Requested size: 390.0pt x 292.48679pt.
- [8 <../donnees25-02/IMG_0922.jpg>]
+ [7 <../donnees25-02/IMG_0922.jpg>]
+<../donnees25-02/mesures_perpendiculaires/test7.png, id=39, 1443.89438pt x 227.
+34938pt>
+File: ../donnees25-02/mesures_perpendiculaires/test7.png Graphic file (type png
+)
+ <use ../donnees25-02/mesures_perpendiculaires/test7.png>
+Package pdftex.def Info: ../donnees25-02/mesures_perpendiculaires/test7.png use
+d on input line 112.
+(pdftex.def)             Requested size: 390.0pt x 61.40596pt.
 
-LaTeX Warning: File `../donnees25-02/mesures_perpendiculaires/test7.png' not fo
-und on input line 112.
-
-
-! Package pdftex.def Error: File `../donnees25-02/mesures_perpendiculaires/test
-7.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.112 ...25-02/mesures_perpendiculaires/test7.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<../donnees25-02/IMG_0924.jpg, id=41, 2457.18pt x 3276.24pt>
+<../donnees25-02/IMG_0924.jpg, id=40, 2457.18pt x 3276.24pt>
 File: ../donnees25-02/IMG_0924.jpg Graphic file (type jpg)
 
 <use ../donnees25-02/IMG_0924.jpg>
 Package pdftex.def Info: ../donnees25-02/IMG_0924.jpg used on input line 121.
 (pdftex.def)             Requested size: 390.0pt x 519.95985pt.
- [9 <../donnees25-02/IMG_0923.jpg>] [10 <../donnees25-02/IMG_0924.jpg>]
-<../donnees11-03/test_1.jpg, id=49, 2457.18pt x 3276.24pt>
+ [8 <../donnees25-02/IMG_0923.jpg> <../donnees25-02/mesures_perpendiculaires/te
+st7.png (PNG copy)>] [9 <../donnees25-02/IMG_0924.jpg>]
+LaTeX Font Info:    Try loading font information for U+msa on input line 141.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 141.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<../donnees11-03/test_1.jpg, id=48, 2457.18pt x 3276.24pt>
 File: ../donnees11-03/test_1.jpg Graphic file (type jpg)
 
 <use ../donnees11-03/test_1.jpg>
-Package pdftex.def Info: ../donnees11-03/test_1.jpg used on input line 144.
+Package pdftex.def Info: ../donnees11-03/test_1.jpg used on input line 150.
 (pdftex.def)             Requested size: 390.0pt x 519.95985pt.
- [11]
+ [10]
 <../donnees11-03/test_2.jpg, id=53, 2457.18pt x 3276.24pt>
 File: ../donnees11-03/test_2.jpg Graphic file (type jpg)
 
 <use ../donnees11-03/test_2.jpg>
-Package pdftex.def Info: ../donnees11-03/test_2.jpg used on input line 151.
+Package pdftex.def Info: ../donnees11-03/test_2.jpg used on input line 157.
 (pdftex.def)             Requested size: 390.0pt x 519.95985pt.
- [12 <../donnees11-03/test_1.jpg>] [13 <../donnees11-03/test_2.jpg>]
-<../donnees11-03/test_4.jpg, id=61, 3276.24pt x 2457.18pt>
+ [11 <../donnees11-03/test_1.jpg>] [12 <../donnees11-03/test_2.jpg>]
+<../donnees11-03/test_4.jpg, id=60, 3276.24pt x 2457.18pt>
 File: ../donnees11-03/test_4.jpg Graphic file (type jpg)
 
 <use ../donnees11-03/test_4.jpg>
-Package pdftex.def Info: ../donnees11-03/test_4.jpg used on input line 162.
+Package pdftex.def Info: ../donnees11-03/test_4.jpg used on input line 168.
 (pdftex.def)             Requested size: 390.0pt x 292.48679pt.
- [14 <../donnees11-03/test_4.jpg>] [15]
-[16] (./rapport.aux) ) 
+ [13 <../donnees11-03/test_4.jpg>] [14]
+(./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 3941 strings out of 493089
- 52420 string characters out of 6134841
+ 3976 strings out of 493089
+ 53113 string characters out of 6134841
  116443 words of memory out of 5000000
- 7350 multiletter control sequences out of 15000+600000
- 10328 words of font info for 24 fonts, out of 8000000 for 9000
+ 7370 multiletter control sequences out of 15000+600000
+ 14362 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,30p,363b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-su
-per/cm-super-t1.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-s
-uper/sfbx1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-sup
-er/sfbx1440.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super
-/sfbx1728.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/s
-fbx2488.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfc
-c1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1
-200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sftt120
-0.pfb>
-Output written on rapport.pdf (16 pages, 14754200 bytes).
+ 37i,6n,30p,357b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/c
+m-super-t1.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/s
+fbx1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfb
+x1440.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1
+728.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx248
+8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfcc1200.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pf
+b>
+Output written on rapport.pdf (14 pages, 14781871 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 93 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
