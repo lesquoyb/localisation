@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.29)  30 MAR 2016 15:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.29)  30 MAR 2016 17:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,19 +6,20 @@ entering extended mode
 (./rapport.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
-\c@section=\count80
-\c@subsection=\count81
-\c@subsubsection=\count82
-\c@paragraph=\count83
-\c@subparagraph=\count84
-\c@figure=\count85
-\c@table=\count86
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
@@ -248,23 +249,23 @@ Language: frenchb 2015/04/10 v3.1e French support from the babel system
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2014/09/25 3.9l Babel common definitions
-\babel@savecnt=\count87
+\babel@savecnt=\count88
 \U@D=\dimen103
 )
 \l@acadian = a dialect from \language\l@french 
 \l@canadien = a dialect from \language\l@french 
 \FBcolonskip=\skip43
 \FBthinskip=\skip44
-\FB@interchartokenstateORI=\count88
+\FB@interchartokenstateORI=\count89
 Package babel Info: Making : an active character on input line 371.
 Package babel Info: Making ; an active character on input line 372.
 Package babel Info: Making ! an active character on input line 373.
 Package babel Info: Making ? an active character on input line 374.
 \FBguillskip=\skip45
-\FBguill@level=\count89
+\FBguill@level=\count90
 \FB@Mht=\dimen104
-\std@mcc=\count90
-\dec@mcc=\count91
+\std@mcc=\count91
+\dec@mcc=\count92
 \listindentFB=\skip46
 \labelwidthFB=\skip47
 \leftmarginFB=\skip48
@@ -302,13 +303,13 @@ Package: amsbsy 1999/11/29 v1.2d
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count92
+\inf@bad=\count93
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count93
-\leftroot@=\count94
+\uproot@=\count94
+\leftroot@=\count95
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count95
-\DOTSCASE@=\count96
+\classnum@=\count96
+\DOTSCASE@=\count97
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -317,15 +318,15 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen108
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count97
-\c@MaxMatrixCols=\count98
+\macc@depth=\count98
+\c@MaxMatrixCols=\count99
 \dotsspace@=\muskip10
-\c@parentequation=\count99
-\dspbrk@lvl=\count100
+\c@parentequation=\count100
+\dspbrk@lvl=\count101
 \tag@help=\toks18
-\row@=\count101
-\column@=\count102
-\maxfields@=\count103
+\row@=\count102
+\column@=\count103
+\maxfields@=\count104
 \andhelp@=\toks19
 \eqnshift@=\dimen109
 \alignsep@=\dimen110
@@ -352,7 +353,7 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count104
+\c@float@type=\count105
 \float@exts=\toks22
 \float@box=\box28
 \@float@everytoks=\toks23
@@ -381,7 +382,7 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count105
+\Gread@gobject=\count106
 ))
 \Gin@req@height=\dimen115
 \Gin@req@width=\dimen116
@@ -407,16 +408,16 @@ LaTeX Info: Redefining \up on input line 11.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count106
+\scratchcounter=\count107
 \scratchdimen=\dimen117
 \scratchbox=\box30
-\nofMPsegments=\count107
-\nofMParguments=\count108
+\nofMPsegments=\count108
+\nofMParguments=\count109
 \everyMPshowfont=\toks24
-\MPscratchCnt=\count109
+\MPscratchCnt=\count110
 \MPscratchDim=\dimen118
-\MPnumerator=\count110
-\makeMPintoPDFobject=\count111
+\MPnumerator=\count111
+\makeMPintoPDFobject=\count112
 \everyMPtoPDFconversion=\toks25
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -466,25 +467,26 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<../24-02-16/mesures/m1/schema.png, id=1, 630.355pt x 93.34875pt>
+[1
+
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<../24-02-16/mesures/m1/schema.png, id=8, 630.355pt x 93.34875pt>
 File: ../24-02-16/mesures/m1/schema.png Graphic file (type png)
 
 <use ../24-02-16/mesures/m1/schema.png>
 Package pdftex.def Info: ../24-02-16/mesures/m1/schema.png used on input line 2
 4.
 (pdftex.def)             Requested size: 390.0pt x 57.75455pt.
- [1
-
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../24-0
-2-16/mesures/m1/schema.png>]
-<../donnees25-02/IMG_0919.jpg, id=14, 3276.24pt x 2457.18pt>
+ [2 <../24-02-16/mesures/m1/schema.png>] <../donnees25-02/IMG_0919.jpg, id=17, 
+3276.24pt x 2457.18pt>
 File: ../donnees25-02/IMG_0919.jpg Graphic file (type jpg)
 
 <use ../donnees25-02/IMG_0919.jpg>
 Package pdftex.def Info: ../donnees25-02/IMG_0919.jpg used on input line 53.
 (pdftex.def)             Requested size: 390.0pt x 292.48679pt.
 
-<../donnees25-02/mesures_en_ligne/tableau_resultats.png, id=15, 371.88937pt x 2
+<../donnees25-02/mesures_en_ligne/tableau_resultats.png, id=18, 371.88937pt x 2
 10.7875pt>
 File: ../donnees25-02/mesures_en_ligne/tableau_resultats.png Graphic file (type
  png)
@@ -493,24 +495,26 @@ Package pdftex.def Info: ../donnees25-02/mesures_en_ligne/tableau_resultats.png
  used on input line 57.
 (pdftex.def)             Requested size: 390.0pt x 221.06001pt.
 
-[2] [3 <../donnees25-02/IMG_0919.jpg>]
-<../donnees25-02/IMG_0920.jpg, id=22, 3276.24pt x 2457.18pt>
+[3] [4 <../donnees25-02/IMG_0919.jpg>]
+<../donnees25-02/IMG_0920.jpg, id=25, 3276.24pt x 2457.18pt>
 File: ../donnees25-02/IMG_0920.jpg Graphic file (type jpg)
 
 <use ../donnees25-02/IMG_0920.jpg>
 Package pdftex.def Info: ../donnees25-02/IMG_0920.jpg used on input line 65.
 (pdftex.def)             Requested size: 390.0pt x 292.48679pt.
- [4 <../donnees25-02/mesures_en_ligne/tableau_resultats.png (PNG copy)>]
-<../donnees25-02/mesures_micro_colles/colles.png, id=26, 1444.64719pt x 227.349
+ [5 <../donnees25-02/mesures_en_ligne/tableau_resultats.png (PNG copy)>]
+<../donnees25-02/mesures_micro_colles/colles.png, id=29, 1444.64719pt x 227.349
 38pt>
 File: ../donnees25-02/mesures_micro_colles/colles.png Graphic file (type png)
  <use ../donnees25-02/mesures_micro_colles/colles.png>
 Package pdftex.def Info: ../donnees25-02/mesures_micro_colles/colles.png used o
 n input line 69.
 (pdftex.def)             Requested size: 390.0pt x 61.37474pt.
- [5 <../donnees25-02/IMG_0920.jpg> <../donnees25-02/mesures_micro_colles/colles
+ [6 <../donnees25-02/IMG_0920.jpg> <../donnees25-02/mesures_micro_colles/colles
 .png (PNG copy)>]
-<../donnees25-02/IMG_0922.jpg, id=30, 3276.24pt x 2457.18pt>
+[7
+
+] <../donnees25-02/IMG_0922.jpg, id=37, 3276.24pt x 2457.18pt>
 File: ../donnees25-02/IMG_0922.jpg Graphic file (type jpg)
 
 <use ../donnees25-02/IMG_0922.jpg>
@@ -521,14 +525,14 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 98--99
 [][] 
  []
 
-[6] <../donnees25-02/IMG_0923.jpg, id=34, 3276.24pt x 2457.18pt>
+[8] <../donnees25-02/IMG_0923.jpg, id=41, 3276.24pt x 2457.18pt>
 File: ../donnees25-02/IMG_0923.jpg Graphic file (type jpg)
 
 <use ../donnees25-02/IMG_0923.jpg>
 Package pdftex.def Info: ../donnees25-02/IMG_0923.jpg used on input line 104.
 (pdftex.def)             Requested size: 390.0pt x 292.48679pt.
- [7 <../donnees25-02/IMG_0922.jpg>]
-<../donnees25-02/mesures_perpendiculaires/test7.png, id=39, 1443.89438pt x 227.
+ [9 <../donnees25-02/IMG_0922.jpg>]
+<../donnees25-02/mesures_perpendiculaires/test7.png, id=45, 1443.89438pt x 227.
 34938pt>
 File: ../donnees25-02/mesures_perpendiculaires/test7.png Graphic file (type png
 )
@@ -537,16 +541,19 @@ Package pdftex.def Info: ../donnees25-02/mesures_perpendiculaires/test7.png use
 d on input line 112.
 (pdftex.def)             Requested size: 390.0pt x 61.40596pt.
 
-<../donnees25-02/IMG_0924.jpg, id=40, 2457.18pt x 3276.24pt>
+<../donnees25-02/IMG_0924.jpg, id=46, 2457.18pt x 3276.24pt>
 File: ../donnees25-02/IMG_0924.jpg Graphic file (type jpg)
 
 <use ../donnees25-02/IMG_0924.jpg>
 Package pdftex.def Info: ../donnees25-02/IMG_0924.jpg used on input line 121.
 (pdftex.def)             Requested size: 390.0pt x 519.95985pt.
- [8 <../donnees25-02/IMG_0923.jpg> <../donnees25-02/mesures_perpendiculaires/te
-st7.png (PNG copy)>] [9 <../donnees25-02/IMG_0924.jpg>]
+ [10 <../donnees25-02/IMG_0923.jpg> <../donnees25-02/mesures_perpendiculaires/t
+est7.png (PNG copy)>] [11 <../donnees25-02/IMG_0924.jpg>] [12] [13
+
+]
 LaTeX Font Info:    Try loading font information for U+msa on input line 136.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 136.
@@ -554,14 +561,14 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 136.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<../donnees11-03/test_1.jpg, id=48, 2457.18pt x 3276.24pt>
+<../donnees11-03/test_1.jpg, id=61, 2457.18pt x 3276.24pt>
 File: ../donnees11-03/test_1.jpg Graphic file (type jpg)
 
 <use ../donnees11-03/test_1.jpg>
 Package pdftex.def Info: ../donnees11-03/test_1.jpg used on input line 148.
 (pdftex.def)             Requested size: 390.0pt x 519.95985pt.
- [10]
-<../donnees11-03/test_2.jpg, id=53, 2457.18pt x 3276.24pt>
+ [14]
+<../donnees11-03/test_2.jpg, id=66, 2457.18pt x 3276.24pt>
 File: ../donnees11-03/test_2.jpg Graphic file (type jpg)
 
 <use ../donnees11-03/test_2.jpg>
@@ -572,36 +579,41 @@ Overfull \hbox (1.68204pt too wide) in paragraph at lines 151--155
 []\T1/cmr/m/n/12 Les deux mi-cros sont en ligne droite avec le haut-parleur.
  []
 
-[11 <../donnees11-03/test_1.jpg>] [12 <../donnees11-03/test_2.jpg>]
-<../donnees11-03/test_4.jpg, id=60, 3276.24pt x 2457.18pt>
+[15 <../donnees11-03/test_1.jpg>] [16 <../donnees11-03/test_2.jpg>]
+<../donnees11-03/test_4.jpg, id=73, 3276.24pt x 2457.18pt>
 File: ../donnees11-03/test_4.jpg Graphic file (type jpg)
 
 <use ../donnees11-03/test_4.jpg>
 Package pdftex.def Info: ../donnees11-03/test_4.jpg used on input line 159.
 (pdftex.def)             Requested size: 390.0pt x 292.48679pt.
- [13 <../donnees11-03/test_4.jpg>] [14]
-(./rapport.aux) ) 
+ [17 <../donnees11-03/test_4.jpg>] [18]
+[19]
+Annexe A.
+[20
+
+] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 3976 strings out of 493089
- 53113 string characters out of 6134841
- 116443 words of memory out of 5000000
- 7370 multiletter control sequences out of 15000+600000
- 14362 words of font info for 40 fonts, out of 8000000 for 9000
+ 3995 strings out of 493089
+ 53315 string characters out of 6134841
+ 117777 words of memory out of 5000000
+ 7388 multiletter control sequences out of 15000+600000
+ 15134 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,6n,30p,357b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/c
-m-super-t1.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/s
-fbx1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfb
-x1440.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1
-728.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx248
-8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfcc1200.
-pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pf
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super
+/cm-super-t1.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super
+/sfbx1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/s
+fbx1440.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfb
+x1728.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfbx2
+488.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfcc120
+0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1200.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pf
 b>
-Output written on rapport.pdf (14 pages, 14784558 bytes).
+Output written on rapport.pdf (20 pages, 14806003 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 116 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

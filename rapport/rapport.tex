@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[francais]{babel}
 \usepackage[T1]{fontenc}
@@ -154,7 +154,7 @@ On en conclu que l'écho influence effectivement beaucoup le signal reçu, pouva
 	\caption{Photo de l'expérience avec les micros en ligne}
 	\end{figure}
 \item[Troisième test] Les deux micros sont à la même distance par rapport à la source sonore (920mm), mais il sont tous deux séparé de 680mm.
-\item[Quatrième test] Un des deux micros est entouré de mousse pour faire un cône, le rendant unidirectionnel. Le cône est dirigé vers le haut-parleur. Les deux micros sont à une distance de 900mm de la source sonore.
+\item[Quatrième test] Un des deux micros est entouré de mousse pour faire un cône, le rendant unidirectionnel. Le cône est dirigé vers le haut-parleur. Les deux micros sont à une distance de 900mm de la source sonore. Les deux micros sont séparé de 12cm.
 	\begin{figure}[H]
 	\includegraphics[width=\textwidth]{../donnees11-03/test_4.jpg} 
 	\caption{Photo de l'expérience avec un cône autour d'un micro}
@@ -162,54 +162,41 @@ On en conclu que l'écho influence effectivement beaucoup le signal reçu, pouva
 \item[Cinquième test]	Un des deux micros est entouré de mousse pour faire un cone, le rendant unidirectionnel. Le cône est dirigé à 180 degré du haut-parleur. Les deux micros sont à une distance de 900mm de la source sonore.
 \end{description}
 
+\begin{huge}
+TODO: expliquer la pertinance des tests
+\end{huge}
+
 \section{Résultats/conclusions}
-\paragraph{résultats}
-	Impulsion carré de 1 sample:
-		premier test:
-			il n'y a un décalage que d'un sample entre les deux.
+\subsection{résultats}
+\paragraph{Impulsion carré de 1 echantillon}
+\begin{description}
+\item[Premier test] Il n'y a un décalage que d'un sample entre les deux.
+\item[Deuxième test] Le décalage de phase est de 11 sample, soit 220 microsecondes.
+\item[Troisième test] Malgré le faite que les deux micros soient a la même distance avec la source sonore, il y a un décalage de phase de 4 sample. Ce décalage peut etre du au haut parleur qui n'est pas omnidirectionnel, et/ou a une erreur de mesure de l'ordre du centimetre
+\item[Quatrième test] Les deux signaux ne se ressemblent pas. Il y a décalage de 1 sample.
+\item[Cinquième test] Le signal entouré du cone est beaucoup plus faible. Il y a un décalage de 5 sample entre les deux signaux.
+\end{description}
 
-		deuxième test:
-			le décalage de phase est de 11 sample, soit 220 microsecondes.
-
-		troisième test:
-			malgré le faite que les deux micros soient a la même distance avec la source sonore, il y a un décalage de phase de 2 sample. de plus, les deux signaux ne se ressemblent pas du tout!
-
-		quatrième test :
-			les deux signaux ne se ressemblent pas
-			il y a décalage de 1 sample.
-
-		cinquième test :
-			le signal entouré du cone est beaucoup plus faible.
-			il y a un décalage de 5 sample entre les deux signaux.
-
-	Impulsion carré de 5 sample:
-		premier test:
-			il n'y a un décalage de phase que d'un seul sample. (20 microsecondes)
-
-		deuxième test:
-			le décalage de phase est de 11 sample (220 microsecondes)
-			ce décalage de phase est cohérent avec la distance entre les deux micros
-
-		troisième test:
-			le décalage de phase est de 2 samples.
-			de plus les deux signaux ne se ressemblent pas 
-
-		quatrième test :
-			il n' a pas de décalage de phase... je ne sais pas pourquoi!
-
-		cinquième test :
-	        le décalage de phase est de 2 sample. j'aurais pensé que ça soit plus.
-	        le signale est beaucoup plus faible pour le micro qui est entouré du cone. 
-
+\paragraph{Impulsion carré de 5 échantillons}
+\begin{description}
+\item[Premier test] Il n'y a un décalage de phase que d'un seul sample. (20 microsecondes)
+\item[Deuxième test] Le décalage de phase est de 11 sample (220 microsecondes). Ce décalage de phase est cohérent avec la distance entre les deux micros
+\item[Troisième test] Le décalage de phase est de 4 samples.  Ce décalage peut etre du au haut parleur qui n'est pas omnidirectionnel, et/ou a une erreur de mesure de l'ordre du centimetre
+\item[Quatrième test] Il n' a pas de décalage de phase... je ne sais pas pourquoi!
+\item[Cinquième test] Le décalage de phase est de 2 sample. j'aurais pensé que ça soit plus. Le signale est beaucoup plus faible pour le micro qui est entouré du cone. 
+\end{description}
+\begin{huge}
+Remarque : Quand les murs sont à 5m derriere les micros, on commence a persevoir l'echo 2.8ms après le front montant (meme si les deux signaux n'ont pas grand chose a voir)
+\end{huge}
 
 \subsection{Conclusion}
 	Malgré la forme du signal d'origine très reconnaissable, la signal reçu, l'est beaucoup moins. Il est assez compliqué de repéré le même extremum dans les deux signaux acquis par les micros.
 	Le fait que le signal n'est pas reconnaissable, et que le tous les piques ne sont pas pareil dans l'enregistrement des deux micros, est probablement du au limitation matériel du haut-parleur (la membrane vibre et ne peut pas reconstituer un signal carré)
 	Malgré les effort pour limiter l'apparition d'écho, celui-ci est inévitable.
-
-
-
-TODO: expliquer les pistes sur les captures d'écran audacity
+	
+	
+\appendix
+\chapter{Audacity}
 
 
 \end{document}
