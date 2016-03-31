@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.15)  31 MAR 2016 02:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.15)  31 MAR 2016 04:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -613,7 +613,7 @@ ng (ext4): destination with the same identifier (name{page.1}) has been already
  used, duplicate ignored
 <to be read again> 
                    \relax 
-l.35 ...ement d'orientation}{15}{subsection.3.3.2}
+l.35 ... {\'e} de la mousse}{14}{subsection.3.3.1}
                                                    [1
 
 ])
@@ -624,58 +624,51 @@ l.35 ...ement d'orientation}{15}{subsection.3.3.2}
 Chapitre 1.
 [3
 
-]
-
-LaTeX Warning: Reference `signal_carre' on page 4 undefined on input line 36.
-
-
-LaTeX Warning: Reference `protocole' on page 4 undefined on input line 39.
-
-<img/micros_face.png, id=229, 762.59906pt x 225.09094pt>
+] <img/micros_face.png, id=296, 762.59906pt x 225.09094pt>
 File: img/micros_face.png Graphic file (type png)
 
 <use img/micros_face.png>
 Package pdftex.def Info: img/micros_face.png used on input line 46.
 (pdftex.def)             Requested size: 390.0pt x 115.11084pt.
  [4 <./img/micros_face.png (PNG copy)>]
-<img/signal_sans_mousse.png, id=236, 1327.20844pt x 225.09094pt>
+<img/signal_sans_mousse.png, id=303, 1327.20844pt x 225.09094pt>
 File: img/signal_sans_mousse.png Graphic file (type png)
 
 <use img/signal_sans_mousse.png>
 Package pdftex.def Info: img/signal_sans_mousse.png used on input line 55.
-(pdftex.def)             Requested size: 132.7286pt x 22.5104pt.
+(pdftex.def)             Requested size: 199.07268pt x 33.76218pt.
 
-<img/signal_avec_mousse.png, id=237, 1297.84875pt x 225.09094pt>
+<img/signal_avec_mousse.png, id=304, 1297.84875pt x 225.09094pt>
 File: img/signal_avec_mousse.png Graphic file (type png)
 
 <use img/signal_avec_mousse.png>
 Package pdftex.def Info: img/signal_avec_mousse.png used on input line 57.
-(pdftex.def)             Requested size: 129.79248pt x 22.5104pt.
+(pdftex.def)             Requested size: 194.66891pt x 33.76218pt.
 
-<img/isolation.png, id=238, 846.91406pt x 226.59656pt>
+Overfull \hbox (27.74162pt too wide) in paragraph at lines 54--60
+[][] 
+ []
+
+<img/isolation.png, id=305, 846.91406pt x 226.59656pt>
 File: img/isolation.png Graphic file (type png)
  <use img/isolation.png>
 Package pdftex.def Info: img/isolation.png used on input line 66.
 (pdftex.def)             Requested size: 390.0pt x 104.34631pt.
 
-<img/90.png, id=239, 765.6103pt x 225.84375pt>
+<img/90.png, id=306, 765.6103pt x 225.84375pt>
 File: img/90.png Graphic file (type png)
  <use img/90.png>
 Package pdftex.def Info: img/90.png used on input line 75.
 (pdftex.def)             Requested size: 390.0pt x 115.04437pt.
  [5 <./img/signal_sans_mousse.png (PNG copy)> <./img/signal_avec_mousse.png (PN
 G copy)> <./img/isolation.png (PNG copy)>]
-<img/dos_a_dos.png, id=246, 837.1275pt x 222.8325pt>
+<img/dos_a_dos.png, id=313, 837.1275pt x 222.8325pt>
 File: img/dos_a_dos.png Graphic file (type png)
  <use img/dos_a_dos.png>
 Package pdftex.def Info: img/dos_a_dos.png used on input line 83.
 (pdftex.def)             Requested size: 390.0pt x 103.80984pt.
 
-
-LaTeX Warning: Reference `differences_entre_micros' on page 6 undefined on inpu
-t line 86.
-
-<img/dos_a_la_source.png, id=247, 868.74562pt x 227.34938pt>
+<img/dos_a_la_source.png, id=315, 868.74562pt x 227.34938pt>
 File: img/dos_a_la_source.png Graphic file (type png)
 
 <use img/dos_a_la_source.png>
@@ -684,167 +677,191 @@ Package pdftex.def Info: img/dos_a_la_source.png used on input line 90.
  [6 <./img/90.png (PNG copy)> <./img/dos_a_dos.png (PNG copy)>] [7 <./img/dos_a
 _la_source.png (PNG copy)>]
 Chapitre 2.
-<../tests/test_du_protocole/schema.png, id=264, 630.355pt x 93.34875pt>
+<../tests/test_du_protocole/schema.png, id=332, 630.355pt x 93.34875pt>
 File: ../tests/test_du_protocole/schema.png Graphic file (type png)
 
 <use ../tests/test_du_protocole/schema.png>
 Package pdftex.def Info: ../tests/test_du_protocole/schema.png used on input li
-ne 119.
+ne 120.
 (pdftex.def)             Requested size: 390.0pt x 57.75455pt.
  [8
 
  <../tests/test_du_protocole/schema.png>]
-<../tests/test_du_protocole/micros_alignes.jpg, id=272, 3276.24pt x 2457.18pt>
+<../tests/test_du_protocole/micros_alignes.jpg, id=340, 3276.24pt x 2457.18pt>
 File: ../tests/test_du_protocole/micros_alignes.jpg Graphic file (type jpg)
 
 <use ../tests/test_du_protocole/micros_alignes.jpg>
 Package pdftex.def Info: ../tests/test_du_protocole/micros_alignes.jpg used on 
-input line 148.
+input line 149.
 (pdftex.def)             Requested size: 390.0pt x 292.48679pt.
 
-<../tests/test_du_protocole/mesures_en_ligne/tableau_resultats.png, id=273, 371
+<../tests/test_du_protocole/mesures_en_ligne/tableau_resultats.png, id=341, 371
 .88937pt x 210.7875pt>
 File: ../tests/test_du_protocole/mesures_en_ligne/tableau_resultats.png Graphic
  file (type png)
 
 <use ../tests/test_du_protocole/mesures_en_ligne/tableau_resultats.png>
 Package pdftex.def Info: ../tests/test_du_protocole/mesures_en_ligne/tableau_re
-sultats.png used on input line 152.
+sultats.png used on input line 153.
 (pdftex.def)             Requested size: 390.0pt x 221.06001pt.
 
 [9] [10 <../tests/test_du_protocole/micros_alignes.jpg>]
-<../tests/test_du_protocole/micros_cote_a_cote.jpg, id=283, 3276.24pt x 2457.18
+<../tests/test_du_protocole/micros_cote_a_cote.jpg, id=351, 3276.24pt x 2457.18
 pt>
 File: ../tests/test_du_protocole/micros_cote_a_cote.jpg Graphic file (type jpg)
 
  <use ../tests/test_du_protocole/micros_cote_a_cote.jpg>
 Package pdftex.def Info: ../tests/test_du_protocole/micros_cote_a_cote.jpg used
- on input line 160.
+ on input line 161.
 (pdftex.def)             Requested size: 390.0pt x 292.48679pt.
  [11 <../tests/test_du_protocole/mesures_en_ligne/tableau_resultats.png (PNG co
 py)>]
-<../tests/test_du_protocole/mesures_micro_colles/colles.png, id=289, 1444.64719
+<../tests/test_du_protocole/mesures_micro_colles/colles.png, id=357, 1444.64719
 pt x 227.34938pt>
 File: ../tests/test_du_protocole/mesures_micro_colles/colles.png Graphic file (
 type png)
 
 <use ../tests/test_du_protocole/mesures_micro_colles/colles.png>
 Package pdftex.def Info: ../tests/test_du_protocole/mesures_micro_colles/colles
-.png used on input line 164.
+.png used on input line 165.
 (pdftex.def)             Requested size: 390.0pt x 61.37474pt.
  [12 <../tests/test_du_protocole/micros_cote_a_cote.jpg> <../tests/test_du_prot
 ocole/mesures_micro_colles/colles.png (PNG copy)>]
 Chapitre 3.
 [13
 
-] <../tests/test_du_protocole/cone_face.jpg, id=301, 3276.24pt x 2457.18pt>
+] <../tests/test_du_protocole/cone_face.jpg, id=368, 3276.24pt x 2457.18pt>
 File: ../tests/test_du_protocole/cone_face.jpg Graphic file (type jpg)
 
 <use ../tests/test_du_protocole/cone_face.jpg>
 Package pdftex.def Info: ../tests/test_du_protocole/cone_face.jpg used on input
- line 193.
+ line 194.
 (pdftex.def)             Requested size: 390.0pt x 292.48679pt.
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 193--194
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 194--195
 [][] 
  []
 
 
-<../tests/test_du_protocole/cone_dos_a_dos.jpg, id=302, 3276.24pt x 2457.18pt>
+<../tests/test_du_protocole/cone_dos_a_dos.jpg, id=369, 3276.24pt x 2457.18pt>
 File: ../tests/test_du_protocole/cone_dos_a_dos.jpg Graphic file (type jpg)
 
 <use ../tests/test_du_protocole/cone_dos_a_dos.jpg>
 Package pdftex.def Info: ../tests/test_du_protocole/cone_dos_a_dos.jpg used on 
-input line 199.
+input line 200.
 (pdftex.def)             Requested size: 390.0pt x 292.48679pt.
  [14 <../tests/test_du_protocole/cone_face.jpg>]
-<../tests/test_du_protocole/mesures_perpendiculaires/test7.png, id=307, 1443.89
+<../tests/test_du_protocole/mesures_perpendiculaires/test7.png, id=374, 1443.89
 438pt x 227.34938pt>
 File: ../tests/test_du_protocole/mesures_perpendiculaires/test7.png Graphic fil
 e (type png)
 
 <use ../tests/test_du_protocole/mesures_perpendiculaires/test7.png>
 Package pdftex.def Info: ../tests/test_du_protocole/mesures_perpendiculaires/te
-st7.png used on input line 207.
+st7.png used on input line 208.
 (pdftex.def)             Requested size: 390.0pt x 61.40596pt.
 
-<../tests/test_du_protocole/IMG_0924.jpg, id=308, 2457.18pt x 3276.24pt>
+<../tests/test_du_protocole/IMG_0924.jpg, id=375, 2457.18pt x 3276.24pt>
 File: ../tests/test_du_protocole/IMG_0924.jpg Graphic file (type jpg)
 
 <use ../tests/test_du_protocole/IMG_0924.jpg>
 Package pdftex.def Info: ../tests/test_du_protocole/IMG_0924.jpg used on input 
-line 216.
+line 217.
 (pdftex.def)             Requested size: 390.0pt x 519.95985pt.
  [15 <../tests/test_du_protocole/cone_dos_a_dos.jpg> <../tests/test_du_protocol
 e/mesures_perpendiculaires/test7.png (PNG copy)>] [16 <../tests/test_du_protoco
 le/IMG_0924.jpg>] [17]
 Chapitre 4.
+<img/cone_90.png, id=391, 1135.24126pt x 134.5025pt>
+File: img/cone_90.png Graphic file (type png)
+ <use img/cone_90.png>
+Package pdftex.def Info: img/cone_90.png used on input line 234.
+(pdftex.def)             Requested size: 390.0pt x 46.20638pt.
 
-<../tests/lecture_de_signaux_carres/donnees11-03/test_1.jpg, id=324, 2457.18pt 
+<img/sinus_base.png, id=392, 794.2172pt x 223.58531pt>
+File: img/sinus_base.png Graphic file (type png)
+
+<use img/sinus_base.png>
+Package pdftex.def Info: img/sinus_base.png used on input line 238.
+(pdftex.def)             Requested size: 390.0pt x 109.79315pt.
+ [18
+
+ <./img/cone_90.png>]
+<img/cone_90_plus_fin.png, id=402, 1110.1475pt x 104.39pt>
+File: img/cone_90_plus_fin.png Graphic file (type png)
+
+<use img/cone_90_plus_fin.png>
+Package pdftex.def Info: img/cone_90_plus_fin.png used on input line 263.
+(pdftex.def)             Requested size: 390.0pt x 36.67242pt.
+ [19 <./img/sinus_base.png (PNG copy)>]
+<img/cone+obstacle.png, id=408, 1076.02pt x 140.525pt>
+File: img/cone+obstacle.png Graphic file (type png)
+
+<use img/cone+obstacle.png>
+Package pdftex.def Info: img/cone+obstacle.png used on input line 270.
+(pdftex.def)             Requested size: 390.0pt x 50.93202pt.
+ [20 <./img/cone_90_plus_fin.png> <./img/cone+obstacle.png>]
+Chapitre 5.
+
+<../tests/lecture_de_signaux_carres/donnees11-03/test_1.jpg, id=417, 2457.18pt 
 x 3276.24pt>
 File: ../tests/lecture_de_signaux_carres/donnees11-03/test_1.jpg Graphic file (
 type jpg)
  <use ../tests/lecture_de_signaux_carres/donnees11-03/test_1.jpg>
 Package pdftex.def Info: ../tests/lecture_de_signaux_carres/donnees11-03/test_1
-.jpg used on input line 238.
+.jpg used on input line 295.
 (pdftex.def)             Requested size: 390.0pt x 519.95985pt.
 
-[18
+[21
 
 ]
-<../tests/lecture_de_signaux_carres/donnees11-03/test_2.jpg, id=330, 2457.18pt 
+<../tests/lecture_de_signaux_carres/donnees11-03/test_2.jpg, id=423, 2457.18pt 
 x 3276.24pt>
 File: ../tests/lecture_de_signaux_carres/donnees11-03/test_2.jpg Graphic file (
 type jpg)
  <use ../tests/lecture_de_signaux_carres/donnees11-03/test_2.jpg>
 Package pdftex.def Info: ../tests/lecture_de_signaux_carres/donnees11-03/test_2
-.jpg used on input line 243.
+.jpg used on input line 300.
 (pdftex.def)             Requested size: 390.0pt x 519.95985pt.
 
-Overfull \hbox (1.68204pt too wide) in paragraph at lines 241--245
+Overfull \hbox (1.68204pt too wide) in paragraph at lines 298--302
 []\T1/cmr/m/n/12 Les deux mi-cros sont en ligne droite avec le haut-parleur.
  []
 
-[19 <../tests/lecture_de_signaux_carres/donnees11-03/test_1.jpg>] [20 <../tests
+[22 <../tests/lecture_de_signaux_carres/donnees11-03/test_1.jpg>] [23 <../tests
 /lecture_de_signaux_carres/donnees11-03/test_2.jpg>]
-<../tests/lecture_de_signaux_carres/donnees11-03/test_4.jpg, id=341, 3276.24pt 
+<../tests/lecture_de_signaux_carres/donnees11-03/test_4.jpg, id=434, 3276.24pt 
 x 2457.18pt>
 File: ../tests/lecture_de_signaux_carres/donnees11-03/test_4.jpg Graphic file (
 type jpg)
  <use ../tests/lecture_de_signaux_carres/donnees11-03/test_4.jpg>
 Package pdftex.def Info: ../tests/lecture_de_signaux_carres/donnees11-03/test_4
-.jpg used on input line 249.
+.jpg used on input line 306.
 (pdftex.def)             Requested size: 390.0pt x 292.48679pt.
 
-[21 <../tests/lecture_de_signaux_carres/donnees11-03/test_4.jpg>] [22] [23]
+[24 <../tests/lecture_de_signaux_carres/donnees11-03/test_4.jpg>] [25] [26]
 Annexe A.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 290.
-[24
+File: img/dos_a_dos.png Graphic file (type png)
+<use img/dos_a_dos.png>
+Package pdftex.def Info: img/dos_a_dos.png used on input line 351.
+(pdftex.def)             Requested size: 390.0pt x 103.80984pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 360.
+ [27
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 290.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 360.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 290.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 290.
-
-
-Package rerunfilecheck Warning: File `rapport.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `rapport.out':
-(rerunfilecheck)             Before: B14E1F27E481E50E66205CBA1B3C6FE0;2725
-(rerunfilecheck)             After:  CB979052900B22018C44182BEC05107D;2770.
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 290.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 360.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 360.
+Package rerunfilecheck Info: File `rapport.out' has not changed.
+(rerunfilecheck)             Checksum: 637C2E4794815D230E07C122A3327969;3622.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 360.
  ) 
 Here is how much of TeX's memory you used:
- 7733 strings out of 493054
- 109629 string characters out of 6140585
- 200399 words of memory out of 5000000
- 11039 multiletter control sequences out of 15000+600000
+ 7786 strings out of 493054
+ 110517 string characters out of 6140585
+ 200528 words of memory out of 5000000
+ 11068 multiletter control sequences out of 15000+600000
  18505 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,12n,30p,556b,568s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -857,10 +874,10 @@ re/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sfrm2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfr
 m2488.pfb>
-Output written on rapport.pdf (25 pages, 14930962 bytes).
+Output written on rapport.pdf (28 pages, 14958916 bytes).
 PDF statistics:
- 416 PDF objects out of 1000 (max. 8388607)
- 356 compressed objects within 4 object streams
- 88 named destinations out of 1000 (max. 500000)
- 416 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 513 PDF objects out of 1000 (max. 8388607)
+ 442 compressed objects within 5 object streams
+ 108 named destinations out of 1000 (max. 500000)
+ 540 words of extra memory for PDF output out of 10000 (max. 10000000)
 

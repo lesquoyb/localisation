@@ -5,4 +5,5 @@ face: les deux micros de face, l'un avec un cone large l'autre avec la mousse de
 90: un micro est perpendiculaire à la source et a un cône, l'autre face à la source.
 90reverse: même chose, mais on interverti les positions deux micros, histoire de vérifier
 90reverseConePlusFin: idem mais on a resserré le cone
+chaise: on met une chaise à 70 cm de la sortie  du cône.
 

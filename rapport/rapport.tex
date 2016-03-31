@@ -32,7 +32,7 @@ Pour la mousse, il est difficile de chiffrer le résultat, le but est juste de s
 Pour les micros, on utilisera les deux configurations où les micros sont tous les deux de face pour savoir s'il existe des différences entre les deux au niveau de l'amplitude du signal reçu, voir si on constate un décalage de phase (même minime), et si possible chiffrer ces différences. On voudrait aussi savoir à quel point ils sont omnidirectionnel et quantifier les différences entre les signaux reçus selon l'orientation du micro par rapport à la source.
 
 
-\subsection{Signal émit}
+\subsection{Signal émis}
 On a utilisé le signal carré de 5 samples(voir \ref{signal_carre}) afin de repérer facilement les signaux venant de l'émetteur.
 
 \subsection{Réception du signal}
@@ -40,7 +40,7 @@ On utilise le montage habituel (voir \ref{protocole}).
 
 \section{Résultats}
 
-\subsection{Entre les deux micros}
+\subsection{Entre les deux micros}\label{differences_entre_micros}
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{img/micros_face.png}
@@ -51,10 +51,10 @@ On ne constate pas de grosses différences entre les deux micros. la forme globa
 \subsection{mousse de base des micros}
 
 \begin{figure}[H]
-\begin{tabular}{l r}
- \includegraphics[scale=0.1]{img/signal_sans_mousse.png}
+\begin{tabular}{ll}
+ \includegraphics[scale=0.15]{img/signal_sans_mousse.png}
 &  
- \includegraphics[scale=0.1]{img/signal_avec_mousse.png}
+ \includegraphics[scale=0.15]{img/signal_avec_mousse.png}
  \\
 \end{tabular}
 \caption{à gauche le signal sans mousse, à droite avec}
@@ -102,22 +102,8 @@ De toutes ces expériences on peut en déduire:
 \end{itemize}
 
 
-\chapter{Influence de l'environnement sur l'utilisation des cônes}
-\section{Objectif}
 
-\section{Expérience}
-\subsection{Critères d'acceptation}
 
-\subsection{Configurations physique}
-
-\subsection{environnement de test}
-
-\subsection{Signal émit}
-\subsection{Réception du signal}
-\section{Résultats}
-\section{conclusions}
-
-TODO: l'importance de l'environnement
 
 \chapter{Élaboration du protocole}
 \section{Objectif}
@@ -139,7 +125,7 @@ les différentes configurations choisies sont:
 \item m1, m2 et s1 sont alignés, on teste différentes valeurs de x et y.
 \item m1 et m2 sont côte à côte, plus ou moins collés.
 \end{itemize}
-\subsection{Signal émit}
+\subsection{Signal émis}
 On utilisera un fichier sonore wav qui:
 \begin{itemize}
 \item dure 3 secondes
@@ -147,14 +133,14 @@ On utilisera un fichier sonore wav qui:
 \item a un sample rate de 44100Hz
 \item est un fichier mono
 \end{itemize}
-Le signal est émit depuis une enceinte branché à un ordinateur via une prise jack 3.5.
+Le signal est émis depuis une enceinte branché à un ordinateur via une prise jack 3.5.
 
 
 
 \subsection{Réception du signal}
 Le signal est enregistré via deux micros identiques (même modèle), posés sur de la mousse. Le tout est coordonné par un contrôleur trik sur lequel les micros sont branchés via deux prises jack 3.5 séparées.
 On enregistre le signal réceptionné dans un fichier wav avec un taux d'échantillonnage de 44100Hz.
-Chaque enregistrement dur 6 secondes, on commence par démarrer l'enregistrement, puis on attend une à 2 secondes avant d'émettre le signal. Ainsi on peut observer le bruit ambiant et être sûr de capter l'intégralité du signal émit.
+Chaque enregistrement dur 6 secondes, on commence par démarrer l'enregistrement, puis on attend une à 2 secondes avant d'émettre le signal. Ainsi on peut observer le bruit ambiant et être sûr de capter l'intégralité du signal émis.
 Les calculs de distances et de décalage de phase seront fait par rapport aux premiers échantillons reçus du signal, afin de ne pas être influencé par l'écho.
 
 \section{Résultats/conclusions}
@@ -198,7 +184,7 @@ On considérera que l'écho a de l'influence sur le signal reçu si en changeant
 \subsection{Configurations}
 On reprend la configuration précédente. Cette fois, on placera les micros côte à côte et on changera uniquement l'orientation  du micro entouré d'un cône de mousse.
 
-\subsection{Signal émit et réception}
+\subsection{Signal émis et réception}
 Le matériel et les paramètres sont les mêmes que pour l'expérience précédente à la seule différence du cône en mousse autour d'un des micros.
 
 \section{Résultats/conclusions}
@@ -231,18 +217,72 @@ TODO: faire le tableau avec tous les décalages, calculer le décalage moyen
 \includegraphics[width=\textwidth]{../tests/test_du_protocole/IMG_0924.jpg} 
 \end{figure}
 
-TODO: on a perdu certaines mesures, il va falloir les refaire :(
-
 \subsection{conclusion}
 On en conclu que l'écho influence effectivement beaucoup le signal reçu, pouvant fausser les calculs basés sur le décalage de phase.
 
-\chapter{Signal carré}
+
+\chapter{Influence de l'environnement sur l'utilisation des cônes}
+\section{Objectif}
+Au cours d'une expérience précédente on s'est rendu compte que dans certains cas, même en utilisant des cônes, le signal reçu était fortement bruité (très probablement par accumulation d'écho). On aimerait savoir si ce problème provient de l'environnement (en l'occurrence une grande pièce sans obstacles) et si on peut améliorer le signal en modifiant le cône.
+
+\section{Expérience}
+\subsection{Critères d'acceptation}
+On partira de la capture du signal quasi inexploitable et on comparera les nouveaux résultats avec celui-ci et le signal émis pour voir s'il y a une amélioration ou pas.
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/cone_90.png}
+\caption{le signal bruité}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/sinus_base.png}
+\caption{le signal de base}
+\end{figure}
+On regardera le milieux/la fin du signal reçu, afin d'être sûr que l'écho ait bien eu le temps de s'ajouter au signal de base.
+
+
+\subsection{Configurations physique}
+On utilise un seul micro, perpendiculaire à l'émetteur et dans un cône de mousse.
+
+On testera avec un cône le moins ouvert possible (cylindre) pour voir si on peut réduire l'écho perçu.
+
+Puis on mettra un obstacle à 80 centimètres de la sortie du cône pour simuler un environnement plus étroit.
+
+\subsection{environnement de test}
+Les tests se font dans une grande pièce sans obstacles(pas à la hauteur où se passe l'expérience du moins).
+
+\subsection{Signal émis}
+même sinusoïde que pour \ref{protocole}, seulement elle dure 10 secondes.
+
+\subsection{Réception du signal}
+même chose que dans \ref{protocole}.
+
+\section{Résultats}
+\subsection{Cône plus refermé}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/cone_90_plus_fin.png}
+\caption{utilisation d'un cône plus refermé}
+\end{figure}
+Le fait d'utiliser cône plus refermé semble améliorer le signal reçu, il reste quand même très bruité.
+
+\subsection{Ajout d'un obstacle}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/cone+obstacle.png}
+\caption{signal avec un obstacle en face de la sortie du cylindre}
+\end{figure}
+Cette fois la forme du signal ressemble beaucoup plus au sinus de base.
+
+\section{Conclusions}
+Utiliser un cylindre plutôt qu'un cône semble améliorer un peu le signal.
+
+L'environnement semble jouer un grand rôle dans le signal perçu, dans un environnement ouvert comme c'était le cas au début, on a beaucoup d'écho, alors qu'en rajoutant simplement un obstacle à 80cm de la sortie du cylindre  on obtient un signal bien plus exploitable, il faudrait creuser plus en regardant si ça marche pour tout types d'obstacles (forme/matériau) et jusque quelle distance.
+
+
+\chapter{Signal carré}\label{signal_carre}
 \section{Objectifs}
 	Le premier objectif de cette série de tests est de vérifier la validité de l'utilisation d'un signal carré.
 	On a voulu tester cette forme de signal, car le front montant du signal est supposé être facilement repérable dans le signal de l'acquisition du micro.
 	Le deuxième objectif est d'acquérir un signal avec le minimum d'écho possible. Le signal carré utilisé étant très court, le pique enregistré sur les micros ne devrait (hypothétiquement) pas être bruité par de l'écho.
 
-\section{Protocole}
+\section{Protocole}\label{protocole}
 	On a créé deux fichier .wav. Le premier a 10 piques carré de longueur sample de longueur, le deuxième a 10 piques carré de longueur 5 sample.
 	On a ensuite fait les mêmes teste que pour les séances précédentes:
 
@@ -268,7 +308,7 @@ On en conclu que l'écho influence effectivement beaucoup le signal reçu, pouva
 \end{description}
 
 \begin{huge}
-TODO: expliquer la pertinance des tests
+TODO: expliquer la pertinence des tests
 \end{huge}
 
 \section{Résultats/conclusions}
@@ -286,12 +326,12 @@ TODO: expliquer la pertinance des tests
 \begin{description}
 \item[Premier test] Il n'y a un décalage de phase que d'un seul sample. (20 microsecondes)
 \item[Deuxième test] Le décalage de phase est de 11 sample (220 microsecondes). Ce décalage de phase est cohérent avec la distance entre les deux micros
-\item[Troisième test] Le décalage de phase est de 4 samples.  Ce décalage peut etre du au haut parleur qui n'est pas omnidirectionnel, et/ou a une erreur de mesure de l'ordre du centimetre
+\item[Troisième test] Le décalage de phase est de 4 échantillons.  Ce décalage peut être du au haut parleur qui n'est pas omnidirectionnel, et/ou a une erreur de mesure de l'ordre du centimètre
 \item[Quatrième test] Il n' a pas de décalage de phase... je ne sais pas pourquoi!
 \item[Cinquième test] Le décalage de phase est de 2 sample. j'aurais pensé que ça soit plus. Le signale est beaucoup plus faible pour le micro qui est entouré du cone. 
 \end{description}
 \begin{huge}
-Remarque : Quand les murs sont à 5m derriere les micros, on commence a persevoir l'echo 2.8ms après le front montant (meme si les deux signaux n'ont pas grand chose a voir)
+Remarque : Quand les murs sont à 5m derrière les micros, on commence a percevoir l'écho 2.8ms après le front montant (même si les deux signaux n'ont pas grand chose a voir)
 \end{huge}
 
 \subsection{Conclusion}
@@ -300,6 +340,19 @@ Malgré la forme du signal d'origine très reconnaissable, la signal reçu, l'es
 	
 \appendix
 \chapter{Audacity}
+Audacity est un logiciel permettant de traiter les fichiers audio.
+On s'en servira beaucoup pour afficher les courbes des différents signaux qu'on doit traiter.
+
+Une capture typique d'un signal sous audacity se présente ainsi:
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/dos_a_dos.png}
+\caption{une capture d'un signal quelconque dans audacity}
+\end{figure}
+
+On remarque qu'il y a 2 signaux, ce sont les deux pistes de l'enregistrement audio. Celle du haut correspond au canal gauche, et celle du bas au canal droit.
+
+Chaque point bleu représente un échantillon.
 
 
 \end{document}
