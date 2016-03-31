@@ -2,5 +2,6 @@
 *.log
 *.out
 *.synctex.gz
+*.bak
 *.toc
 rapport/*.pdf
