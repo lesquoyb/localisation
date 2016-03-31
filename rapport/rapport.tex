@@ -7,13 +7,16 @@
 \usepackage{amssymb}
 \usepackage{float}
 \usepackage{graphicx}
+
 \usepackage{array}
 \usepackage{hyperref}
 \author{Baptiste Lesquoy, Nicolas Weissenbach}
 \title{Expériences}
+
 \begin{document}
 \maketitle
 \tableofcontents
+
 
 \chapter{Test du matériel}
 
@@ -163,7 +166,7 @@ TODO: exprimer le décalage en sample pour des distances plus précises + ce ser
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{../tests/test_du_protocole/mesures_micro_colles/colles.png} 
-\caption{signaux reçu par les deux micros lorsqu'ils sont collés}
+\caption{signaux reçu par les deux micros lorsqu'ils sont collés (cf. \hyperref[appAudacity]{Audacity})}
 \end{figure}
 On constate bien qu'il n'y a pas de décalage quand les deux micros sont collés. Par contre on remarque une différence d'intensité, qui peut être expliqué par une simple différence du matériel. Les micros n'étant pas des micros professionnels, ce n'est pas étonnant que la qualité ne soit pas constante d'un micro à l'autre.
 
@@ -206,7 +209,7 @@ Le matériel et les paramètres sont les mêmes que pour l'expérience précéde
 On constate déjà qu'il y a un décalage assez marqué(anormal puisque les micros sont côte à côte)
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{../tests/test_du_protocole/mesures_perpendiculaires/test7.png} 
-\caption{exemple de décalage sur la 7ème itération de l'expérience}
+\caption{exemple de décalage sur la 7ème itération de l'expérience (cf. \hyperref[appAudacity]{Audacity})}
 \end{figure}
 
 TODO: faire le tableau avec tous les décalages, calculer le décalage moyen
@@ -277,6 +280,7 @@ L'environnement semble jouer un grand rôle dans le signal perçu, dans un envir
 
 
 \chapter{Signal carré}\label{signal_carre}
+
 \section{Objectifs}
 	Le premier objectif de cette série de tests est de vérifier la validité de l'utilisation d'un signal carré.
 	On a voulu tester cette forme de signal, car le front montant du signal est supposé être facilement repérable dans le signal de l'acquisition du micro.
@@ -287,29 +291,49 @@ L'environnement semble jouer un grand rôle dans le signal perçu, dans un envir
 	On a ensuite fait les mêmes teste que pour les séances précédentes:
 
 \subsection{Protocole des tests}
-\begin{description}
-\item[Premier test] Les deux micros sont côte à côte(à 6cm de décalage), à la même distance de la source sonore.
-	\begin{figure}[H]
-	\includegraphics[width=\textwidth]{../tests/lecture_de_signaux_carres/donnees11-03/test_1.jpg} 
-	\caption{Photo de l'expérience avec les micros côte à côte}
-	\end{figure}
-\item[Deuxième test] Les deux micros sont en ligne droite avec le haut-parleur. La distance entre les deux micros est de 520mm, la distance entre le micro le plus proche du haut-parleur et le haut-parleur est de 400mm.
-	\begin{figure}[H]
-	\includegraphics[width=\textwidth]{../tests/lecture_de_signaux_carres/donnees11-03/test_2.jpg} 
-	\caption{Photo de l'expérience avec les micros en ligne}
-	\end{figure}
-\item[Troisième test] Les deux micros sont à la même distance par rapport à la source sonore (920mm), mais il sont tous deux séparé de 680mm.
-\item[Quatrième test] Un des deux micros est entouré de mousse pour faire un cône, le rendant unidirectionnel. Le cône est dirigé vers le haut-parleur. Les deux micros sont à une distance de 900mm de la source sonore. Les deux micros sont séparé de 12cm.
-	\begin{figure}[H]
-	\includegraphics[width=\textwidth]{../tests/lecture_de_signaux_carres/donnees11-03/test_4.jpg} 
-	\caption{Photo de l'expérience avec un cône autour d'un micro}
-	\end{figure}
-\item[Cinquième test]	Un des deux micros est entouré de mousse pour faire un cone, le rendant unidirectionnel. Le cône est dirigé à 180 degré du haut-parleur. Les deux micros sont à une distance de 900mm de la source sonore.
-\end{description}
 
-\begin{huge}
-TODO: expliquer la pertinence des tests
-\end{huge}
+\paragraph{Premier test} 
+Les deux micros sont côte à côte(à 6cm de décalage), à la même distance de la source sonore.
+\subparagraph{Objectif du test}
+Ce test est réalisé pour avoir une référance par rapport aux autres test. En plus d'une référance, ce test permet de voir les difference d'acquisition là où il ne devrait pas en avoir.
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{../tests/lecture_de_signaux_carres/donnees11-03/test_1.jpg} 
+\caption{Photo de l'expérience avec les micros côte à côte}
+\end{figure}
+	
+\paragraph{Deuxième test} 
+Les deux micros sont en ligne droite avec le haut-parleur. La distance entre les deux micros est de 520mm, la distance entre le micro le plus proche du haut-parleur et le haut-parleur est de 400mm.
+\subparagraph{Objectif du test}
+Le but de ce test est de vérifier qu'on arrive à obtenir le bon resultat sur le calcul de distance entre les deux micros à partir du décalage de phase.
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{../tests/lecture_de_signaux_carres/donnees11-03/test_2.jpg} 
+\caption{Photo de l'expérience avec les micros en ligne}
+\end{figure}
+	
+\paragraph{Troisième test} 
+Les deux micros sont à la même distance par rapport à la source sonore (920mm), mais il sont tous deux séparé de 680mm.
+\subparagraph{Objectif du test}
+Le but de ce test est de voir comment ce propage le son en direction des deux micros qui sont à la même distance de la source sonore. En effet, comme le haut-parleur n'étant pas complètement omnidirectionnel, et que l'écho ne peut pas impacter les micros de la même facon, il faut connaitre leurs effets en augmentant la distance entre les deux micro
+\begin{Large} pas tres sur de la tournure de toute ce paragraphe! \end{Large}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{../tests/lecture_de_signaux_carres/donnees11-03/test_3.jpg} 
+\caption{Photo de l'expérience avec les micros à la même distance de la source, mais séparés}
+\end{figure}
+
+\paragraph{Quatrième test} 
+Un des deux micros est entouré de mousse pour faire un cône, le rendant unidirectionnel. Le cône est dirigé vers le haut-parleur. Les deux micros sont à une distance de 900mm de la source sonore. Les deux micros sont séparé de 12cm.
+\subparagraph{Objectif du test}
+Le but de ce test est de comparer ce que les deux micros acquire. En effet, l'un des deux micro devrait etre moins impacter pas l'écho ambiant, et donc etre moins bruité.
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{../tests/lecture_de_signaux_carres/donnees11-03/test_4.jpg} 
+\caption{Photo de l'expérience avec un cône autour d'un micro}
+\end{figure}
+	
+\paragraph{Cinquième test} 
+Un des deux micros est entouré de mousse pour faire un cone, le rendant unidirectionnel. Le cône est dirigé à 180 degré du haut-parleur. Les deux micros sont à une distance de 900mm de la source sonore.
+\subparagraph{Objectif du test}
+Le but de ce test est de comparé les mesures entre les deux micros. L'un des micro ne pourra pas acquerir le son direct émis du haut parleur, l'enregistrement sur ce micro devrait donc etre principalement composé d'écho de la source sonore.
+
 
 \section{Résultats/conclusions}
 \subsection{résultats}
@@ -327,12 +351,10 @@ TODO: expliquer la pertinence des tests
 \item[Premier test] Il n'y a un décalage de phase que d'un seul sample. (20 microsecondes)
 \item[Deuxième test] Le décalage de phase est de 11 sample (220 microsecondes). Ce décalage de phase est cohérent avec la distance entre les deux micros
 \item[Troisième test] Le décalage de phase est de 4 échantillons.  Ce décalage peut être du au haut parleur qui n'est pas omnidirectionnel, et/ou a une erreur de mesure de l'ordre du centimètre
-\item[Quatrième test] Il n' a pas de décalage de phase... je ne sais pas pourquoi!
-\item[Cinquième test] Le décalage de phase est de 2 sample. j'aurais pensé que ça soit plus. Le signale est beaucoup plus faible pour le micro qui est entouré du cone. 
+\item[Quatrième test] Il n' a pas de décalage de phase. Ce qui est consistant avec le fait que les deux micro recoivent la meme chose, meme si l'un des deux est unidirectionnel.
+\item[Cinquième test] Le signal enregistré par le micro entouré d'un cone est beaucoup plus faible que celui sans. De plus, les deux signaux ne se ressemble pas beaucoup, il est donc difficile de répérer des extremums qui coincident.
 \end{description}
-\begin{huge}
-Remarque : Quand les murs sont à 5m derrière les micros, on commence a percevoir l'écho 2.8ms après le front montant (même si les deux signaux n'ont pas grand chose a voir)
-\end{huge}
+
 
 \subsection{Conclusion}
 Malgré la forme du signal d'origine très reconnaissable, la signal reçu, l'est beaucoup moins. Il est assez compliqué de repéré le même extremum dans les deux signaux acquis par les micros. Le fait que le signal n'est pas reconnaissable, et que le tous les piques ne sont pas pareil dans l'enregistrement des deux micros, est probablement du au limitation matériel du haut-parleur (la membrane vibre et ne peut pas reconstituer un signal carré). Malgré les effort pour limiter l'apparition d'écho, celui-ci est inévitable.
@@ -340,8 +362,12 @@ Malgré la forme du signal d'origine très reconnaissable, la signal reçu, l'es
 	
 \appendix
 \chapter{Audacity}
-Audacity est un logiciel permettant de traiter les fichiers audio.
-On s'en servira beaucoup pour afficher les courbes des différents signaux qu'on doit traiter.
+\label{appAudacity}
+Audacity est le logiciel que nous avons choisis pour analyser les signaux que nous enregistrons grâce aux micros. Ce logiciel nous permet de visualiser les signaux des deux micros.
+%Audacity est un logiciel permettant de traiter les fichiers audio.
+%On s'en servira beaucoup pour afficher les courbes des différents signaux qu'on doit traiter. 
+
+Nous incluons des capture d'écran des signaux quand ils sont pertinant à l'explication. 
 
 Une capture typique d'un signal sous audacity se présente ainsi:
 
@@ -350,7 +376,7 @@ Une capture typique d'un signal sous audacity se présente ainsi:
 \caption{une capture d'un signal quelconque dans audacity}
 \end{figure}
 
-On remarque qu'il y a 2 signaux, ce sont les deux pistes de l'enregistrement audio. Celle du haut correspond au canal gauche, et celle du bas au canal droit.
+On remarque qu'il y a 2 signaux, ce sont les deux pistes de l'enregistrement audio. Celle du haut correspond au canal gauche, et celle du bas au canal droit. Souvant, la zone selectionné indique une partie du signal qui est important (décalage de phase notable, difference dans les deux signaux, etc...).
 
 Chaque point bleu représente un échantillon.
 
