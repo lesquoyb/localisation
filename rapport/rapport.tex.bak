@@ -7,26 +7,103 @@
 \usepackage{amssymb}
 \usepackage{float}
 \usepackage{graphicx}
-\author{Baptiste Lesquoy}
+\usepackage{array}
+\usepackage{hyperref}
+\author{Baptiste Lesquoy, Nicolas Weissenbach}
+\title{Expériences}
 \begin{document}
+\maketitle
+\tableofcontents
 
-\chapter{Expériences}
+\chapter{Test du matériel}
 
-
-\part{Test du matériel}
 \section{Objectif}
 On voudrait savoir à quel point le matériel utilisé est fiable, et quelle précision on peut espérer avec.
-On testera donc que la mousse isole correctement. Ainsi que jusqu'à quel degré les micros sont omnidirectionnels.
+On testera donc que la mousse qu'on compte utiliser pour rendre les micros plus unidirectionnel isole correctement, ainsi que l'effet de la mousse fournit de base avec les micros de plus on voudrait savoir jusqu'à quel degré les micros sont omnidirectionnels.
 \section{Expérience}
-\subsection{La qualité de la mousse}
-\subsection{L'omnidirectionnalité des micros}
-\section{Résultats/conclusions}
+
+\subsection{Configurations physique}
+Dans chacune des expériences on gardera un micro témoin, le plus possible collé au micro servant de test (moins de 3cm à chaque fois) pour ne pas être influencé par autre chose. Seule exception: le test de la mousse incluse avec les micros, où on a procédé à un enregistrement avec et l'autre sans, sans changer le reste de la configuration.\\
+Pour tester la mousse que l'on utilisera pour rendre les micros unidirectionnel, on enroule intégralement un micro dans cette mousse, l'autre micro est simplement posé à côté.\\
+Pour tester les l'omnidirectionnalité, on positionne le micro témoin en face de l'émetteur, et un autre à côté, mais orienté de dos ou à 90 degrés de l'émetteur. Enfin on complétera en mettant les deux micros perpendiculaires à l'émetteur mais orienté vers des côtés opposés.
+
+\subsection{Critères d'acceptation}
+Pour la mousse, il est difficile de chiffrer le résultat, le but est juste de se donner une idée de son pouvoir isolant en visualisant des signaux lu avec et sans. Néanmoins, on s'attend à ce que: à partir d'un micro entouré de mousse, le signal ait une amplitude plus faible voir ait une forme globale différente d'un signal reçu sur un micro normal.\\
+Pour les micros, on utilisera les deux configurations où les micros sont tous les deux de face pour savoir s'il existe des différences entre les deux au niveau de l'amplitude du signal reçu, voir si on constate un décalage de phase (même minime), et si possible chiffrer ces différences. On voudrait aussi savoir à quel point ils sont omnidirectionnel et quantifier les différences entre les signaux reçus selon l'orientation du micro par rapport à la source.
 
 
+\subsection{Signal émit}
+On a utilisé le signal carré de 5 samples(voir \ref{signal_carre}) afin de repérer facilement les signaux venant de l'émetteur.
+
+\subsection{Réception du signal}
+On utilise le montage habituel (voir \ref{protocole}).
+
+\section{Résultats}
+
+\subsection{Entre les deux micros}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/micros_face.png}
+\caption{signaux des deux micros côte à côte}
+\end{figure}
+On ne constate pas de grosses différences entre les deux micros. la forme globale du signal capté est la même, il y a parfois quelques irrégularités, mais elle ne sont ni importantes, ni très fréquentes. L'amplitude est sensiblement identique et on ne constate aucun décalage de phase.
+
+\subsection{mousse de base des micros}
+
+\begin{figure}[H]
+\begin{tabular}{l r}
+ \includegraphics[scale=0.1]{img/signal_sans_mousse.png}
+&  
+ \includegraphics[scale=0.1]{img/signal_avec_mousse.png}
+ \\
+\end{tabular}
+\caption{à gauche le signal sans mousse, à droite avec}
+\end{figure}
+On ne remarque pas vraiment de différence entre les deux, la mousse de base semble donc peu utile.
+
+\subsection{mousse isolante}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/isolation.png}
+\caption{en haut le micro sans isolation, en bas celui avec}
+\end{figure}
+On constate que la mousse isolante atténue bien l'amplitude du signal reçu. Il y a un léger décalage de phase (de 1 à 3 échantillons selon ce que l'on mesure), néanmoins on ne peut rien en conclure car la position et l'orientation précise du micro dans la mousse est inconnue. Par contre on remarque que le signal qui suit l'impulsion est assez différent sur les deux, cette partie du signal correspondant à l'écho, on peut en déduire que celui-ci est partiellement filtré par la mousse isolante.
+
+\subsection{Orientation des micros}
+
+\subsubsection{Un micro perpendiculaire à l'émetteur}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/90.png}
+\caption{en haut le micro de référence, en bas celui orienté à 90 degrés de l'émetteur}
+\end{figure}
+On constate que la différence d'amplitude est grandes entre les deux signaux. De plus il y a un décalage de phase: il est de 3 à 4 échantillons au début du signal et de 1 à 2 échantillons dans l'écho.
+Enfin on remarque que les deux signaux peuvent différer à certains endroits (notamment dans le début de l'écho).
+
+\subsubsection{Deux micros perpendiculaires à l'émetteur(dos à dos)}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/dos_a_dos.png}
+\caption{signaux reçus quand les micros sont dos à dos}
+\end{figure}
+Dos à dos on retrouve des signaux plus identiques l'un à l'autre que lorsque seul un des deux est perpendiculaire à la source. L'amplitude est la même pour les deux signaux, et le décalage de phase est de 1 à 2 échantillons pour le tout début de l'impulsion puis de 0 à 1 échantillons dans l'écho. On remarques quelques différences, mais pas plus que ce qui est normal(voir \ref{differences_entre_micros}).
+
+\subsubsection{Dos à l'émetteur}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{img/dos_a_la_source.png}
+\caption{en haut le témoin, en bas le micro dos à l'émetteur}
+\end{figure}
+Les signaux reçus sont très différents, la seule partie que l'on peut identifier clairement étant le tout début de l'impulsion. Sur cette dernière on constate un écart de phase de 11 samples.
+
+\section{Conclusion}
+De toutes ces expériences on peut en déduire:
+\begin{itemize}
+\item les micros sont fiables et il n'y a pas de différences notables entre les deux.
+\item la mousse de base semble inutile
+\item la mousse isolante réduit assez clairement l'amplitude du signal capté, hypothétiquement on peut s'en servir pour réduire l'écho.
+\item il y a des différences dans les signaux reçus en fonction de l'orientation du micro. si un des micros est dos à l'émetteur alors que l'autre est de face, le signal en devient même impossible à reconnaitre. Si on reste dans une disposition avec un micro à 90 degrés de l'émetteur l'écart est très faible, et s'annule quasiment si le deuxième aussi est à 90 degrés(dans le sens inverse). On peut donc conjecturer que tant qu'on reste dans une orientation de moins de 90 degrés le signal reste exploitable.
+\end{itemize}
 
 TODO: l'importance de l'environnement
 
-\part{Élaboration du protocole}
+\chapter{Élaboration du protocole}
 \section{Objectif}
 On aimerait définir un protocole qui permettrait de mesurer précisément un décalage de phase sur un signal enregistré en même temps par deux micros différents.
 
@@ -60,14 +137,14 @@ Le signal est émit depuis une enceinte branché à un ordinateur via une prise 
 
 \subsection{Réception du signal}
 Le signal est enregistré via deux micros identiques (même modèle), posés sur de la mousse. Le tout est coordonné par un contrôleur trik sur lequel les micros sont branchés via deux prises jack 3.5 séparées.
-On enregistre le signal réceptionné dans un fichier wav avec un taux d'échantillonnage de 192000Hz.
+On enregistre le signal réceptionné dans un fichier wav avec un taux d'échantillonnage de 44100Hz.
 Chaque enregistrement dur 6 secondes, on commence par démarrer l'enregistrement, puis on attend une à 2 secondes avant d'émettre le signal. Ainsi on peut observer le bruit ambiant et être sûr de capter l'intégralité du signal émit.
-Les calculs de distances et de décalage de phase seront fait par rapport aux premiers samples reçu du signal, afin de ne pas être influencé par l'écho.
+Les calculs de distances et de décalage de phase seront fait par rapport aux premiers échantillons reçus du signal, afin de ne pas être influencé par l'écho.
 
 \section{Résultats/conclusions}
 \subsection{Tout aligné}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../tests/test_du_protocole/IMG_0919.jpg} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/micros_alignes.jpg} 
 \caption{expérience avec les micros et l'enceinte aligné}
 \end{figure}
 \begin{figure}[H]
@@ -79,7 +156,7 @@ TODO: exprimer le décalage en sample pour des distances plus précises + ce ser
 
 \subsection{Récepteurs côte à côte}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../tests/test_du_protocole/IMG_0920.jpg} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/micros_cote_a_cote.jpg} 
 \end{figure}
 
 \begin{figure}[H]
@@ -92,7 +169,7 @@ On constate bien qu'il n'y a pas de décalage quand les deux micros sont collés
 TODO: même chose que précédemment :)
 
 
-\part{Décalage de phase}
+\chapter{Décalage de phase}
 \section{Objectif}
 Dans l'expérience précédente on a ignoré l'écho, cette fois si, on aimerait savoir à quel point l'écho peut avoir de l'importance dans le signal reçu, et plus particulièrement dans le décalage de phase entre les deux micro .
 On va donc utiliser de la mousse pour rendre les micros plus "directionnels" et regarder si ça a de l'influence sur les données enregistrées selon la direction donné.
@@ -112,13 +189,13 @@ Le matériel et les paramètres sont les mêmes que pour l'expérience précéde
 
 
 \subsection{Vérification de l'efficacité de la mousse}
-\includegraphics[width=\textwidth]{../tests/test_du_protocole/IMG_0922.jpg} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/cone_face.jpg} 
 
 \subsection{Changement d'orientation}
 
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../tests/test_du_protocole/IMG_0923.jpg} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/cone_dos_a_dos.jpg} 
 \end{figure}
 
 
@@ -135,7 +212,7 @@ TODO: faire le tableau avec tous les décalages, calculer le décalage moyen
 \paragraph{dos au haut-parleur}
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../donnees25-02/IMG_0924.jpg} 
+\includegraphics[width=\textwidth]{../tests/test_du_protocole/IMG_0924.jpg} 
 \end{figure}
 
 TODO: on a perdu certaines mesures, il va falloir les refaire :(
@@ -143,7 +220,7 @@ TODO: on a perdu certaines mesures, il va falloir les refaire :(
 \subsection{conclusion}
 On en conclu que l'écho influence effectivement beaucoup le signal reçu, pouvant fausser les calculs basés sur le décalage de phase.
 
-\part{Signal carré}
+\chapter{Signal carré}
 \section{Objectifs}
 	Le premier objectif de cette série de tests est de vérifier la validité de l'utilisation d'un signal carré.
 	On a voulu tester cette forme de signal, car le front montant du signal est supposé être facilement repérable dans le signal de l'acquisition du micro.
@@ -157,18 +234,18 @@ On en conclu que l'écho influence effectivement beaucoup le signal reçu, pouva
 \begin{description}
 \item[Premier test] Les deux micros sont côte à côte(à 6cm de décalage), à la même distance de la source sonore.
 	\begin{figure}[H]
-	\includegraphics[width=\textwidth]{../donnees11-03/test_1.jpg} 
+	\includegraphics[width=\textwidth]{../tests/lecture_de_signaux_carres/donnees11-03/test_1.jpg} 
 	\caption{Photo de l'expérience avec les micros côte à côte}
 	\end{figure}
 \item[Deuxième test] Les deux micros sont en ligne droite avec le haut-parleur. La distance entre les deux micros est de 520mm, la distance entre le micro le plus proche du haut-parleur et le haut-parleur est de 400mm.
 	\begin{figure}[H]
-	\includegraphics[width=\textwidth]{../donnees11-03/test_2.jpg} 
+	\includegraphics[width=\textwidth]{../tests/lecture_de_signaux_carres/donnees11-03/test_2.jpg} 
 	\caption{Photo de l'expérience avec les micros en ligne}
 	\end{figure}
 \item[Troisième test] Les deux micros sont à la même distance par rapport à la source sonore (920mm), mais il sont tous deux séparé de 680mm.
 \item[Quatrième test] Un des deux micros est entouré de mousse pour faire un cône, le rendant unidirectionnel. Le cône est dirigé vers le haut-parleur. Les deux micros sont à une distance de 900mm de la source sonore. Les deux micros sont séparé de 12cm.
 	\begin{figure}[H]
-	\includegraphics[width=\textwidth]{../donnees11-03/test_4.jpg} 
+	\includegraphics[width=\textwidth]{../tests/lecture_de_signaux_carres/donnees11-03/test_4.jpg} 
 	\caption{Photo de l'expérience avec un cône autour d'un micro}
 	\end{figure}
 \item[Cinquième test]	Un des deux micros est entouré de mousse pour faire un cone, le rendant unidirectionnel. Le cône est dirigé à 180 degré du haut-parleur. Les deux micros sont à une distance de 900mm de la source sonore.
