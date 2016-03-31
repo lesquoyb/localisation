@@ -200,6 +200,22 @@ public class SoundSignal {
 		return ret;
 	}
 
+	public SoundSignal filtrage_par_superposition_de_periodes(double periode){
+		SoundSignal ret = new SoundSignal();
+		int nb_samples_periode = (int) (periode * samplingFrequency);
+		int[] sig = new int[ nb_samples_periode];
+		for(int i = 0 ; i < signal.length  ; i++){
+			sig[i%nb_samples_periode] += signal[i];
+		}
+		short[] retSig = new short[nb_samples_periode];
+		for(int i = 0 ; i < sig.length ; i++){
+			retSig[i] =(short)( sig[i] / ((signal.length/nb_samples_periode )));
+			System.out.println( sig[i] + " " + retSig[i]);
+		}
+		ret.setSignal(retSig, samplingFrequency);
+		return ret;
+	}
+	
 	double [] signalEnergy(int m, int N){
 		int nb_echantillons = (signal.length - N) / m;
 
@@ -218,6 +234,8 @@ public class SoundSignal {
 		energy /= (N+1);
 		return 10* Math.log10(energy);
 	}
+	
+	
 }
 
 
