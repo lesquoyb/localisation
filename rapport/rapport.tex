@@ -8,6 +8,8 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
 
 \hypersetup{
     colorlinks,
@@ -17,9 +19,45 @@
     urlcolor=black
 }
 
+\definecolor{Zgris}{rgb}{0.87,0.85,0.85}
+\newcommand{\HRule}{\rule{\linewidth}{1mm}}
+\newsavebox{\BBbox}
+\newenvironment{DDbox}[1]{
+\begin{lrbox}{\BBbox}\begin{minipage}{\linewidth}}
+{\end{minipage}\end{lrbox}\noindent\colorbox{Zgris}{\usebox{\BBbox}} \\
+[.5cm]}
+
 \author{Baptiste Lesquoy}
 
 \begin{document}
+
+%%
+%%	TITLE PAGE
+%%
+  \begin{titlepage}
+    \begin{center}
+      % Upper part of the page. The '~' is needed because \\
+      % only works if a paragraph has started.
+      ~\\[4cm]
+      \textsc{\LARGE Universite de Lorraine}\\[1.5cm]
+      \textsc{\Large Faculté de Science et Technologie\\de Nancy}\\[0.5cm]
+      \textsc{\Large Departement Informatique}\\[0.5cm]
+      % Title
+      \HRule \\[0.4cm]
+      { \huge \bfseries Initiation à la Recherche \\[0.4cm] }
+      \HRule \\[1cm]
+      \textsc{\LARGE Localisation de robot}\\[1cm]
+      \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+	\emph{Auteurs:}\\
+	Baptiste \textsc{Lesquoy}\\
+	Nicolas \textsc{Weissenbach}\\
+      \end{tabular*}
+      \vfill
+      % Bottom of the page
+      {\large \today}
+      %\LaTex
+    \end{center}
+  \end{titlepage}
 
 \tableofcontents
 
@@ -193,7 +231,7 @@ Le but de ce test est de voir comment ce propage le son en direction des deux mi
 \begin{Large} pas tres sur de la tournure de toute ce paragraphe! \end{Large}
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{../tests/lecture_de_signaux_carres/donnees11-03/test_3.jpg} 
-\caption{Photo de l'expérience avec les micros en ligne}
+\caption{Photo de l'expérience avec les micros à la même distance de la source, mais séparés}
 \end{figure}
 
 \paragraph{Quatrième test} 
