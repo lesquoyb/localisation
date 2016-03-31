@@ -11,5 +11,5 @@ la classe ne prend en compte que le mono pour l'instant, donc on tronque ce qu'o
 
 test que la méthode fait bien ce qu'on veut: on génère un sinus continus sur 10 secondes, puis on utilise le filtrage sur le fichier généré, si on obtient bien un fichier avec seulement un sinus parfait, le filtrage a fonctionné. 
 On teste ensuite sur un fichier qui correspond à une lecture d'un sinus par le dispositif(donc bruité), on espère obtenir un sinus assez propre. => en vrai le signal est illisible et on est obligé de monter jusqu'à 40 périodes dans le même fichier pour reconnaitre.
-On réessaie donc en coupant l'enregistrement pour qu'il n'y ai pas de bruit blanc avant ou après le sinus. => on reconnait plus ou moins un sinus, mais il est clairement bouffé par l'écho.
+On réessaie donc en coupant l'enregistrement pour qu'il n'y ai pas de bruit blanc avant ou après le sinus.
 
