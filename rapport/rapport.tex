@@ -160,12 +160,43 @@ Les calculs de distances et de décalage de phase seront fait par rapport aux pr
 \includegraphics[width=\textwidth]{../tests/test_du_protocole/micros_alignes.jpg} 
 \caption{expérience avec les micros et l'enceinte aligné}
 \end{figure}
+
+
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{../tests/test_du_protocole/mesures_en_ligne/tableau_resultats.png}
+\begin{tabular}{l || p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm}  }
+\# & $f$ (Hz) & $x$ (mm) & $y$ (mm) & durée (s) & décalage de phase (échantillons) & décalage de phase (s) & décalage de phase (m)\\
+\hline
+1	& 80 & 220 &	500&	3&	266&	0.0014&	0.476\\
+2	&80	&220	&500	&3	&287	&0.0015&	0.51\\
+3	&80	&220	&500	&3	&273	&0.0014	&0.476\\
+4	&80	&220	&500	&3	&281	&0.0015	&0.51\\
+5	&80	&220	&500	&3	&273	&0.0014	&0.476\\
+6	&80	&220	&500	&3	&271	&0.0014	&0.476\\
+7	&80	&220	&500	&3	&269	&0.0014	&0.476\\
+8	&80	&220	&500	&3	&284	&0.0015	&0.51\\
+9	&80	&220	&500	&3	&282	&0.0015	&0.51\\
+10&	80&	220	&500	&3	&272	&0.0014	&0.476\\
+\hline
+11&	80&	500	&260	&3	&923	&0.0048	&1.632\\
+12&	80&	500	&260	&3	&844	&0.0044	&1.496\\
+13&	80&	500	&260	&3	&836	&0.0044	&1.496\\
+14&	80&	500	&260	&3	&836	&0.0044	&1.496\\
+15&	80&	500	&260	&3	&845	&0.0044	&1.496\\
+16&	80&	500	&260	&3	&915	&0.0048	&1.632\\
+17&	80&	500	&260	&3	&852	&0.0044	&1.496\\
+18&	80&	500	&260	&3	&850	&0.0044	&1.496\\
+19&	80&	500	&260	&3	&844	&0.0044	&1.496\\
+20&	80&	500	&260	&3	&849	&0.0044	&1.496
+\end{tabular}
+où : 
+\begin{description}
+\item[$f$] est la fréquence utilisé.
+\item[$x$] est la distance entre la source sonore et le premier micro
+\item[$y$] est la distance entre les deux micros
+\end{description}
 \caption{tableau des résultats de toutes les itération de l'expérience avec les micros et enceintes alignés}
 \end{figure}
-On constate que le décalage de phase correspond aux distances entre m1, m2 et s1\\
-TODO: exprimer le décalage en sample pour des distances plus précises + ce serait sympa de retrouver la formule, parce que phi ça ne me parle pas trop sans contexte :)
+
 
 \subsection{Récepteurs côte à côte}
 \begin{figure}[H]
