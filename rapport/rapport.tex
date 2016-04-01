@@ -210,10 +210,25 @@ où :
 \includegraphics[width=\textwidth]{../tests/test_du_protocole/mesures_micro_colles/colles.png} 
 \caption{signaux reçu par les deux micros lorsqu'ils sont collés}
 \end{figure}
+
+\begin{figure}[H]
+\begin{tabular}{l || p{1.4cm} | p{1.4cm} | p{1.4cm} | p{1.4cm} | p{1.4cm} | p{1.7cm} | p{1.7cm}  }
+\# & $f$ (Hz) & $x$ (mm) & $y$ (mm) & durée (s) & décalage de phase (échantillons) & décalage de phase (s) & décalage de phase (m)\\
+\hline
+1	&80	&220	&500	&3	&2	&0.0000104	&0.003536\\
+2	&80	&220	&500	&3	&2	&0.0000104	&0.003536\\
+3	&80	&220	&500	&3	&1	&0.0000052	&0.001768
+\end{tabular}
+où : 
+\begin{description}
+\item[$f$] est la fréquence utilisé.
+\item[$x$] est la distance entre la source sonore et le premier micro
+\item[$y$] est la distance entre les deux micros
+\end{description}
+\caption{tableau des résultats de toutes les itération de l'expérience avec les micros collé}
+\end{figure}
+
 On constate bien qu'il n'y a pas de décalage quand les deux micros sont collés. Par contre on remarque une différence d'intensité, qui peut être expliqué par une simple différence du matériel. Les micros n'étant pas des micros professionnels, ce n'est pas étonnant que la qualité ne soit pas constante d'un micro à l'autre.
-
-
-TODO: même chose que précédemment :)
 
 
 \chapter{Décalage de phase}
@@ -254,7 +269,35 @@ On constate déjà qu'il y a un décalage assez marqué(anormal puisque les micr
 \caption{exemple de décalage sur la 7ème itération de l'expérience}
 \end{figure}
 
-TODO: faire le tableau avec tous les décalages, calculer le décalage moyen
+\begin{figure}[H]
+\begin{center}
+\begin{tabular}{l || p{1.4cm} | p{1.4cm} | p{1.4cm} | p{1.7cm} | p{1.7cm}  }
+\# & $f$ (Hz) &  durée (s) & décalage de phase (échantillons) & décalage de phase (s) & décalage de phase (m)\\
+\hline
+1	&80	&3	&28 &0.00063	&0.2142\\
+2	&80	&3	&6	&0.00014	&0.0476\\
+3	&80	&3	&6	&0.00014	&0.0476\\
+4	&80	&3	&6	&0.00014	&0.0476\\
+5	&80	&3	&6	&0.00014	&0.0476\\
+6	&80	&3	&6	&0.00014	&0.0476\\
+7	&80	&3	&6	&0.00014	&0.0476\\
+8	&80	&3	&6	&0.00014	&0.0476\\
+9	&80	&3	&7	&0.00016	&0.0544\\
+10	&80	&3	&6	&0.00014	&0.0476\\
+\hline
+\multicolumn{4}{c|}{Moyenne} & 0.000191	&0.06494
+\end{tabular}
+\end{center}
+~\\
+où : 
+\begin{description}
+\item[$f$] est la fréquence utilisé.
+\item[$x$] est la distance entre la source sonore et le premier micro
+\item[$y$] est la distance entre les deux micros
+\end{description}
+\caption{tableau des résultats de toutes les itération de l'expérience avec les micros collé}
+\end{figure}
+
 
 \paragraph{dos au haut-parleur}
 
