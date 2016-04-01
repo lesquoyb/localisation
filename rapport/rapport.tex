@@ -363,20 +363,20 @@ L'environnement semble jouer un grand rôle dans le signal perçu, dans un envir
 
 \chapter{Signal carré}\label{signal_carre}
 \section{Objectifs}
-	Le premier objectif de cette série de tests est de vérifier la validité de l'utilisation d'un signal carré.
-	On a voulu tester cette forme de signal, car le front montant du signal est supposé être facilement repérable dans le signal de l'acquisition du micro.
-	Le deuxième objectif est d'acquérir un signal avec le minimum d'écho possible. Le signal carré utilisé étant très court, le pique enregistré sur les micros ne devrait (hypothétiquement) pas être bruité par de l'écho.
+Le premier objectif de cette série de tests est de vérifier la validité de l'utilisation d'un signal carré.
+On a voulu tester cette forme de signal, car le front montant du signal est supposé être facilement repérable dans le signal de l'acquisition du micro. \\
+Le deuxième objectif est d'acquérir un signal avec le minimum d'écho possible. Le signal carré utilisé étant très court, le pique enregistré sur les micros ne devrait (hypothétiquement) pas être bruité par de l'écho.
 
 \section{Protocole}\label{protocole}
-	On a créé deux fichier .wav. Le premier a 10 piques carré de longueur sample de longueur, le deuxième a 10 piques carré de longueur 5 sample.
-	On a ensuite fait les mêmes teste que pour les séances précédentes:
+On a créé deux fichier .wav. Le premier a 10 piques carré de longueur sample de longueur, le deuxième a 10 piques carré de longueur 5 sample.
+On a ensuite fait les mêmes teste que pour les séances précédentes:
 
 \subsection{Protocole des tests}
  
  \paragraph{Premier test} 
  Les deux micros sont côte à côte(à 6cm de décalage), à la même distance de la source sonore.
  \subparagraph{Objectif du test}
- Ce test est réalisé pour avoir une référance par rapport aux autres test. En plus d'une référance, ce test permet de voir les difference d'acquisition là où il ne devrait pas en avoir.
+ Ce test est réalisé pour avoir une référence par rapport aux autres test. En plus d'une référence, ce test permet de voir les différence d'acquisition là où il ne devrait pas en avoir.
  \begin{figure}[H]
  \includegraphics[width=\textwidth]{../tests/lecture_de_signaux_carres/donnees11-03/test_1.jpg} 
  \caption{Photo de l'expérience avec les micros côte à côte}
@@ -438,7 +438,9 @@ L'environnement semble jouer un grand rôle dans le signal perçu, dans un envir
  \end{description}
 
 \subsection{Conclusion}
-Malgré la forme du signal d'origine très reconnaissable, la signal reçu, l'est beaucoup moins. Il est assez compliqué de repéré le même extremum dans les deux signaux acquis par les micros. Le fait que le signal n'est pas reconnaissable, et que le tous les piques ne sont pas pareil dans l'enregistrement des deux micros, est probablement du au limitation matériel du haut-parleur (la membrane vibre et ne peut pas reconstituer un signal carré). Malgré les effort pour limiter l'apparition d'écho, celui-ci est inévitable.
+Malgré la forme du signal d'origine très reconnaissable, le signal reçu, l'est beaucoup moins. Il est assez compliqué de repéré le même extremum dans les deux signaux acquis par les micros. Le fait que le signal n'est pas reconnaissable, et que tous les piques ne sont pas pareil dans l'enregistrement des deux micros, est probablement du au limitation matériel du haut-parleur (la membrane vibre et ne peut pas reconstituer un signal carré). \\
+En ce qui concerne l'écho, celui ci est inévitable, mais apparait tout de même assez loin dans le temps pour pouvoir être discernable du signal original. \\
+En conclusion, bien que le signal original est très reconnaissable, il n'est pas du tout approprié en ce qui concerne des ondes sonore. Ces tests nous ont cependant permis d'analyser des signaux en étant sur que ces signaux ne sont pas bruité par de l'écho
 	
 	
 \appendix
