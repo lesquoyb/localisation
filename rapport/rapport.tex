@@ -212,12 +212,15 @@ où :
 \end{figure}
 
 \begin{figure}[H]
-\begin{tabular}{l || p{1.4cm} | p{1.4cm} | p{1.4cm} | p{1.4cm} | p{1.4cm} | p{1.7cm} | p{1.7cm}  }
+\begin{tabular}{|l || p{1.4cm} | p{1.4cm} | p{1.4cm} | p{1.4cm} | p{1.4cm} | p{1.7cm} | p{1.7cm}  |}
+\hline
 \# & $f$ (Hz) & $x$ (mm) & $y$ (mm) & durée (s) & décalage de phase (échantillons) & décalage de phase (s) & décalage de phase (m)\\
+\hline
 \hline
 1	&80	&220	&500	&3	&2	&0.0000104	&0.003536\\
 2	&80	&220	&500	&3	&2	&0.0000104	&0.003536\\
-3	&80	&220	&500	&3	&1	&0.0000052	&0.001768
+3	&80	&220	&500	&3	&1	&0.0000052	&0.001768\\
+\hline
 \end{tabular}
 où : 
 \begin{description}
@@ -239,7 +242,7 @@ On va donc utiliser de la mousse pour rendre les micros plus "directionnels" et 
 \section{Expérience}
 \subsection{Critères d'acceptation}
 On commencera par reprendre la dernière configuration de l'expérience précédente en ajoutant un cône autour d'un des micros afin de vérifier que le signal reçu est différent avec et sans le cône (donc que la mousse est bien efficace pour filtrer le signal).
-On considérera que l'écho a de l'influence sur le signal reçu si en changeant l'orientation d'un micro placé dans un cône en mousse on observe un décalage de phase différent par rapport à un micro sans cône (donc omnidirectionnel).
+On considérera que l'écho a de l'influence sur le signal reçu si en changeant l'orientation d'un micro placé dans un cône en mousse on observe un décalage de phase par rapport à un micro sans cône (donc omnidirectionnel).
 
 \subsection{Configurations}
 On reprend la configuration précédente. Cette fois, on placera les micros côte à côte et on changera uniquement l'orientation  du micro entouré d'un cône de mousse.
@@ -261,7 +264,7 @@ Le matériel et les paramètres sont les mêmes que pour l'expérience précéde
 \end{figure}
 
 
-\paragraph{perpendiculaire au haut-parleur}
+\subsubsection{perpendiculaire au haut-parleur}
 
 On constate déjà qu'il y a un décalage assez marqué(anormal puisque les micros sont côte à côte)
 \begin{figure}[h]
@@ -271,8 +274,10 @@ On constate déjà qu'il y a un décalage assez marqué(anormal puisque les micr
 
 \begin{figure}[H]
 \begin{center}
-\begin{tabular}{l || p{1.4cm} | p{1.4cm} | p{1.4cm} | p{1.7cm} | p{1.7cm}  }
+\begin{tabular}{|l || p{1.4cm} | p{1.4cm} | p{1.4cm} | p{1.7cm} | p{1.7cm}  |}
+\hline
 \# & $f$ (Hz) &  durée (s) & décalage de phase (échantillons) & décalage de phase (s) & décalage de phase (m)\\
+\hline
 \hline
 1	&80	&3	&28 &0.00063	&0.2142\\
 2	&80	&3	&6	&0.00014	&0.0476\\
@@ -285,7 +290,9 @@ On constate déjà qu'il y a un décalage assez marqué(anormal puisque les micr
 9	&80	&3	&7	&0.00016	&0.0544\\
 10	&80	&3	&6	&0.00014	&0.0476\\
 \hline
-\multicolumn{4}{c|}{Moyenne} & 0.000191	&0.06494
+\multicolumn{4}{|c|}{Moyenne} & 0.000191	&0.06494\\
+\hline
+
 \end{tabular}
 \end{center}
 ~\\
@@ -299,11 +306,13 @@ où :
 \end{figure}
 
 
-\paragraph{dos au haut-parleur}
+\subsubsection{dos au haut-parleur}
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{../tests/test_du_protocole/IMG_0924.jpg} 
 \end{figure}
+
+TODO: on n'a pas de données pour celui là ?
 
 \subsection{conclusion}
 On en conclu que l'écho influence effectivement beaucoup le signal reçu, pouvant fausser les calculs basés sur le décalage de phase.
@@ -397,8 +406,7 @@ L'environnement semble jouer un grand rôle dans le signal perçu, dans un envir
  \paragraph{Troisième test} 
  Les deux micros sont à la même distance par rapport à la source sonore (920mm), mais il sont tous deux séparé de 680mm.
  \subparagraph{Objectif du test}
- Le but de ce test est de voir comment ce propage le son en direction des deux micros qui sont à la même distance de la source sonore. En effet, comme le haut-parleur n'étant pas complètement omnidirectionnel, et que l'écho ne peut pas impacter les micros de la même facon, il faut connaitre leurs effets en augmentant la distance entre les deux micro
- \begin{Large} pas tres sur de la tournure de toute ce paragraphe! \end{Large}
+ Le but de ce test est de voir comment se propage le son en direction des deux micros. En effet, le haut-parleur n'est pas complètement omnidirectionnel, on voudrait savoir si cela a un effet important sur le signal. En plus d'impacter le signal perçu directement, cela peut aussi changer l'écho perçu par les micros. 
  \begin{figure}[H]
  \includegraphics[width=\textwidth]{../tests/lecture_de_signaux_carres/donnees11-03/test_3.jpg} 
  \caption{Photo de l'expérience avec les micros à la même distance de la source, mais séparés}
@@ -426,7 +434,7 @@ L'environnement semble jouer un grand rôle dans le signal perçu, dans un envir
 \begin{description}
 \item[Premier test] Il n'y a pas de décalage de phase entre les deux micros. De plus l'écho est n'apparait qu'après la fin du signal initial. Celui-ci est assez loin pour que le signal original ne soit pas bruité par l'écho
 \item[Deuxième test] \label{test1sample1} Le décalage de phase est de 62 échantillons. Les signaux se ressemblent, même à partir du moment où l'écho s'est mis en place. Le signal du micro le plus éloigné est très atténue par la distance entre la source et ce micro.
-\item[Troisième test] Malgré le faite que les deux micros soient a la même distance avec la source sonore, il y a un décalage léger décalage de phase. Ce décalage peut être du au haut parleur qui n'est pas omnidirectionnel ou a la méthode de propagation du son qui n'est pas parfaitement circulaire. En ce qui concerne l'écho, il apparait aussi bien après le signal initial et ne le bruite pas.
+\item[Troisième test] Il y a un léger décalage de phase qui pourrait être dû au haut parleur qui n'est pas omnidirectionnel. En ce qui concerne l'écho, il apparait aussi bien après le signal initial et ne le bruite pas.
 \item[Quatrième test] Il y a un décalage de phase que nous n'arrivons pas à expliquer.
 \item[Cinquième test] Le signale du micro avec la cone est très atténue. Meme avec le cone, le micro enregistre quand meme une partie du signal initial (même s'il est très atténue par rapport à l'autre micro). Il y a aussi un décalage de phase de 13 échantillons, ce qui est consistant avec l'orientation du micro (cf. \hyperref[orientation_micro]{Orientation des micros}). Cependant le décalage de phase entre l'acquisition du front initial par le micro sans cone, et l'écho acquerit par le micro avec un cone est de 65 échantillons (ce qui est consistant avec l'environnement de la pièce).
 \end{description}
