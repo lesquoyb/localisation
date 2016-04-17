@@ -1,0 +1,6 @@
+On essaie de voir si on peut reconnaitre une sinusoide dans un signal bruité à l'aide de la transformée de Fourier.
+Danke schön Princeton für die FFT und Complex Java Klassen.
+On connais la sinusoïde de départ (sa fréquence d'émission) et on aimerait la retrouver le plus précisément possible dans le signal reçu.
+
+
+
