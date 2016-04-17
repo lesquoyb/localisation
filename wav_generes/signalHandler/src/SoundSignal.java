@@ -133,7 +133,7 @@ public class SoundSignal {
 	 * Write in LittleEndian a short
 	 * 
 	 */
-	private void writeShort(DataOutputStream out, int arg0) throws IOException {
+	public static void writeShort(DataOutputStream out, int arg0) throws IOException {
 		out.writeByte(arg0 & 0xff);
 		out.writeByte((arg0 >> 8) & 0xff);
 	}
@@ -142,12 +142,42 @@ public class SoundSignal {
 	 * Write in LittleEndian an int
 	 * 
 	 */
-	private void writeInt(DataOutputStream out,int arg0) throws IOException {
+	public static void writeInt(DataOutputStream out,int arg0) throws IOException {
 		out.writeByte(arg0 & 0xff);
 		out.writeByte((arg0 >> 8) & 0xff);
 		out.writeByte((arg0 >> 16) & 0xff);
 		out.writeByte((arg0 >> 24) & 0xff);
 	}
+	
+	enum WAVE_FORMAT {PCM, IEEE_FLOAT, ALAW, MULAW, EXTENSIBLE};
+	public static final short[] wave_format_value = {0x0001, 0x0003, 0x0006, 0x0007, 0xFFE};
+	
+	public void writeFMTChunk(DataOutputStream data, WAVE_FORMAT format,short nChannels, short nSamplesPerSec, short nAvgBytesPerSec) throws Exception{
+		int chunkSize;
+		switch(format){
+		case PCM:
+			chunkSize = 16;
+			data.write("fmt ".getBytes());
+			writeInt(	data, chunkSize); 
+			writeShort(	data, wave_format_value[format.ordinal()]);
+			writeShort(	data, nChannels) ; 
+			writeInt(	data, getSamplingFrequency() ) ; 
+			writeInt(	data, getSamplingFrequency() * Short.SIZE * nChannels / 8) ; // nb octets par seconde 
+			writeShort(	data, (short)(Short.SIZE * nChannels / 8)) ; //octet by frame 
+			writeShort(	data, (short) Short.SIZE ) ; // nb octet par sample
+			break;
+		default:
+			throw new Exception("pas fait les autres formats, flemme");
+		}
+	}
+	
+	public void writeData(DataOutputStream data) throws IOException{
+		int dataSize = getSignalLength()*Short.SIZE/8;
+		data.write("data".getBytes()); 
+		writeInt(	data, dataSize) ; 
+
+	}
+
 
 	/**
 	 * Export a signal (array) in a sound file.
@@ -162,22 +192,22 @@ public class SoundSignal {
 			int sizeHeader = 44 ;
 			//WRITE HEADER
 			data.write("RIFF".getBytes()) ; //4
-			this.writeInt(data, (int)sizeHeader - 8 + signal.length*2) ; //8
+			writeInt(data, (int)sizeHeader - 8 + signal.length*2) ; //8
 			data.write("WAVE".getBytes()); //12
 			data.write("fmt ".getBytes()); //16
-			this.writeInt(data, (int)16); //20
-			this.writeShort(data, (short)1) ; //22 PCM
-			this.writeShort(data, (short)1) ; //24 NUMCHANEL CANAUX 1=MONO
-			this.writeInt(data, (int)this.getSamplingFrequency()) ; //28 SAMPLERATE (FREQUENCE)
-			this.writeInt(data, (int)(this.getSamplingFrequency()*2)) ; //32 BYTERATE nb octets par seconde (=SAMPLERATE*NUMCHANEL*BITPERSAMPLE/8)
-			this.writeShort(data, (short)2) ; //34 BLOCKALIGN NB octet by frame (=NUMCHANEL * BITPERSAMPLE/8)
-			this.writeShort(data, (short)16) ; //36 BITEPERSAMPLE nb octet par sample
+			writeInt(data, (int)16); //20, taille du chunk
+			writeShort(data, (short)1) ; //22 format wave: PCM
+			writeShort(data, (short)1) ; //24 NUMCHANEL CANAUX 1=MONO
+			writeInt(data, (int)this.getSamplingFrequency()) ; //28 SAMPLERATE (FREQUENCE)
+			writeInt(data, (int)(this.getSamplingFrequency()*2)) ; //32 BYTERATE nb octets par seconde (=SAMPLERATE*NUMCHANEL*BITPERSAMPLE/8)
+			writeShort(data, (short)2) ; //34 BLOCKALIGN NB octet by frame (=NUMCHANEL * BITPERSAMPLE/8)
+			writeShort(data, (short)16) ; //36 BITEPERSAMPLE nb octet par sample
 			data.write("data".getBytes()); //40
-			this.writeInt(data, (int)this.getSignalLength()*2) ; //44
+			writeInt(data, (int)this.getSignalLength()*2) ; //44
 		}
 
 		for (int i = 0 ; i < this.getSignalLength() ; i++){
-			this.writeShort(data, signal[i]) ;
+			writeShort(data, signal[i]) ;
 		}
 
 		data.close() ;

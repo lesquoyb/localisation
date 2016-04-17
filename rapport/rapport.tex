@@ -25,6 +25,7 @@
 \begin{document}
 \maketitle
 \tableofcontents
+\part{Matériel}
 
 \chapter{Test du matériel}
 
@@ -44,7 +45,7 @@ Pour les micros, on utilisera les deux configurations où les micros sont tous l
 
 
 \subsection{Signal émis}
-On a utilisé le signal carré de 5 samples(voir \ref{signal_carre}) afin de repérer facilement les signaux venant de l'émetteur.
+On a utilisé le signal carré de 5 échantillons(voir \ref{signal_carre}) afin de repérer facilement les signaux venant de l'émetteur.
 
 \subsection{Réception du signal}
 On utilise le montage habituel (voir \ref{protocole}).
@@ -54,7 +55,7 @@ On utilise le montage habituel (voir \ref{protocole}).
 \subsection{Entre les deux micros}\label{differences_entre_micros}
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{img/micros_face.png}
+\includegraphics[width=\textwidth]{resources/img/micros_face.png}
 \caption{signaux des deux micros côte à côte}
 \end{figure}
 On ne constate pas de grosses différences entre les deux micros. la forme globale du signal capté est la même, il y a parfois quelques irrégularités, mais elle ne sont ni importantes, ni très fréquentes. L'amplitude est sensiblement identique et on ne constate aucun décalage de phase.
@@ -63,9 +64,9 @@ On ne constate pas de grosses différences entre les deux micros. la forme globa
 
 \begin{figure}[H]
 \begin{tabular}{ll}
- \includegraphics[scale=0.15]{img/signal_sans_mousse.png}
+ \includegraphics[scale=0.15]{resources/img/signal_sans_mousse.png}
 &  
- \includegraphics[scale=0.15]{img/signal_avec_mousse.png}
+ \includegraphics[scale=0.15]{resources/img/signal_avec_mousse.png}
  \\
 \end{tabular}
 \caption{à gauche le signal sans mousse, à droite avec}
@@ -74,7 +75,7 @@ On ne remarque pas vraiment de différence entre les deux, la mousse de base sem
 
 \subsection{mousse isolante}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{img/isolation.png}
+\includegraphics[width=\textwidth]{resources/img/isolation.png}
 \caption{en haut le micro sans isolation, en bas celui avec}
 \end{figure}
 On constate que la mousse isolante atténue bien l'amplitude du signal reçu. Il y a un léger décalage de phase (de 1 à 3 échantillons selon ce que l'on mesure), néanmoins on ne peut rien en conclure car la position et l'orientation précise du micro dans la mousse est inconnue. Par contre on remarque que le signal qui suit l'impulsion est assez différent sur les deux, cette partie du signal correspondant à l'écho, on peut en déduire que celui-ci est partiellement filtré par la mousse isolante.
@@ -83,7 +84,7 @@ On constate que la mousse isolante atténue bien l'amplitude du signal reçu. Il
 \label{orientation_micro}
 \subsubsection{Un micro perpendiculaire à l'émetteur}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{img/90.png}
+\includegraphics[width=\textwidth]{resources/img/90.png}
 \caption{en haut le micro de référence, en bas celui orienté à 90 degrés de l'émetteur}
 \end{figure}
 On constate que la différence d'amplitude est grandes entre les deux signaux. De plus il y a un décalage de phase: il est de 3 à 4 échantillons au début du signal et de 1 à 2 échantillons dans l'écho.
@@ -91,17 +92,17 @@ Enfin on remarque que les deux signaux peuvent différer à certains endroits (n
 
 \subsubsection{Deux micros perpendiculaires à l'émetteur(dos à dos)}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{img/dos_a_dos.png}
+\includegraphics[width=\textwidth]{resources/img/dos_a_dos.png}
 \caption{signaux reçus quand les micros sont dos à dos}
 \end{figure}
 Dos à dos on retrouve des signaux plus identiques l'un à l'autre que lorsque seul un des deux est perpendiculaire à la source. L'amplitude est la même pour les deux signaux, et le décalage de phase est de 1 à 2 échantillons pour le tout début de l'impulsion puis de 0 à 1 échantillons dans l'écho. On remarques quelques différences, mais pas plus que ce qui est normal(voir \ref{differences_entre_micros}).
 
 \subsubsection{Dos à l'émetteur}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{img/dos_a_la_source.png}
+\includegraphics[width=\textwidth]{resources/img/dos_a_la_source.png}
 \caption{en haut le témoin, en bas le micro dos à l'émetteur}
 \end{figure}
-Les signaux reçus sont très différents, la seule partie que l'on peut identifier clairement étant le tout début de l'impulsion. Sur cette dernière on constate un écart de phase de 11 samples.
+Les signaux reçus sont très différents, la seule partie que l'on peut identifier clairement étant le tout début de l'impulsion. Sur cette dernière on constate un écart de phase de 11 échantillons.
 
 \section{Conclusion}
 De toutes ces expériences on peut en déduire:
@@ -141,7 +142,7 @@ On utilisera un fichier sonore wav qui:
 \begin{itemize}
 \item dure 3 secondes
 \item est un sinus à une fréquence constante a 300Hz
-\item a un sample rate de 44100Hz
+\item a un taux d'échantillonnage de 44100Hz
 \item est un fichier mono
 \end{itemize}
 Le signal est émis depuis une enceinte branché à un ordinateur via une prise jack 3.5.
@@ -326,11 +327,11 @@ Au cours d'une expérience précédente on s'est rendu compte que dans certains 
 \subsection{Critères d'acceptation}
 On partira de la capture du signal quasi inexploitable et on comparera les nouveaux résultats avec celui-ci et le signal émis pour voir s'il y a une amélioration ou pas.
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{img/cone_90.png}
+\includegraphics[width=\textwidth]{resources/img/cone_90.png}
 \caption{le signal bruité}
 \end{figure}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{img/sinus_base.png}
+\includegraphics[width=\textwidth]{resources/img/sinus_base.png}
 \caption{le signal de base}
 \end{figure}
 On regardera le milieux/la fin du signal reçu, afin d'être sûr que l'écho ait bien eu le temps de s'ajouter au signal de base.
@@ -355,14 +356,14 @@ même chose que dans \ref{protocole}.
 \section{Résultats}
 \subsection{Cône plus refermé}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{img/cone_90_plus_fin.png}
+\includegraphics[width=\textwidth]{resources/img/cone_90_plus_fin.png}
 \caption{utilisation d'un cône plus refermé}
 \end{figure}
 Le fait d'utiliser cône plus refermé semble améliorer le signal reçu, il reste quand même très bruité.
 
 \subsection{Ajout d'un obstacle}
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{img/cone+obstacle.png}
+\includegraphics[width=\textwidth]{resources/img/cone+obstacle.png}
 \caption{signal avec un obstacle en face de la sortie du cylindre}
 \end{figure}
 Cette fois la forme du signal ressemble beaucoup plus au sinus de base.
@@ -424,7 +425,7 @@ L'environnement semble jouer un grand rôle dans le signal perçu, dans un envir
  \paragraph{Cinquième test} 
  Un des deux micros est entouré de mousse pour faire un cone, le rendant unidirectionnel. Le cône est dirigé à 180 degré du haut-parleur. Les deux micros sont à une distance de 900mm de la source sonore.
  \subparagraph{Objectif du test}
- Le but de ce test est de comparé les mesures entre les deux micros. L'un des micro ne pourra pas acquerir le son direct émis du haut parleur, l'enregistrement sur ce micro devrait donc etre principalement composé d'écho de la source sonore.
+ Le but de ce test est de comparer les mesures entre les deux micros. L'un des micro ne pourra pas acquerir le son direct émis du haut parleur, l'enregistrement sur ce micro devrait donc etre principalement composé d'écho de la source sonore.
  
 
 
@@ -449,7 +450,7 @@ L'environnement semble jouer un grand rôle dans le signal perçu, dans un envir
  \end{description}
 
 \subsection{Conclusion}
-Malgré la forme du signal d'origine très reconnaissable, la signal reçu, l'est beaucoup moins. Il est assez compliqué de repéré le même extremum dans les deux signaux acquis par les micros. Le fait que le signal n'est pas reconnaissable, et que le tous les piques ne sont pas pareil dans l'enregistrement des deux micros, est probablement du au limitation matériel du haut-parleur (la membrane vibre et ne peut pas reconstituer un signal carré). Malgré les effort pour limiter l'apparition d'écho, celui-ci est inévitable.
+Malgré la forme du signal d'origine très reconnaissable, la signal reçu, l'est beaucoup moins. Il est assez compliqué de repéré le même extremum dans les deux signaux acquis par les micros. Le fait que le signal n'est pas reconnaissable, et que le tous les piques ne sont pas pareil dans l'enregistrement des deux micros, est probablement dû au limitation matériel du haut-parleur (la membrane vibre et ne peut pas reconstituer un signal carré). Malgré les effort pour limiter l'apparition d'écho, celui-ci est inévitable.
 	
 	
 \appendix
@@ -460,7 +461,7 @@ On s'en servira beaucoup pour afficher les courbes des différents signaux qu'on
 Une capture typique d'un signal sous Audacity se présente ainsi:
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{img/dos_a_dos.png}
+\includegraphics[width=\textwidth]{resources/img/dos_a_dos.png}
 \caption{une capture d'un signal quelconque dans audacity}
 \end{figure}
 
@@ -468,5 +469,34 @@ On remarque qu'il y a 2 signaux, ce sont les deux pistes de l'enregistrement aud
 
 Chaque point bleu représente un échantillon.
 
+\part{Traitement du signal reçu}
+
+
+\chapter{Filtrage "par accumulation"}
+\section{Objectif}
+On voudrait nettoyer le signal reçu afin de reconnaitre plus facilement le signal émis.
+Pour ce faire, on découpe le signal reçu en parties de la taille de la période du signal émis, et on additionne toutes ces parties afin d'amplifier le signal émis. 
+
+\section{Expérience}
+\subsection{Critères d'acceptation}
+\subsubsection{Vérification de l'expérience}
+Afin de vérifier que l'expérience teste bien ce que l'on veut, on applique le procédé au signal émis. Si l'expérience fonctionne bien, on devrait obtenir une période du signal.
+\subsubsection{Efficacité du filtrage}
+On comparera le signal lu une fois filtré avec une période du signal émis, 
+%TODO TODO TODO
+%TODO
+%TODO
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%flemme là
+
+\subsection{Configurations physique}
+
+\subsection{environnement de test}
+
+\subsection{Signal émis}
+\subsection{Réception du signal}
+\section{Résultats}
+\section{conclusions}
 
 \end{document}
