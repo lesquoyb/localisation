@@ -5,19 +5,24 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{graphicx}
 \usepackage{lmodern}
 \usepackage{kpfonts}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{graphicx}
 \usepackage{setspace}
 \usepackage{float}
 \usepackage{fancyhdr} 
-\usepackage{array}
 \usepackage{footnote}
+\usepackage{array}
+\usepackage[title,titletoc,toc]{appendix}
 \usepackage{hyperref}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
 \author{Baptiste Lesquoy}
 \title{Rapport d'initiation à la recherche}
 
@@ -68,46 +73,90 @@ Baptiste Lesquoy\\
 
 \tableofcontents
 
+
 \chapter{Le sujet}
-\section{Sujet de base}
-La localisation est le fait de pouvoir déterminer précisément où se situe un objet ou une personne. Le but de ce projet et de créer une méthode fiable de localisation d'un robot à partir d'un signal sonore. Il ne s'agit donc pas de développer une solution pour un robot particulier, mais bien de déterminer une façon de procéder ainsi que le matériel nécessaire pour effectuer une localisation sonore. On voudra aussi étudier précisément les limites de la méthode créée. De plus on aimerait que le système développé puisse être réellement utilisé, on a donc choisi la coupe de France de robotique comme cadre de référence. Le sujet implique aussi quelques contraintes
+
+\section{Introduction}
+La localisation est le fait de pouvoir déterminer précisément où se situe un objet ou une personne. Le but de ce projet est de créer une méthode fiable de localisation d'un robot à partir d'un signal sonore. Il ne s'agit donc pas de développer une solution pour un robot particulier, mais bien de déterminer une façon de procéder ainsi que le matériel nécessaire pour effectuer une localisation sonore. On voudra aussi étudier précisément les limites du système. De plus on aimerait que le système développé puisse être réellement utilisé, on a donc choisi la coupe de France de robotique comme cadre de référence.
+
+\section{Contraintes du sujet}
+Le sujet implique quelques contraintes
 \begin{itemize}
 \item le matériel nécessaire doit être accessible, on s'efforcera d'utiliser le plus possible les composants les moins coûteux.
-\item le robot est censé se déplacer, il faut donc qu'on puisse se localisation autant de fois qu'on le veut.
+\item le robot est censé se déplacer, il faut donc qu'on puisse se localiser autant de fois qu'on le veut.
 \item l'environnement sera très bruyant et le bruit ne sera pas régulier (personnes qui parlent, marchent, courent aux alentours).
-\item l'environnement dans lequel se déplacera le robot comporte des obstacles (possibilité d'échos ou d'atténuer les sons) à des positions inconnues et pour certains pouvant se déplacer.
+\item l'environnement dans lequel se déplacera le robot comporte des obstacles à des positions inconnues et pour certains pouvant se déplacer.
 \end{itemize}
 On partira aussi du principe que la localisation sera bornée à une zone bien déterminée, dans le cas de l'application à la coupe de France de robotique: le terrain de jeu. 
 
-Le développement de ce système se fera par incrément, en expérimentant et en tirant les conclusions de ces expériences. Il faudra donc bien documenter toutes les expériences afin qu'elles puissent être reproduites.
+\section{méthode de travail}
+Pour arriver à nos fins, on commencera par analyser ce qui existe déjà dans le domaine de la localisation sonore, afin d'avoir une vue d'ensemble des obstacles qu'on pourra rencontrer ainsi que des méthodes classiques de procéder.
 
-\section{Analyse d'une étude précédente}
+Une fois cela fait, on passera au développement du système à proprement parler. Il se fera par incréments, en expérimentant et en tirant les conclusions de ces expériences. Il faudra donc bien documenter toutes les expériences afin qu'elles puissent être reproduites.
 
-Pour débuter nous nous somme basé sur le travail de John Swindle \cite{john_swindle2010}, qui avait déjà travaillé sur la localisation basé sur du son. Il a donc fallu comprendre la problématique qu'il s'était posé, comment il y a répondu, puis de partir de ces réflexion pour répondre à notre problématique.
+Enfin on aimerait pouvoir présenter une démo fonctionnelle du système pour prouver sa viabilité.
 
-\subsection{Résumé de l'étude}
+\chapter{Analyse d'une étude précédente}
+
+Pour débuter nous nous sommes basé sur le travail de John Swindle \cite{john_swindle2010}, qui avait déjà travaillé sur la localisation basé sur du son. Il a donc fallu comprendre la problématique qu'il s'était posé, comment il y a répondu, puis de partir de ces réflexion pour répondre à notre problématique.
+
+\section{Résumé de l'étude}
 La problématique de l'étude est très proche de la notre, à savoir qu'il veut pouvoir localiser un objet tout en essayant aussi d'utiliser le plus possible du matériel peu coûteux et en considérant un environnement un peu bruyant.
 
 Pour y arriver il propose un système utilisant un micro et 3 enceintes (2 enceintes étant théoriquement possible mais demanderais du matériel plus précis, et donc plus cher) le tout relié à un ordinateur.
-Le système fonctionne ainsi: L'ordinateur envoie un signal sonore via les 3 enceintes. Le micro reçoit 3 fois le même signal (un par enceinte) mais avec un décalage entre chacun. à l'aide de ce décalage on peut en résolvant un système d'équations trouver la position du micro.
+Le système fonctionne ainsi: L'ordinateur envoie un signal sonore via les 3 enceintes. Le micro reçoit 3 fois le même signal (un par enceinte) mais avec un décalage entre chacun. à l'aide de ce décalage on peut, en résolvant un système d'équations, trouver la position du micro.
 
 Son travail met aussi en avant des réflexions importantes sur le signal à utiliser. Tout d'abord il faut que le signal soit périodique, sinon on ne peut pas le différencier du bruit ambiant. Ensuite, pour éviter l'écho(qui fausserait tout), il propose d'utiliser un signal le plus court possible(des pics), ainsi que d'attendre un certain temps sans rien émettre entre chaque pic, pour que l'écho s'annule.
 
 Enfin il faut pouvoir traiter le signal reçu par le micro pour différencier les signaux envoyés du bruit ambiant, pour cela il utilise des techniques déjà connues en traitement du signal qui sont le "filtre haute-passe" , le "waveform averaging" et de la compression audio(réduction des bruit au dessus d'un certain seuil).
 
 
-\subsection{Que peut-on en tirer ?}
+\section{Que peut-on en tirer ?}
 
 La majorité du travail effectué dans cette étude pourra nous servir. Effectivement les  deux problématiques sont très proches et on peut se baser sur cette réflexion déjà faite pour créer notre système.
-Pour commencer le fonctionnement générale (calculer la position du micro en fonction du déphasage entre les signaux) semble être la solution la plus fiable et précise et s'adapte parfaitement à nos conditions.
-Ensuite on pourra se servir de son raisonnement sur le signal à envoyer et le traitement du signal enregistré. Mais cette partie n'étant que peu documenté, on prendra soin de faire nous même des tests dont tout le protocole et les résultats seront détaillés afin de s'orienter comme bon nous semble dans cette partie de l'élaboration du système, et permettre à d'autre plus tard de faire de même.
+Pour commencer le fonctionnement général (calculer la position du micro en fonction du déphasage entre les signaux) semble être la solution la plus fiable et précise et s'adapte parfaitement à nos conditions.
+Ensuite on pourra se servir de son raisonnement sur le signal à envoyer et le traitement du signal enregistré. Mais cette partie n'étant que peu documentée, on prendra soin de faire nous même des tests dont tout le protocole et les résultats seront détaillés afin de s'orienter comme bon nous semble dans cette partie de l'élaboration du système, et permettre à d'autres plus tard de faire de même.
 
-Néanmoins notre sujet diffère en plusieurs points, premièrement nous devons prendre en compte en environnement avec de fortes perturbations sonores, il faudra donc sûrement effectuer plus de traitements sur le signal reçu. Ensuite nous avons plusieurs micros à disposition, que nous pouvons donc utiliser pour croiser les données, et donc peut être n'utiliser que 2 enceintes finalement. Enfin l'étude ne parle pas du tout de se déplacer, ce sera donc à nous d'étudier complètement ce problème.
+Néanmoins notre sujet diffère en plusieurs points, premièrement nous devons prendre en compte un environnement avec de fortes perturbations sonores, il faudra donc sûrement effectuer plus de traitements sur le signal reçu. Ensuite nous avons décidé d'utiliser plusieurs micros(au moins 2) plutôt qu'un et d'utiliser le déphasage entre les micros pour calculer directement la distance aux enceintes. Cette façon de faire change un peu la configuration matérielle et le procédé, même si le fonctionnement général reste le même. Enfin l'étude ne parle pas du tout de se déplacer, ce sera donc à nous d'étudier complètement ce problème.
 
 
-\chapter{Tests effectués}
-On dois tester le matériel, le fait qu'on arrive bien à mesure ce qui nous intéresse(déphasage), les signaux envoyés, la réception.
-\chapter{Traitement du signal reçu}
+\chapter{développement de la solution}
+\section{Mise en place du système}
+
+Une fois l'analyse faite nous avons commencé la mise en place du système.
+Lors de cette phase nous avons procédé en émettant des hypothèses et en les infirmant/confirmant expérimentalement. 
+
+
+On a commencé par élaborer un protocole détaillé permettant de vérifier qu'on pouvait bien observer un déphasage entre les micros et on a déterminé la précision qu'on pouvait espérer.
+
+Puis on a étudié les conséquences de l'écho sur le signal reçu, c'est à dire à quel moment il apparaît, quel est son impact sur le signal reçu et comment peut on le plus possible le limiter. On a notamment tenter d'isoler les micros avec de la mousse pour les rendre directionnels. L'isolation semble marcher, mais dans un environnement avec beaucoup d'écho, il reste très dur de distinguer le signal de départ dans celui reçu.
+
+C'est pourquoi nous nous sommes ensuite intéressé aux différents types de signaux qu'on pouvait envoyer. Pour tous les tests précédents on utilisait un sinus en continu, nous avons donc enchainé en essayant des signaux plus brefs. Et on a pu vérifier qu'avec un signal très cours (moins de 5 échantillons pour un signal à 44100Hz) on pouvait dissocier le signal initial de l'écho, comme annoncé dans l'étude. 
+
+\section{Traitement du signal reçu}
+
+Une fois tout ceci fait nous avons commencé à nous intéresser à l'automatisation de la reconnaissance du signal reçu. On peut décomposer ce problème en une première sous partie consistant à nettoyer le signal le plus possible, et une seconde où on reconnait réellement le signal émis.
+\subsection{nettoyage du signal}
+\subsubsection{Filtrage par "waveform averaging"}
+Le principe de cette méthode est simple: connaissant la période du signal envoyé, on découpe le signal reçu en morceaux de la taille de celle-ci, et on fait la moyenne de ces bouts. Le résultat obtenu devrait donc mettre en valeur le signal se répétant sur cette période, le reste étant du bruit (donc plus ou moins aléatoire) devrait s'annuler au fur et à mesure.
+
+Après avoir testé expérimentalement cette méthode (détaillé en \ref{waveform_averaging}) afin d'essayer d'amplifier un signal particulier, on peut constater que cette méthode est efficace dans une certaine mesure. En effet on a bien amplifié le signal émis, mais le résultat reste quand même très bruité, c'est donc une méthode qu'on pourrait utiliser en combinaison avec une autre.
+
+\subsubsection{Filtrage par fréquences}
+c'est là où on en est :) 
+
+\subsection{reconnaissance du signal émis}
+Nope pas encore %%TODO
+
+\chapter{Implémentation du système}
+Nope pas encore %%TODO
+
+\chapter{Conclusion}
+Nope pas encore %%%TODO
+
+\begin{appendices}
+\input{rapport_experiences.tex}
+\end{appendices}
 
 \bibliographystyle{plain}
 \bibliography{resources/biblio}
