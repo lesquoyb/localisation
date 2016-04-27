@@ -1,0 +1,13 @@
+objectif:
+	tester si on peut bien appliquer la méthode en situation réelle
+comment: 
+	on reproduit l'environnement de la coupe de france de robotique:
+		- terrain de 2*3m
+		- micros sur un support (pour voir si ça change quelque chose)
+		- micros fixés (distances constantes l'un de l'autre
+		- les enceintes sont à 3 endroits fixes à la bordure du terrain
+	
+	on commence par définir exactement toutes les distances séparant les enceintes des micros et on en déduit le déphasage précis qu'on devra constater.
+	puis on vérifie que c'est bien ce que l'on constate.
+
+todo: calculer la distance minimal pour voir un décalage
