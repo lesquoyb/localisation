@@ -1,0 +1,7 @@
+retester accu avec des clacs
+
+coupe de france:
+	rectangle 2x3m
+	2 enceinte face à une troisième
+	fixer taille entre micros
+	plein

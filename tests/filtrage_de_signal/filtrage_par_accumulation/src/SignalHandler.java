@@ -15,9 +15,10 @@ public class SignalHandler {
 		(SoundSignal.createSound(sinus330, 20, 192000)).exportSignal("test330.wav", true);
 		*/
 		SoundSignal s = new SoundSignal();
-		s.setSignal("base_sinus_mono_non_bruite.wav");
-		s.filtrage_par_superposition_de_periodes((44100/440 +1 )*1)
-			.exportSignal("filtrage_non_bruite.wav", true);
+		//s.setSignal("base_clac_bruite.wav");
+		s.setSignal("base_clac_bruite.wav");
+		s.filtrage_par_superposition_de_periodes((44100 )*3 + 4)
+			.exportSignal("filtrage_clac_bruite.wav", true);
 		
 	} 
 }
