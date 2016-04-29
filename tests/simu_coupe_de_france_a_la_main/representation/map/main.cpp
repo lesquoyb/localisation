@@ -14,43 +14,9 @@ const int   width = 240,
             black = 0,
             samplingRate = 44100,
             speed_of_sound = 34000,
-            xH1 = 0,
-            yH1 = 88,
-            xH2 = 240,
-            yH2 = 0,
-            xH3 = 240,
-            yH3 = 175,
-            magic_factor = 1;
+            dist_inter_mic = 22;
 
 
-
-int eval(int xbase, int ybase, int i2, int j2, int decalage1, int decalage2, int decalage3){
-
-    int dist_base1 = sqrt((xH1 - xbase) *(xH1 - xbase)  + (yH1 - ybase) * (yH1 - ybase));
-    int dist_micro1 = sqrt((xH1 - i2) *(xH1 - i2)  + (yH1 - j2) * (yH1 - j2));
-
-    int dist_base2 = sqrt((xH2 - xbase) *(xH2 - xbase)  + (yH2 - ybase) * (yH2 - ybase));
-    int dist_micro2 = sqrt((xH2 - i2) *(xH2 - i2)  + (yH2 - j2) * (yH2 - j2));
-
-    int dist_base3 = sqrt((xH3 - xbase) *(xH3 - xbase)  + (yH3 - ybase) * (yH3 - ybase));
-    int dist_micro3 = sqrt((xH3 - i2) *(xH3 - i2)  + (yH3 - j2) * (yH3 - j2));
-
-
-    int diff1 = dist_base1 - dist_micro1;
-
-    int diff2 = dist_base2 - dist_micro2;
-
-    int diff3 = dist_base3 - dist_micro3;
-
-    return     abs(diff1 - decalage1)
-             * abs(diff2 - decalage2)
-             * abs(diff3 - decalage3);
-
-}
-
-int decalage(int xbase, int ybase, int xH, int yH){
-
-}
 
 class terrain{
 public:
@@ -65,13 +31,17 @@ public:
 
     TGAImage to_tga(string name)const{
         TGAImage img(width, height, TGAImage::RGB);
-        int minv = 999;
+        int minv = 9999;
+        int** true_values = new int*[width];
+
         for(int i = 0 ; i < width ; i++){
+            true_values[i] = new int[height];
             for(int j = 0 ; j < height ; j++){
                 int val = eval(i, j,xM1, yM1, decal1, decal2, decal3);
+                minv = min(minv, val);
+                true_values[i][j] = val;
                 img.set(i,j, TGAColor((unsigned char) max(min(val, white), black), (unsigned char) max(min(val, white), black), (unsigned char) max(min(val, white), black), 1));
             }
-            cout << endl;
         }
 
         img.set(xM1, yM1, TGAColor(255, 0, 0, 1) );
@@ -79,26 +49,62 @@ public:
         img.set(xH1, yH1, TGAColor(0, 0, 255, 1));
         img.set(xH2, yH2, TGAColor(0, 0, 255, 1));
         img.set(xH3, yH3, TGAColor(0, 0, 255, 1));
+        for(int i = 0 ; i < width ; i++){
+            for(int j = 0 ; j < height ; j++){
+                if(true_values[i][j] == minv){
+                    TGAColor c = img.get(i,j);
+                    c.b = 255;
+                    img.set(i,j,c);
+                }
+            }
+        }
         img.write_tga_file(name.c_str());
         ofstream os;
         os.open(name + ".desc");
-        //ostringstream oss;
-        os << "M1: "<< xM1 << " " << yM1 << endl
+
+        os << "M1: " << xM1 << " " << yM1 << endl
            << "M2: " << xM2 << " " << yM2 << endl
-           << "d1: " << decal1 <<endl
-            << "d2: " << decal2 << endl
-            << "d3: " << decal3 <<endl;
-       // os << oss.str();//, oss.str().size());
+           << "d1: " << decal1 << endl
+           << "d2: " << decal2 << endl
+           << "d3: " << decal3 << endl;
+
         os.close();
         return img;
     }
 
 
+
+    int eval(int xbase, int ybase, int i2, int j2, int decalage1, int decalage2, int decalage3) const{
+
+        int dist_base1 =  sqrt((xH1 - xbase) *(xH1 - xbase)  + (yH1 - ybase) * (yH1 - ybase));
+        int dist_micro1 = sqrt((xH1 - i2) *(xH1 - i2)  + (yH1 - j2) * (yH1 - j2));
+
+        int dist_base2 =  sqrt((xH2 - xbase) *(xH2 - xbase)  + (yH2 - ybase) * (yH2 - ybase));
+        int dist_micro2 = sqrt((xH2 - i2) *(xH2 - i2)  + (yH2 - j2) * (yH2 - j2));
+
+        int dist_base3 =  sqrt((xH3 - xbase) *(xH3 - xbase)  + (yH3 - ybase) * (yH3 - ybase));
+        int dist_micro3 = sqrt((xH3 - i2) *(xH3 - i2)  + (yH3 - j2) * (yH3 - j2));
+
+
+        int diff1 = dist_base1 - dist_micro1;
+
+        int diff2 = dist_base2 - dist_micro2;
+
+        int diff3 = dist_base3 - dist_micro3;
+
+        int diff_base = sqrt((xbase - i2)*(xbase - i2) + (ybase - j2)*(ybase - j2));
+
+        return   (1*( abs(diff1 - decalage1))
+                 + 1*(abs(diff2 - decalage2))
+                 + 1*(abs(diff3 - decalage3))
+                 + 10*(abs(diff_base - dist_inter_mic)));
+
+    }
+
 };
 
 terrain generation_terrain_au_pif(){
     terrain t;
-    int dist_inter_mic = 22;
 
     //On pif les micros
     t.xM1 = random() % width;
@@ -146,7 +152,7 @@ int main(int argc, char *argv[]){
 
     //int** values = (int**) malloc(sizeof(int**) * width);
     srand(time(NULL));
-    for(int i = 0 ; i < 300 ; i++)
+    for(int i = 0 ; i < 100 ; i++)
     generation_terrain_au_pif().to_tga("pif/pif_test" + to_string(i) + ".tga");
      return 0;
 
