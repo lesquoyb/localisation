@@ -17,6 +17,12 @@ const int   width = 240,
             dist_inter_mic = 22;
 
 
+int decalage(int x1, int y1, int x2, int y2, int xBase, int yBase){
+    return ( sqrt( (xBase - x2)*(xBase - x2)  + (yBase - y2)*(yBase - y2) )
+            -sqrt( (xBase - x1)*(xBase - x1)  + (yBase - y1)*(yBase - y1) ) )*samplingRate/speed_of_sound;
+}
+
+
 
 class terrain{
 public:
@@ -101,6 +107,19 @@ public:
 
     }
 
+
+
+    void calcule_decalages(){
+        decal1 = (sqrt( (xH1 - xM2)*(xH1 - xM2)  + (yH1 - yM2)*(yH1 - yM2) )
+                    -sqrt( (xH1 - xM1)*(xH1 - xM1)  + (yH1 - yM1)*(yH1 - yM1) ) )*samplingRate/speed_of_sound;
+
+        decal2 = (       sqrt( (xH2 - xM2)*(xH2 - xM2)  + (yH2 - yM2)*(yH2 - yM2) )
+                    -   sqrt( (xH2 - xM1)*(xH2 - xM1)  + (yH2 - yM1)*(yH2 - yM1) ))*samplingRate/speed_of_sound;
+
+        decal3 =      (sqrt( (xH3 - xM2)*(xH3 - xM2)  + (yH3 - yM2)*(yH3 - yM2) )
+                    -sqrt( (xH3 - xM1)*(xH3 - xM1)  + (yH3 - yM1)*(yH3 - yM1) ))*samplingRate/speed_of_sound;
+    }
+
 };
 
 terrain generation_terrain_au_pif(){
@@ -135,25 +154,45 @@ terrain generation_terrain_au_pif(){
     t.yH3 = height-1;
 
     //on déduit les décalages (:O un truc vraiment calculé )
-    t.decal1 =  (sqrt( (t.xH1 - t.xM2)*(t.xH1 - t.xM2)  + (t.yH1 - t.yM2)*(t.yH1 - t.yM2) )
-                -sqrt( (t.xH1 - t.xM1)*(t.xH1 - t.xM1)  + (t.yH1 - t.yM1)*(t.yH1 - t.yM1) )
-                   )*samplingRate/speed_of_sound;
-
-    t.decal2 =      (sqrt( (t.xH2 - t.xM2)*(t.xH2 - t.xM2)  + (t.yH2 - t.yM2)*(t.yH2 - t.yM2) )
-                    -sqrt( (t.xH2 - t.xM1)*(t.xH2 - t.xM1)  + (t.yH2 - t.yM1)*(t.yH2 - t.yM1) ))*samplingRate/speed_of_sound;
-
-    t.decal3 =      (sqrt( (t.xH3 - t.xM2)*(t.xH3 - t.xM2)  + (t.yH3 - t.yM2)*(t.yH3 - t.yM2) )
-                -sqrt( (t.xH3 - t.xM1)*(t.xH3 - t.xM1)  + (t.yH3 - t.yM1)*(t.yH3 - t.yM1) ))*samplingRate/speed_of_sound;
+    t.calcule_decalages();
 
     return t;
 }
+
+
+terrain generation_terrain_vrais_donnees(){
+    terrain t;
+    t.xH1 = 0;
+    t.yH1 = height/2;
+
+    t.xH3 = width-1;
+    t.yH3 = 0;
+
+    t.xH2 = width-1;
+    t.yH2 = height-1;
+
+    t.xM1 = width - 7;
+    t.yM1 = 8;
+
+    t.xM2 = width - 4.5;
+    t.yM2 = 28;
+
+    t.calcule_decalages();
+
+    //cout << t.decal1 << " " << t.decal2 << " " << t.decal3 << endl;
+    return t;
+}
+
+
+
 
 int main(int argc, char *argv[]){
 
     //int** values = (int**) malloc(sizeof(int**) * width);
     srand(time(NULL));
-    for(int i = 0 ; i < 100 ; i++)
-    generation_terrain_au_pif().to_tga("pif/pif_test" + to_string(i) + ".tga");
+    generation_terrain_vrais_donnees().to_tga("vraies_donnees.tga");
+    //for(int i = 0 ; i < 100 ; i++)
+    //generation_terrain_au_pif().to_tga("pif/pif_test" + to_string(i) + ".tga");
      return 0;
 
 
