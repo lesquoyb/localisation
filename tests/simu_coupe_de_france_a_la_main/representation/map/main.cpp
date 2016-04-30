@@ -43,7 +43,7 @@ public:
         for(int i = 0 ; i < width ; i++){
             true_values[i] = new int[height];
             for(int j = 0 ; j < height ; j++){
-                int val = eval(i, j,xM1, yM1, decal1, decal2, decal3);
+                int val = eval(i, j,xM1, yM1);
                 minv = min(minv, val);
                 true_values[i][j] = val;
                 img.set(i,j, TGAColor((unsigned char) max(min(val, white), black), (unsigned char) max(min(val, white), black), (unsigned char) max(min(val, white), black), 1));
@@ -80,16 +80,16 @@ public:
 
 
 
-    int eval(int xbase, int ybase, int i2, int j2, int decalage1, int decalage2, int decalage3) const{
+    int eval(int xbase, int ybase, int i2, int j2) const{
 
         int dist_base1 =  sqrt((xH1 - xbase) *(xH1 - xbase)  + (yH1 - ybase) * (yH1 - ybase));
-        int dist_micro1 = sqrt((xH1 - i2) *(xH1 - i2)  + (yH1 - j2) * (yH1 - j2));
+        int dist_micro1 = sqrt((xH1 - i2)    *(xH1 - i2)     + (yH1 - j2)    * (yH1 - j2));
 
         int dist_base2 =  sqrt((xH2 - xbase) *(xH2 - xbase)  + (yH2 - ybase) * (yH2 - ybase));
-        int dist_micro2 = sqrt((xH2 - i2) *(xH2 - i2)  + (yH2 - j2) * (yH2 - j2));
+        int dist_micro2 = sqrt((xH2 - i2)    *(xH2 - i2)     + (yH2 - j2)    * (yH2 - j2));
 
         int dist_base3 =  sqrt((xH3 - xbase) *(xH3 - xbase)  + (yH3 - ybase) * (yH3 - ybase));
-        int dist_micro3 = sqrt((xH3 - i2) *(xH3 - i2)  + (yH3 - j2) * (yH3 - j2));
+        int dist_micro3 = sqrt((xH3 - i2)    *(xH3 - i2)     + (yH3 - j2)    * (yH3 - j2));
 
 
         int diff1 = dist_base1 - dist_micro1;
@@ -100,9 +100,9 @@ public:
 
         int diff_base = sqrt((xbase - i2)*(xbase - i2) + (ybase - j2)*(ybase - j2));
 
-        return   (1*( abs(diff1 - decalage1))
-                 + 1*(abs(diff2 - decalage2))
-                 + 1*(abs(diff3 - decalage3))
+        return   (1*( abs(diff1 - decal1))
+                 + 1*(abs(diff2 - decal2))
+                 + 1*(abs(diff3 - decal3))
                  + 10*(abs(diff_base - dist_inter_mic)));
 
     }
@@ -160,7 +160,7 @@ terrain generation_terrain_au_pif(){
 }
 
 
-terrain generation_terrain_vrais_donnees(){
+terrain generation_terrain_vraies_donnees(){
     terrain t;
     t.xH1 = 0;
     t.yH1 = height/2;
@@ -171,15 +171,28 @@ terrain generation_terrain_vrais_donnees(){
     t.xH2 = width-1;
     t.yH2 = height-1;
 
-    t.xM1 = width - 7;
-    t.yM1 = 8;
+    int data[] = {   26, 108, 42, 118, 26, -24, -9,
+                  114, 134, 133, 146, 25, -26 , 2 ,
+                  106, 55, 99, 77, -16, -9, 17,
+                  width-89, 80, width-97, 60, -6, 9, -10,
+                  width-75, 53, width-97, 60, -28, 8, 26,
+                  width - 7, 8, width - 5, 28, -5, -26, 23};
 
-    t.xM2 = width - 4.5;
-    t.yM2 = 28;
+    for(int i = 0 ; i < 6 ; i++){
+        t.xM1 = data[i*7];
+        t.yM1 = data[i*7+1];
 
-    t.calcule_decalages();
+        t.xM2 = data[i*7+2];
+        t.yM2 = data[i*7+3];
 
-    //cout << t.decal1 << " " << t.decal2 << " " << t.decal3 << endl;
+        t.decal1 = data[i*7+4];
+        t.decal2 = data[i*7+5];
+        t.decal3 = data[i*7+6];
+
+
+        //t.calcule_decalages();
+        t.to_tga("vraies_donnees/vraies_donneesP" + to_string(i+1) + ".tga");
+    }
     return t;
 }
 
@@ -190,7 +203,7 @@ int main(int argc, char *argv[]){
 
     //int** values = (int**) malloc(sizeof(int**) * width);
     srand(time(NULL));
-    generation_terrain_vrais_donnees().to_tga("vraies_donnees.tga");
+    generation_terrain_vraies_donnees();
     //for(int i = 0 ; i < 100 ; i++)
     //generation_terrain_au_pif().to_tga("pif/pif_test" + to_string(i) + ".tga");
      return 0;
