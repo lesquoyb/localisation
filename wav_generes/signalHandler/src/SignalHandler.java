@@ -14,10 +14,15 @@ public class SignalHandler {
 		/*(SoundSignal.createSound(sinus80, 5, 128000)).exportSignal("test80.wav", true);
 		(SoundSignal.createSound(sinus330, 20, 192000)).exportSignal("test330.wav", true);
 		*/
+		short[] sig = new short[192000 * 30];
+		for(int i = 0 ; i < 30 * 3 ; i++){
+			for(int j = 0 ; j < 10 ; j++){
+				sig[i*192000/3 + j] = Short.MAX_VALUE;
+			}
+		}
 		SoundSignal s = new SoundSignal();
-		s.setSignal("base_sinus_mono_non_bruite.wav");
-		s.filtrage_par_superposition_de_periodes((44100/440 +1 )*1)
-			.exportSignal("filtrage_non_bruite.wav", true);
+		s.setSignal(sig, 192000);
+		s.exportSignal("clac_3_par_sec_192Khz.wav", true);
 		
 	} 
 }

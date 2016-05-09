@@ -5,6 +5,7 @@
 #include <time.h>
 #include <assert.h>
 #include <sstream>
+#include <vector>
 
 using namespace std;
 
@@ -24,6 +25,9 @@ int decalage(int x1, int y1, int x2, int y2, int xBase, int yBase){
 
 
 
+double const pi = 3.1415926535;
+
+
 class terrain{
 public:
  int    xM1, yM1,
@@ -35,9 +39,69 @@ public:
         decal2,
         decal3;
 
-    TGAImage to_tga(string name)const{
+    class robotPosition{
+    public:
+        int x, y, angle;
+        robotPosition(int x, int y, int angle): x(x), y(y), angle(angle) {}
+
+    };
+
+    vector<robotPosition> evaluate(){
+
+        int minv = INT32_MAX;
+        int*** true_values = new int**[width];
+
+
+        for(int i = 0 ; i < width ; i++){
+            true_values[i] = new int*[height];
+            for(int j = 0 ; j < height ; j++){
+                true_values[i][j] = new int[360];
+                int x1 = i,
+                    x2 = i,
+                    y1 = j - dist_inter_mic/2,
+                    y2 = j + dist_inter_mic/2;
+                for(int d = 0 ; d < 360 ; d++){
+                    double angle = d * pi / 180;
+
+
+
+                    int x1r = x1 * cos(angle) - y1 * sin(angle),
+                        x2r = x2 * cos(angle) - y2 * sin(angle),
+                        y1r = y1 * cos(angle) + x1 * sin (angle),
+                        y2r = y2 * cos(angle) + x2 * sin (angle);
+             /*
+                    xM1 = x1r;
+                    xM2 = x2r;
+                    yM1 = y1r;
+                    yM2 = y2r;
+              */
+                    //   to_tga("dump/dump" + to_string(i) +" " + to_string(j) +" " + to_string(d) +".tga");
+                    int val = eval(x1r, y1r, x2r, y2r);
+                    minv = min(minv, val);
+                    true_values[i][j][d] = val;
+                }
+                to_tga("dump/dump" + to_string(i) +" " + to_string(j)  +".tga");
+
+            }
+        }
+
+        cout << minv << endl;
+        vector<robotPosition> ret;
+        for(int i = 0 ; i < width ; i++){
+            for(int j = 0 ; j < height ; j++){
+                for(int d = 0 ; d < 360 ; d++){
+                    if(true_values[i][j][d] == minv){
+                        ret.push_back(robotPosition(i, j, d));
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    TGAImage to_tga(string name){
         TGAImage img(width, height, TGAImage::RGB);
-        int minv = 9999;
+        int minv = INT32_MAX;
         int** true_values = new int*[width];
 
         for(int i = 0 ; i < width ; i++){
@@ -55,6 +119,8 @@ public:
         img.set(xH1, yH1, TGAColor(0, 0, 255, 1));
         img.set(xH2, yH2, TGAColor(0, 0, 255, 1));
         img.set(xH3, yH3, TGAColor(0, 0, 255, 1));
+
+
         for(int i = 0 ; i < width ; i++){
             for(int j = 0 ; j < height ; j++){
                 if(true_values[i][j] == minv){
@@ -64,17 +130,35 @@ public:
                 }
             }
         }
-        img.write_tga_file(name.c_str());
+
         ofstream os;
         os.open(name + ".desc");
-
         os << "M1: " << xM1 << " " << yM1 << endl
            << "M2: " << xM2 << " " << yM2 << endl
            << "d1: " << decal1 << endl
            << "d2: " << decal2 << endl
            << "d3: " << decal3 << endl;
 
+        os << "mins: " <<endl;
+/*
+        for(robotPosition r : evaluate()){
+            double angle =  r.angle * pi / 180;
+            int x1 = r.x * cos(angle) - (r.y - dist_inter_mic/2) * sin(angle),
+                x2 = r.x * cos(angle) - (r.y + dist_inter_mic/2) * sin(angle),
+                y1 = (r.y - dist_inter_mic/2) * cos(angle) + r.x * sin (angle),
+                y2 = (r.y + dist_inter_mic/2) * cos(angle) + r.x * sin (angle);
+            img.set(x1, y1, TGAColor(0, 120, 120, 1));
+            img.set(x2, y2, TGAColor(0, 120, 120, 1));
+
+            os << r.x << " " << r.y << " " << angle << " " << x1 << ", " << y1 << "    " << x2 << ", " << y2 <<endl;
+
+        }
+*/
         os.close();
+
+
+
+        img.write_tga_file(name.c_str());
         return img;
     }
 
@@ -103,7 +187,7 @@ public:
         return   (1*( abs(diff1 - decal1))
                  + 1*(abs(diff2 - decal2))
                  + 1*(abs(diff3 - decal3))
-                 + 10*(abs(diff_base - dist_inter_mic)));
+                 + 0*((diff_base - dist_inter_mic) * (diff_base - dist_inter_mic)));
 
     }
 
@@ -148,10 +232,10 @@ terrain generation_terrain_au_pif(){
     //on ne pif pas les enceintes parce que quand même, faut pas abuser (mais on le fera surement après)
     t.xH1 = 0;
     t.yH1 = height/2;
-    t.xH2 = width-1;
-    t.yH2 = 0;
     t.xH3 = width-1;
-    t.yH3 = height-1;
+    t.yH3 = 0;
+    t.xH2 = width-1;
+    t.yH2 = height-1;
 
     //on déduit les décalages (:O un truc vraiment calculé )
     t.calcule_decalages();
@@ -190,24 +274,118 @@ terrain generation_terrain_vraies_donnees(){
         t.decal3 = data[i*7+6];
 
 
+       t.evaluate();
         //t.calcule_decalages();
         t.to_tga("vraies_donnees/vraies_donneesP" + to_string(i+1) + ".tga");
     }
     return t;
 }
+int H[][2] = {
+               {0, height/2},
+               {width-1, height-1},
+               {width-1, 0}
+
+             } ;
+
+int energy(int x, int y,int alpha){
+    int mic2mic = 22;
+/*
+    int H[][2] = {
+                   {0, height/2},
+                   {width-1, 0},
+                   {width-1, height-1}
+                 } ;
+
+    int D[] = { -16 * speed_of_sound / samplingRate,
+                -9 * speed_of_sound / samplingRate,
+                17 * speed_of_sound / samplingRate} ;
+
+*/
+
+    double Ax = x + mic2mic * cos((double)alpha/180*3.1416)/2;
+    double Ay = y + mic2mic * sin((double)alpha/180*3.1416)/2;
+    double Bx = x - mic2mic * cos((double)alpha/180*3.1416)/2;
+    double By = y - mic2mic * sin((double)alpha/180*3.1416)/2;
+
+    terrain t;
+
+    t.decal1 = 25.*speed_of_sound/samplingRate;
+    t.decal2 = -26.*speed_of_sound/samplingRate;
+    t.decal3 =  2.*speed_of_sound/samplingRate;
+    t.xH1 = H[0][0]; //flemme
+    t.yH1 = H[0][1];
+    t.xH2 = H[1][0];
+    t.yH2 = H[1][1];
+    t.xH3 = H[2][0];
+    t.yH3 = H[2][1];
+
+    return t.eval(Ax, Ay, Bx, By);
+/*
+    int v = 0;
+    for (int i = 0 ; i < 3 ; i++){
+        int dA = sqrt((H[i][0]-Ax)*(H[i][0]-Ax) + (H[i][1]-Ay)*(H[i][1]-Ay));
+        int dB = sqrt((H[i][0]-Bx)*(H[i][0]-Bx) + (H[i][1]-By)*(H[i][1]-By));
+        v += abs(D[i] - abs(dB-dA));
+    }
+    return v;
+    */
+}
 
 
+void drawplot(){
 
+    FILE* f = fopen("plot", "w");
+    string s;
+    int mx, my, ma, mm = INT32_MAX;
+    int** sum = new int*[width];
+    for(int x = 0 ; x < width ; x++){
+        sum[x] = new int[height];
+        for(int y = 0 ; y < height ; y++){
+            int m = INT32_MAX;
+            int z = 150;
+            int e;
+
+            sum[x][y] = 0;
+
+            for(int a = 0 ; a < 360 ; a++){
+
+                e = energy(x, y, a);
+
+                sum[x][y] += abs(e);
+                //s += to_string(x) + " " + to_string(y) + " " + to_string(a) + " " + to_string(e) + "\n";
+
+                if (abs(e) < m){
+                    m = abs(e);
+                    z = a;
+                    if(m < mm){
+                        mx = x;
+                        my = y;
+                        ma = a;
+                        mm = m;
+                    }
+                }
+            }
+            s += to_string(x) + " " + to_string(y) + " " + to_string(z) + " " + to_string(m) + "\n";
+
+        }
+    }
+    cout <<"minimum global: " << mx << " " << my << " " << ma << " " << mm;
+    fwrite( s.c_str(), s.size(), sizeof(char), f);
+    fclose(f);
+}
 
 int main(int argc, char *argv[]){
 
+    drawplot();
+
+    /*
     //int** values = (int**) malloc(sizeof(int**) * width);
     srand(time(NULL));
     generation_terrain_vraies_donnees();
     //for(int i = 0 ; i < 100 ; i++)
     //generation_terrain_au_pif().to_tga("pif/pif_test" + to_string(i) + ".tga");
      return 0;
-
+*/
 
 }
 

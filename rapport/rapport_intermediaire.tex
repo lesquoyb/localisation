@@ -6,7 +6,6 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{lmodern}
-\usepackage{kpfonts}
 \usepackage{setspace}
 \usepackage{float}
 \usepackage{fancyhdr} 
@@ -85,7 +84,7 @@ Le sujet implique quelques contraintes
 \item le matériel nécessaire doit être accessible, on s'efforcera d'utiliser le plus possible les composants les moins coûteux.
 \item le robot est censé se déplacer, il faut donc qu'on puisse se localiser autant de fois qu'on le veut.
 \item l'environnement sera très bruyant et le bruit ne sera pas régulier (personnes qui parlent, marchent, courent aux alentours).
-\item l'environnement dans lequel se déplacera le robot comporte des obstacles à des positions inconnues et pour certains pouvant se déplacer.
+\item l'environnement dans lequel se déplacera le robot comporte des obstacles à des positions inconnues, et pour certains pouvant se déplacer.
 \end{itemize}
 On partira aussi du principe que la localisation sera bornée à une zone bien déterminée, dans le cas de l'application à la coupe de France de robotique: le terrain de jeu. 
 
@@ -98,13 +97,13 @@ Enfin on aimerait pouvoir présenter une démo fonctionnelle du système pour pr
 
 \chapter{Analyse d'une étude précédente}
 
-Pour débuter nous nous sommes basé sur le travail de John Swindle \cite{john_swindle2010}, qui avait déjà travaillé sur la localisation basé sur du son. Il a donc fallu comprendre la problématique qu'il s'était posé, comment il y a répondu, puis de partir de ces réflexion pour répondre à notre problématique.
+Pour débuter nous nous sommes basé sur le travail de John Swindle \cite{john_swindle2010}, qui avait déjà travaillé sur la localisation basé sur du son. Il a donc fallu comprendre la problématique qu'il s'était posé, comment il y a répondu, puis de partir de ces réflexions pour répondre à notre problématique.
 
 \section{Résumé de l'étude}
 La problématique de l'étude est très proche de la notre, à savoir qu'il veut pouvoir localiser un objet tout en essayant aussi d'utiliser le plus possible du matériel peu coûteux et en considérant un environnement un peu bruyant.
 
 Pour y arriver il propose un système utilisant un micro et 3 enceintes (2 enceintes étant théoriquement possible mais demanderais du matériel plus précis, et donc plus cher) le tout relié à un ordinateur.
-Le système fonctionne ainsi: L'ordinateur envoie un signal sonore via les 3 enceintes. Le micro reçoit 3 fois le même signal (un par enceinte) mais avec un décalage entre chacun. à l'aide de ce décalage on peut, en résolvant un système d'équations, trouver la position du micro.
+Le système fonctionne ainsi: L'ordinateur envoie un signal sonore via les 3 enceintes. Le micro reçoit 3 fois le même signal (un par enceinte) mais avec un décalage entre chacun. À l'aide de ce décalage on peut, en résolvant un système d'équations, trouver la position du micro.
 
 Son travail met aussi en avant des réflexions importantes sur le signal à utiliser. Tout d'abord il faut que le signal soit périodique, sinon on ne peut pas le différencier du bruit ambiant. Ensuite, pour éviter l'écho(qui fausserait tout), il propose d'utiliser un signal le plus court possible(des pics), ainsi que d'attendre un certain temps sans rien émettre entre chaque pic, pour que l'écho s'annule.
 
@@ -120,7 +119,7 @@ Ensuite on pourra se servir de son raisonnement sur le signal à envoyer et le t
 Néanmoins notre sujet diffère en plusieurs points, premièrement nous devons prendre en compte un environnement avec de fortes perturbations sonores, il faudra donc sûrement effectuer plus de traitements sur le signal reçu. Ensuite nous avons décidé d'utiliser plusieurs micros(au moins 2) plutôt qu'un et d'utiliser le déphasage entre les micros pour calculer directement la distance aux enceintes. Cette façon de faire change un peu la configuration matérielle et le procédé, même si le fonctionnement général reste le même. Enfin l'étude ne parle pas du tout de se déplacer, ce sera donc à nous d'étudier complètement ce problème.
 
 
-\chapter{développement de la solution}
+\chapter{Développement de la solution}
 \section{Mise en place du système}
 
 Une fois l'analyse faite nous avons commencé la mise en place du système.
@@ -131,32 +130,49 @@ On a commencé par élaborer un protocole détaillé permettant de vérifier qu'
 
 Puis on a étudié les conséquences de l'écho sur le signal reçu, c'est à dire à quel moment il apparaît, quel est son impact sur le signal reçu et comment peut on le plus possible le limiter. On a notamment tenter d'isoler les micros avec de la mousse pour les rendre directionnels. L'isolation semble marcher, mais dans un environnement avec beaucoup d'écho, il reste très dur de distinguer le signal de départ dans celui reçu.
 
-C'est pourquoi nous nous sommes ensuite intéressé aux différents types de signaux qu'on pouvait envoyer. Pour tous les tests précédents on utilisait un sinus en continu, nous avons donc enchainé en essayant des signaux plus brefs. Et on a pu vérifier qu'avec un signal très cours (moins de 5 échantillons pour un signal à 44100Hz) on pouvait dissocier le signal initial de l'écho, comme annoncé dans l'étude. 
+C'est pourquoi nous nous sommes ensuite intéressés aux différents types de signaux qu'on pouvait envoyer. Pour tous les tests précédents on utilisait un sinus en continu, nous avons donc enchainé en essayant des signaux plus brefs. Et on a pu vérifier qu'avec un signal très cours (moins de 5 échantillons pour un signal à 44100Hz) on pouvait dissocier le signal initial de l'écho, comme annoncé dans l'étude. 
 
 \section{Traitement du signal reçu}
 
 Une fois tout ceci fait nous avons commencé à nous intéresser à l'automatisation de la reconnaissance du signal reçu. On peut décomposer ce problème en une première sous partie consistant à nettoyer le signal le plus possible, et une seconde où on reconnait réellement le signal émis.
-\subsection{nettoyage du signal}
-\subsubsection{Filtrage par "waveform averaging"}
+\subsection{waveform averaging}
 Le principe de cette méthode est simple: connaissant la période du signal envoyé, on découpe le signal reçu en morceaux de la taille de celle-ci, et on fait la moyenne de ces bouts. Le résultat obtenu devrait donc mettre en valeur le signal se répétant sur cette période, le reste étant du bruit (donc plus ou moins aléatoire) devrait s'annuler au fur et à mesure.
 
-Après avoir testé expérimentalement cette méthode (détaillé en \ref{waveform_averaging}) afin d'essayer d'amplifier un signal particulier, on peut constater que cette méthode est efficace dans une certaine mesure. En effet on a bien amplifié le signal émis, mais le résultat reste quand même très bruité, c'est donc une méthode qu'on pourrait utiliser en combinaison avec une autre.
+Après avoir testé expérimentalement cette méthode afin d'essayer d'amplifier un signal particulier, on peut constater que cette méthode est efficace dans une certaine mesure. En effet on a bien amplifié le signal émis, mais le résultat reste quand même bruité, c'est donc une méthode qu'on pourrait utiliser en combinaison avec une autre.
 
-\subsubsection{Filtrage par fréquences}
-c'est là où on en est :) 
 
 \subsection{reconnaissance du signal émis}
-Nope pas encore %%TODO
+Dans le cadre de ce projet on ne traitera pas de la reconnaissance automatique du signal émis. Car cette problématique mériterait à elle seule un sujet de recherche. Il est clair que pour implémenter complètement le système il faudra se pencher sur la question, mais ce n'est pas l'objectif de ce sujet de recherche, donc on se contentera dans notre traitement de mesures à la main.
 
 \chapter{Implémentation du système}
-Nope pas encore %%TODO
+Afin de tester le système développé, on a décidé de simuler les conditions réelles d'utilisation.
+Ainsi on a recréé un terrain proche de celui de la coupe de France de robotique. On a choisi des positions au hasard sur celui-ci et si notre approche est correct, on devrait pouvoir retrouver chacune des positions en fonction des déphasages observés.
+
+
+On a donc commencé par placer des points au hasard sur le terrain. Puis on en a déduit les déphasages qu'on devrait observer. On a ensuite émis des signaux, et mesuré les décalages. On a enfin comparé ces décalages à ce qui était attendu, et on a pu constater que les valeurs étaient très proches. On a donc pu en déduire qu'on pouvait bien se fier aux déphasages pour localiser un point.
+\begin{figure}[H]
+\includegraphics[width=15cm]{../tests/simu_coupe_de_france_a_la_main/IMG_2732.JPG}
+\caption{le terrain avec les positions}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[width=12cm]{../tests/simu_coupe_de_france_a_la_main/dist_h1.png}
+\includegraphics[width=12cm]{../tests/simu_coupe_de_france_a_la_main/dist_h2.png}
+\includegraphics[width=12cm]{../tests/simu_coupe_de_france_a_la_main/dist_h3.png}
+\caption{déphasages prévus et constatés par rapport à chaque haut parleur (H$_{i}$) }
+\end{figure}
+Ce qu'on a voulu faire ensuite c'est partir des déphasages et essayer de retrouver la position du robot (ce que fera le système pour se localiser). On a donc décidé de créer une fonction qui associera à chaque position sur le terrain une note selon qu'elle correspond ou non au décalage observé.
+\begin{figure}[H]
+\includegraphics[width=15cm]{../tests/simu_coupe_de_france_a_la_main/P2.png}
+\caption{une représentation des notes données à chaque point du terrain pour les déphasages de la position P2, plus un pixel est sombre, meilleur la note est}
+\end{figure}
+On a pu observer que bien souvent, 3 déphasages ne suffisent pas à localiser précisément un robot sur le terrain, on a souvent affaire à deux zones bien distinctes qui ont de très bonnes notes. Mais cela n'est pas vraiment un problème en soit, puisqu'on peut simplement se baser sur la position précédente pour déterminer laquelle des deux position proposée est la plus proche de la réalité (il suffit de sélectionner la position la plus proche de la précédente).
 
 \chapter{Conclusion}
-Nope pas encore %%%TODO
+Bien que notre recherche ne soit pas terminée, on peut conjecturer que la localisation de robot dans les termes qu'on a définie est possible, et en plus de cela pourrait tout à fait être implémenté afin d'être utilisé en conditions réelles. Les prochains défis pour véritablement implémenter ce dispositif sont de vérifier qu'on peut avec une bonne probabilité déterminer la position du robot en fonction des déphasage et des précédentes positions, ainsi que d'automatiser la reconnaissance du signal émis, qu'on a volontairement omis de traiter dans ce sujet car non prioritaire.
 
-\begin{appendices}
-\input{rapport_experiences.tex}
-\end{appendices}
+%\begin{appendices}
+%\input{rapport_experiences.tex}
+%\end{appendices}
 
 \bibliographystyle{plain}
 \bibliography{resources/biblio}
