@@ -1,0 +1,4 @@
+objectif: 
+on teste le filtrage par accumulation sur des vraies données: extraits de 35 secondes avec 30 secondes de son intéressant (des "clacs").
+résultat:
+il reste du bruit, mais étonnamment ça marche même avec si on n'a pas exactement la bonne fréquence de "clac" (à plus ou moins 2 échantillons près).
