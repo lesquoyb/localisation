@@ -21,12 +21,12 @@ public class SignalHandler {
 			.exportSignal("filtrage/testP3v2_dos.wav", true);
 			
 		s.setSignal("testP3v2_dos_bruite.wav");
-		s.filtrage_par_superposition_de_periodes(14354)
+		s.filtrage_par_superposition_de_periodes(14355)
 			.exportSignal("filtrage/testP3v2_dos_bruite.wav", true);
 		
 		
 		s.setSignal("testP3v2_dos_musique.wav");
-		s.filtrage_par_superposition_de_periodes(14354)
+		s.filtrage_par_superposition_de_periodes(14355)
 			.exportSignal("filtrage/testP3v2_dos_musique.wav", true);
 		
 		
