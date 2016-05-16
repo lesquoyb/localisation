@@ -16,17 +16,17 @@ public class SignalHandler {
 		*/
 		SoundSignal s = new SoundSignal();
 		//s.setSignal("base_clac_bruite.wav");
-		s.setSignal("temoin.wav");
+		s.setSignal("pre_filtre_elim_bruit/temoinA1B4G0.wav");
 		s.filtrage_par_superposition_de_periodes(8613)
-			.exportSignal("temoin_filtre.wav", true);
+			.exportSignal("output/temoinA1B4G0_filtre.wav", true);
 			
-		s.setSignal("musique_forte.wav");
+		s.setSignal("pre_filtre_elim_bruit/musique_forteA1B4G0.wav");
 		s.filtrage_par_superposition_de_periodes(8613)
-			.exportSignal("musique_forte_filtre.wav", true);
+			.exportSignal("output/musique_forteA1B4G0_filtre.wav", true);
 		
-		s.setSignal("musique_tres_forte.wav");
+		s.setSignal("pre_filtre_elim_bruit/musique_tres_forteA1B4G0.wav");
 		s.filtrage_par_superposition_de_periodes(8613)
-			.exportSignal("musique_tres_forte_filtre.wav", true);
+			.exportSignal("output/musique_tres_forteA1B4G0_filtre.wav", true);
 		
 	} 
 }

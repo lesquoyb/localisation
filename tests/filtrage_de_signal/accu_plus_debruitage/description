@@ -1,0 +1,30 @@
+comme le filtrage par accumulation n'est pas super super efficace quand le bruit masque totalement le signal initial, on tente de pré-filtrer.
+méthode: FFT: d�bruitage en faisant une moyen du bruit en d�but de signal et en le soustrayant plein de fois � chaque sample
+
+
+/*
+On essaie de voir si on peut reconnaitre une sinusoide dans un signal bruité.
+On connait la sinusoïde de départ (sa fréquence d'émission) et on aimerait la retrouver le plus précisément possible dans le signal reçu.
+La transformée de Fourier semble convenir parfaitement à cela, puisqu'elle permet de découper un signal en une somme de sinus. On devrait donc pouvoir retrouver assez précisément le signal qu'on a émit.
+
+
+Critère d'acceptation:
+Un premier test pour être sûr que le système fait bien ce qu'on lui demande est de réussir à retrouver une sinusoïde dans un signal généré par ordinateur non bruité composé uniquement de cette sinusoïde. 
+On continuera ensuite en sommant plusieurs sinusoïdes autres lors de la générations.
+Enfin on ajoutera du bruit quelconque (cosinus, bruit aléatoire, whatever ...).
+Si toutes ces étapes sont réussie on pourra utiliser des vraies données:
+	- on prendra plusieurs signaux déjà enregistrés lors d'expériences précédentes
+	- on fera de nouveaux enregistrement en tentant plusieurs façons de bruiter:
+			- marcher/ courir
+			- parler
+			- avoir une musique de fond
+			- essayer différents types d'environnements [extérieur, intérieur clos, grands intérieurs (autre chose ?) ]
+			- combiner plusieurs bruitages.
+Les tests se feront évidemment progressivement, on ne va pas essayer de combiner plusieurs bruitages si on ne maîtrise pas encore le simple bruit ambiant de l'environnement.
+
+Protocole à suivre:
+	Pour chaque enregistrement on précisera tous les critères (type de signal, d'environnement, bruit, qualité de la détection, etc.) afin de pouvoir adapter au mieux le signal envoyé au fur et à mesure.
+
+	// J'ai fait ça un jour moi ?
+*/
+

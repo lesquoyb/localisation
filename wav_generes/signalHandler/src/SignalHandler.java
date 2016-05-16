@@ -10,19 +10,24 @@ public class SignalHandler {
 	
 
 	public static void main(String[] args) throws IOException, UnsupportedAudioFileException {
-		/*(SoundSignal.createSound(sinus440, 5, 44100)).exportSignal("base_sinus_mono_non_bruite.wav", true);
-		/*(SoundSignal.createSound(sinus80, 5, 128000)).exportSignal("test80.wav", true);
+		/*
+		(SoundSignal.createSound(sinus440, 5, 44100)).exportSignal("base_sinus_mono_non_bruite.wav", true);
+		(SoundSignal.createSound(sinus80, 5, 128000)).exportSignal("test80.wav", true);
 		(SoundSignal.createSound(sinus330, 20, 192000)).exportSignal("test330.wav", true);
 		*/
-		short[] sig = new short[192000 * 30];
-		for(int i = 0 ; i < 30 * 3 ; i++){
-			for(int j = 0 ; j < 10 ; j++){
-				sig[i*192000/3 + j] = Short.MAX_VALUE;
+		int samplingRate = 44100;
+		int duration = 30;
+		int nb_clac_par_sec = 10;
+		int nb_samples = 5;
+		short[] sig = new short[samplingRate * duration];
+		for(int i = 0 ; i < duration * nb_clac_par_sec ; i++){
+			for(int j = 0 ; j < nb_samples ; j++){
+				sig[i*samplingRate/nb_clac_par_sec + j] = Short.MAX_VALUE;
 			}
 		}
 		SoundSignal s = new SoundSignal();
-		s.setSignal(sig, 192000);
-		s.exportSignal("clac_3_par_sec_192Khz.wav", true);
-		
+		s.setSignal(sig, samplingRate);
+		s.exportSignal("35min-10_par_sec_44.1Khz.wav", true);
+		/**/
 	} 
 }
